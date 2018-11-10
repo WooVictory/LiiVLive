@@ -16,22 +16,26 @@ import android.annotation.TargetApi
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
 import android.view.View
+import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
 import app.woovictory.liiv_live.adapter.NavigationAdapter
+import kotlinx.android.synthetic.main.content_home.*
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
-    lateinit var naviAdapter : NaviAdapter
-    lateinit var items_title :ArrayList<String>
-    lateinit var items_img : ArrayList<Int>
+    lateinit var naviAdapter: NaviAdapter
+    lateinit var items_title: ArrayList<String>
+    lateinit var items_img: ArrayList<Int>
+    lateinit var homeFragmentAdapter : HomeFragmentAdapter
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1) //call this before super.onCreate
     private fun forceRtlIfSupported() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             window.decorView.layoutDirection = View.LAYOUT_DIRECTION_RTL
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -40,11 +44,16 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
 
+        main_viewpager.adapter = HomeFragmentAdapter(supportFragmentManager)
+        main_viewpager.setCurrentItem(0)
+
         val toggle = ActionBarDrawerToggle(
-            this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+            this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        )
 
         toggle.setDrawerIndicatorEnabled(false)
-        val drawable = ResourcesCompat.getDrawable(resources, R.drawable.main_drawer_bar_btn, applicationContext!!.getTheme())
+        val drawable =
+            ResourcesCompat.getDrawable(resources, R.drawable.main_drawer_bar_btn, applicationContext!!.getTheme())
 
         //val bitmap = (drawable as BitmapDrawable).bitmap
         //val newdrawable = BitmapDrawable(resources, Bitmap.createScaledBitmap(bitmap, 30, 30, true))
@@ -63,14 +72,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
-        forceRtlIfSupported()
+        // forceRtlIfSupported()
 
         naviAdapter = NaviAdapter()
 
         //navigationmenu.adapter = naviAdapter
-        var point : String = "포인트리 얻기"
-
-
+        var point: String = "포인트리 얻기"
 
 
         nav_view.setNavigationItemSelectedListener(this)

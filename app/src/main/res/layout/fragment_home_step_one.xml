@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+
+    <RelativeLayout
+            android:id="@+id/speech_bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/speech_bubble_img"
+            android:layout_centerHorizontal="true"
+            >
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nanumsquareextrabold"
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#fdbd37"
+                    android:lineSpacingExtra="3sp"
+                    android:text="오늘 밤 8시 30분"
+                    android:layout_centerHorizontal="true"
+            />
+
+
+            <TextView
+                    android:layout_marginTop="9dp"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="3sp"
+                    android:text="리브 라이브"
+            />
+            <TextView
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#c7c7c7"
+                    android:lineSpacingExtra="1sp"
+                    android:text="첫 라이브 시작!"
+            />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <ImageView
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/speech_bubble"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/main_yellow_character"/>
+
+</RelativeLayout>

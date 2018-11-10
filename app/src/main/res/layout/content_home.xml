@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,22 +7,42 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/app_bar_home"
-        tools:context=".view.home.HomeActivity">
-
+        tools:context=".view.home.HomeActivity"
+        app:umanoPanelHeight="213dp"
+        app:umanoParallaxOffset="100dp"
+        android:gravity="bottom">
 
     <RelativeLayout
-            android:background="@drawable/main_background_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_marginTop="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="626dp"
+            android:background="@drawable/main_background_img">
+
+        <android.support.v4.view.ViewPager
+                android:layout_marginTop="30dp"
+                android:id="@+id/main_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="292dp"
+                android:clipToPadding="false"
+        />
 
         <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/main_viewpager"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="152.5dp"
+                android:src="@drawable/selector_participant_btn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/main_yellow_character"/>
-
+                android:layout_height="wrap_content"/>
 
     </RelativeLayout>
 
-</RelativeLayout>
+
+    <include
+            layout="@layout/sliding_layout"
+            android:layout_marginTop="-56dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    />
+
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

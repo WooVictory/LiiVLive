@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+    <RelativeLayout
+            android:id="@+id/speech_bubble2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/speech_bubble_img"
+            android:layout_centerHorizontal="true"
+            >
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nanumsquareextrabold"
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#fdbd37"
+                    android:lineSpacingExtra="3sp"
+                    android:text="라이브에 참여하면"
+                    android:layout_centerHorizontal="true"
+            />
+
+
+            <TextView
+                    android:layout_marginTop="9dp"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="3sp"
+                    android:text="레벨 업!"
+            />
+            <TextView
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#c7c7c7"
+                    android:lineSpacingExtra="1sp"
+                    android:text="많이 참여할 수록 레벨이 쑥쑥~!"
+            />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+            android:layout_below="@+id/speech_bubble2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+
+        <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_gravity="left"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="2sp"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:text="황윤선님의 리브는"
+            />
+
+            <TextView
+                    android:layout_gravity="left"
+                    android:layout_marginTop="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="2sp"
+                    android:fontFamily="@font/nanumsquarebold"
+                    android:includeFontPadding="false"
+                    android:text="아직 초보자"
+            />
+
+            <TextView
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Lv. 1"
+            />
+
+        </LinearLayout>
+
+        <ImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_yellow_character_side"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

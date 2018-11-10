@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="22dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="51dp"
+                android:layout_height="61dp"
+                android:src="@drawable/drawer_survey_icon"/>
+
+        <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="19sp"
+                        android:textColor="#3d3d3d"
+                        android:fontFamily="@font/nanumsquarebold"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="3sp"
+                        android:text="황윤선"
+                />
+
+                <TextView
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#3d3d3d"
+                        android:lineSpacingExtra="2sp"
+                        android:text="님"
+                />
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="1sp"
+                    android:text="hwangys0522@gmail.com"
+            />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:elevation="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_sliding_layout_background"
+            android:layout_marginHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="110dp">
+
+        <RelativeLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@drawable/border_sliding_top_background">
+
+
+
+
+        </RelativeLayout>
+        <ImageView
+
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_pointree_icon"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:elevation="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_sliding_layout_background"
+            android:layout_marginHorizontal="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="131dp">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@drawable/border_sliding_top_background">
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
