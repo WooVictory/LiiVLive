@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:background="@drawable/boder_pointree_background"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,11 +10,14 @@
         tools:showIn="@layout/app_bar_home"
         tools:context=".view.home.HomeActivity"
         app:umanoPanelHeight="213dp"
-        app:umanoParallaxOffset="100dp"
+        app:umanoParallaxOffset="50dp"
+        app:umanoShadowHeight="0dp"
+        android:backgroundTint="@android:color/transparent"
+
         android:gravity="bottom">
 
     <RelativeLayout
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="100dp"
             android:layout_width="wrap_content"
             android:layout_height="626dp"
             android:background="@drawable/main_background_img">
@@ -39,7 +43,6 @@
 
     <include
             layout="@layout/sliding_layout"
-            android:layout_marginTop="-56dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
     />
