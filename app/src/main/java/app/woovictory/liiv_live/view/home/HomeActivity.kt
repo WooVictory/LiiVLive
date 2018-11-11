@@ -6,34 +6,79 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
 import android.view.MenuItem
 import app.woovictory.liiv_live.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 import android.os.Build
 import android.annotation.TargetApi
-import android.support.v4.content.ContextCompat
 import android.support.v4.content.res.ResourcesCompat
+import android.support.v4.view.ViewPager
+import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
+import app.woovictory.liiv_live.MainActivity
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
-import app.woovictory.liiv_live.adapter.NavigationAdapter
+import app.woovictory.liiv_live.view.check.CheckActivity
+import app.woovictory.liiv_live.view.pointree.PointreeHistoryActivity
+import app.woovictory.liiv_live.view.quiz.QuizReviewActivity
+import app.woovictory.liiv_live.view.survey.SurveyActivity
 import kotlinx.android.synthetic.main.content_home.*
+import kotlinx.android.synthetic.main.sliding_layout.*
+import org.jetbrains.anko.startActivity
+import android.widget.RelativeLayout
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
+import org.jetbrains.anko.toast
 
 
-class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+    override fun onClick(v: View?) {
+        when (v!!) {
+            checkLayout -> startActivity<CheckActivity>()
+            quizLayout -> startActivity<QuizReviewActivity>()
+            surveyLayout -> startActivity<SurveyActivity>()
+            participantBtn -> startActivity<MainActivity>()
+            topLayout -> startActivity<PointreeHistoryActivity>()
+            pointree_go_btn -> startActivity<PointreeHistoryActivity>()
+            /*sliding_up_panel_layout->{
+                toast("들어오니111?")
+                if(sliding_up_panel_layout.anchorPoint == 1f){
+                    toast("들어오니?")
+                    val plControl = sliding_tops.getLayoutParams() as LinearLayout.LayoutParams
+
+                    plControl.leftMargin = 0
+                    plControl.rightMargin =0
+
+                    sliding_tops.layoutParams = plControl
+                    toast("마무리 되니??")
+                }
+            }*/
+
+        }
+
+
+
+    }
 
 
     lateinit var naviAdapter: NaviAdapter
-    lateinit var items_title: ArrayList<String>
-    lateinit var items_img: ArrayList<Int>
-    lateinit var homeFragmentAdapter : HomeFragmentAdapter
+
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1) //call this before super.onCreate
     private fun forceRtlIfSupported() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             window.decorView.layoutDirection = View.LAYOUT_DIRECTION_RTL
         }
+    }
+
+    fun init() {
+        checkLayout.setOnClickListener(this)
+        quizLayout.setOnClickListener(this)
+        surveyLayout.setOnClickListener(this)
+        participantBtn.setOnClickListener(this)
+        topLayout.setOnClickListener(this)
+        pointree_go_btn.setOnClickListener(this)
+        sliding_up_panel_layout.setOnClickListener(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +89,42 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
 
+        init()
+
+        if(sliding_up_panel_layout.panelState == SlidingUpPanelLayout.PanelState.EXPANDED){
+            toast("올라갔음")
+        }
+        Log.v("woo 119",sliding_up_panel_layout.panelState.toString())
+
+
+
+
+
+        //init()
+
+
         main_viewpager.adapter = HomeFragmentAdapter(supportFragmentManager)
         main_viewpager.setCurrentItem(0)
+
+        circleAnimIndicator.setItemMargin(10)
+        circleAnimIndicator.setAnimDuration(300)
+        circleAnimIndicator.createDotPanel(2, R.drawable.dot_non, R.drawable.dot)
+
+        var mPageChangeListener = object : ViewPager.OnPageChangeListener {
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                circleAnimIndicator.selectDot(position)
+            }
+
+        }
+
+        main_viewpager.addOnPageChangeListener(mPageChangeListener)
+
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close

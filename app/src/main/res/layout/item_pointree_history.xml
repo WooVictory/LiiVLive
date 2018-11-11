@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="73dp">
+
+    <TextView
+            android:id="@+id/pointreeHistoryDateItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="12sp"
+            android:textColor="#a2a2a2"
+            android:lineSpacingExtra="1sp"
+            android:text="11.06 (화)"
+            android:fontFamily="@font/nanumsquareregular"
+            android:includeFontPadding="false"
+    />
+
+    <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/pointreeHistoryTypeItem"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumsquareextrabold"
+            android:includeFontPadding="false"
+            android:textSize="16sp"
+            android:textColor="#707070"
+            android:lineSpacingExtra="2sp"
+            android:text="쿠폰샵"
+    />
+
+
+    <LinearLayout
+            android:id="@+id/pointreeHistoryPointLayout"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_marginRight="10dp"
+                android:id="@+id/pointreeHistoryPointItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/greyblue"
+                android:lineSpacingExtra="2sp"
+                android:text="-4,500 P"
+                android:fontFamily="@font/nanumsquareextrabold"
+                android:includeFontPadding="false"
+                android:layout_toLeftOf="@+id/pointreeHistoryMethodItem"
+        />
+        <TextView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/pointreeHistoryMethodItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/greyblue"
+                android:lineSpacingExtra="1sp"
+                android:text="차감"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+
+        />
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="1dp"
+            android:background="#e0e0e0"/>
+
+
+</RelativeLayout>

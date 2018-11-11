@@ -4,12 +4,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/drawer_layout"
-        android:layoutDirection="rtl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:layout_gravity="right"
-        android:textDirection="anyRtl"
+        android:layout_gravity="left"
+        android:textDirection="firstStrongLtr"
         tools:openDrawer="start">
 
     <include
@@ -21,7 +20,7 @@
             android:id="@+id/nav_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:layout_gravity="left"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header_home"
             app:menu="@menu/activity_home_drawer">
@@ -53,7 +52,7 @@
                 />
 
                 <RelativeLayout
-                        android:id="@+id/pointLayout"
+                        android:id="@+id/checkLayout"
                         android:layout_width="match_parent"
                         android:layout_height="55dp">
 
@@ -76,7 +75,7 @@
                             android:textSize="16sp"
                             android:textColor="#3d3d3d"
                             android:lineSpacingExtra="2sp"
-                            android:text="포인트리 얻기"
+                            android:text="출석  체크"
                     />
 
 
@@ -88,6 +87,7 @@
                         android:layout_height="0.2dp"
                         android:background="#858585"/>
                 <RelativeLayout
+                        android:id="@+id/quizLayout"
                         android:layout_width="match_parent"
                         android:layout_height="55dp">
 
@@ -122,6 +122,7 @@
                         android:layout_height="0.2dp"
                         android:background="#858585"/>
                 <RelativeLayout
+                        android:id="@+id/surveyLayout"
                         android:layout_width="match_parent"
                         android:layout_height="55dp">
 
@@ -197,8 +198,12 @@
 
                 </RelativeLayout>
 
+                <View
+                        android:layout_width="match_parent"
+                        android:background="#f6f6f6"
+                        android:layout_height="10dp"/>
                 <RelativeLayout
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="55dp">
 
@@ -225,8 +230,6 @@
 
 
                 </RelativeLayout>
-
-
 
 
             </LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="282dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/border_sliding_layout_background">
+
+    <ImageView
+            android:id="@+id/quiz_check_btn"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/quiz_review_x_btn"/>
+
+    <ImageView
+            android:id="@+id/explain_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/selector_quiz_review_button">
+
+
+
+    </ImageView>
+
+
+    <TextView
+            android:id="@+id/quiz_title_item"
+            android:layout_below="@+id/quiz_check_btn"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/nanumsquarebold"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="#414141"
+            android:lineSpacingExtra="8sp"
+            android:text="Q. 주식 거래 정규 마감 시간은?"
+    />
+    
+    <app.woovictory.liiv_live.util.CustomProgress
+            android:id="@+id/quiz_answer_one"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="27dp"
+            android:layout_below="@+id/quiz_title_item"
+            android:background="@drawable/border_percentage_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+
+
+    </app.woovictory.liiv_live.util.CustomProgress>
+
+    <RelativeLayout
+            android:id="@+id/quiz_answer_two"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/quiz_answer_one"
+            android:background="@drawable/border_percentage_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/quiz_answer_two"
+            android:background="@drawable/border_percentage_quiz"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="40dp">
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

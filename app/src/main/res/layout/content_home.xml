@@ -1,44 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.sothree.slidinguppanel.SlidingUpPanelLayout
-        android:background="@drawable/boder_pointree_background"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_up_panel_layout"
+        android:clickable="false"
+        android:background="@drawable/boder_pointree_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/app_bar_home"
         tools:context=".view.home.HomeActivity"
         app:umanoPanelHeight="213dp"
-        app:umanoParallaxOffset="50dp"
+        app:umanoParallaxOffset="100dp"
         app:umanoShadowHeight="0dp"
         android:backgroundTint="@android:color/transparent"
-
         android:gravity="bottom">
 
-    <RelativeLayout
-            android:layout_marginTop="100dp"
-            android:layout_width="wrap_content"
-            android:layout_height="626dp"
-            android:background="@drawable/main_background_img">
+    <ScrollView android:layout_width="match_parent" android:layout_height="626dp">
 
-        <android.support.v4.view.ViewPager
-                android:layout_marginTop="30dp"
-                android:id="@+id/main_viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="292dp"
-                android:clipToPadding="false"
-        />
-
-        <ImageView
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/main_viewpager"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/selector_participant_btn"
+        <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="626dp"
+                android:background="@drawable/main_background_img">
 
-    </RelativeLayout>
+            <android.support.v4.view.ViewPager
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/main_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="292dp"
+                    android:clipToPadding="false"
+            />
+
+            <app.woovictory.liiv_live.util.CircleAnimIndicator
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/main_viewpager"
+                    android:id="@+id/circleAnimIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+            />
+
+
+            <ImageView
+                    android:id="@+id/participantBtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/circleAnimIndicator"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/selector_participant_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_below="@+id/participantBtn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#c7c7c7"
+                    android:lineSpacingExtra="1sp"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:text="라이브 시간에만 버튼을 누를 수 있어요!"
+            />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
 
 
     <include

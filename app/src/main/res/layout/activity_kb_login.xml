@@ -26,20 +26,49 @@
             android:text="재미있는 금융시작! 리브 라이브"
     />
 
-    <ImageView
+    <RelativeLayout
             android:id="@+id/loginStarBangkingBtn"
             android:layout_marginTop="71.3dp"
             android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/kb_star_bangking_login_btn"/>
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginHorizontal="36dp"
+            android:background="@drawable/border_show_detail_btn_background">
 
-    <ImageView
-            android:id="@+id/loginNewBtn"
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:lineSpacingExtra="2sp"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
+                android:text="KB 스타뱅킹"
+                android:layout_centerInParent="true"
+        />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/loginKBSignBtn"
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/kb_new_login_btn"/>
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginHorizontal="36dp"
+            android:background="@drawable/border_show_detail_btn_background">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:lineSpacingExtra="2sp"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
+                android:text=" KB 신규가입"
+                android:layout_centerInParent="true"
+        />
+
+    </RelativeLayout>
 
 </LinearLayout>

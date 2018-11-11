@@ -8,7 +8,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "app.woovictory.liiv_live"
-        minSdkVersion 27
+        minSdkVersion 23
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -36,4 +36,5 @@ dependencies {
     implementation 'org.jetbrains.anko:anko:0.10.7'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.sothree.slidinguppanel:library:3.4.0'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1'
 }
