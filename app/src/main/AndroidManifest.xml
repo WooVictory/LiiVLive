@@ -10,7 +10,7 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/AppTheme">
-        <activity android:name=".view.home.HomeActivity">
+        <activity android:name=".view.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".view.login.LoginActivity">
+        <activity android:name=".view.home.HomeActivity">
         </activity>
         <activity android:name=".view.login.KbLoginActivity">
         </activity>
@@ -39,6 +39,8 @@
         <activity android:name=".view.ExamActivity">
         </activity>
         <activity android:name=".view.pointree.PointreeHistoryActivity">
+        </activity>
+        <activity android:name=".view.mypage.MypageActivity">
         </activity>
     </application>
 

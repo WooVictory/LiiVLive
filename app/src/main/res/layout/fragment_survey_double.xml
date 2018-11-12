@@ -1,0 +1,52 @@
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="66dp"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:background="@drawable/border_survey_background"
+        android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RadioGroup
+            android:id="@+id/parent_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RadioButton
+                android:background="@drawable/ripple_survey"
+                android:layout_marginLeft="13dp"
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:buttonTint="@color/mainColor"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+                android:paddingLeft="20dp"
+                android:text="Daily"/>
+
+        <View
+                android:background="#f0f0f1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+        <RadioButton
+                android:id="@+id/option2"
+                android:layout_marginLeft="13dp"
+                android:layout_width="match_parent"
+                android:buttonTint="@color/mainColor"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+                android:layout_height="46dp"
+                android:paddingLeft="20dp"
+                android:text="Once a week"/>
+        <View
+                android:background="#f0f0f1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+
+
+    </RadioGroup>
+
+</LinearLayout>

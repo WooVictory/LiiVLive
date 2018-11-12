@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:background="@drawable/border_sliding_layout_background"
+        >
+
+    <ImageView
+            android:id="@+id/survey_complete_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/complete_v_icon"/>
+
+    <ImageView
+            android:id="@+id/survey_complete_x_button"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/survey_popup_x_btn"
+            android:layout_alignParentRight="true"/>
+
+    <TextView
+            android:id="@+id/survey_complete_text"
+            android:layout_below="@+id/survey_complete_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/nanumsquareextrabold"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#fdbd37"
+            android:lineSpacingExtra="3sp"
+            android:text="설문 완료:)"
+    />
+
+    <TextView
+            android:layout_below="@+id/survey_complete_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#858585"
+            android:layout_marginBottom="21dp"
+            android:layout_centerHorizontal="true"
+            android:lineSpacingExtra="2sp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/nanumsquareregular"
+            android:includeFontPadding="false"
+            android:text="설문조사가 완료되었습니다."
+    />
+
+</RelativeLayout>

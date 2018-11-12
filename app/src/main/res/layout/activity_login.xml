@@ -36,8 +36,7 @@
             android:paddingLeft="12.5dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="52.5dp"
-            android:layout_marginRight="35dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginHorizontal="36dp"
             android:layout_width="match_parent"
             android:fontFamily="@font/nanumsquareregular"
             android:includeFontPadding="false"
@@ -47,14 +46,14 @@
 
 
     <EditText
+            android:layout_marginTop="20dp"
             android:id="@+id/loginPw"
             android:hint="패스워드"
             android:paddingLeft="12.5dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginHorizontal="36dp"
             android:fontFamily="@font/nanumsquareregular"
             android:includeFontPadding="false"
-            android:layout_marginRight="35dp"
-            android:layout_marginTop="20dp"
+            android:paddingRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:background="@drawable/background_login_id"
@@ -212,7 +211,7 @@
                 android:textSize="10sp"
                 android:textColor="#cecece"
                 android:lineSpacingExtra="2sp"
-                tools:text="계정 연동"
+                android:text="계정 연동"
         />
         <View android:layout_width="100dp"
               android:layout_gravity="center_vertical"

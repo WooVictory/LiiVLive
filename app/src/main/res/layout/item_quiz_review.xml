@@ -45,18 +45,31 @@
             android:text="Q. 주식 거래 정규 마감 시간은?"
     />
     
-    <app.woovictory.liiv_live.util.CustomProgress
+    <RelativeLayout
             android:id="@+id/quiz_answer_one"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="27dp"
             android:layout_below="@+id/quiz_title_item"
-            android:background="@drawable/border_percentage_quiz"
+            android:background="@drawable/border_quiz_answer"
             android:layout_width="match_parent"
             android:layout_height="40dp">
 
+        <TextView
+                android:id="@+id/quiz_answer_one_tv"
+                android:layout_centerVertical="true"
+                android:paddingLeft="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#757575"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="10sp"
+                android:text="PM 15:00"
+        />
 
 
-    </app.woovictory.liiv_live.util.CustomProgress>
+    </RelativeLayout>
 
     <RelativeLayout
             android:id="@+id/quiz_answer_two"
@@ -66,6 +79,20 @@
             android:background="@drawable/border_percentage_quiz"
             android:layout_width="match_parent"
             android:layout_height="40dp">
+
+        <TextView
+                android:id="@+id/quiz_answer_two_tv"
+                android:layout_centerVertical="true"
+                android:paddingLeft="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#757575"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="10sp"
+                android:text="PM 15:00"
+        />
 
 
 
@@ -81,6 +108,20 @@
             android:layout_marginBottom="15dp"
             android:layout_height="40dp">
 
+
+        <TextView
+                android:id="@+id/quiz_answer_three_tv"
+                android:layout_centerVertical="true"
+                android:paddingLeft="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#757575"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="10sp"
+                android:text="PM 15:00"
+        />
 
 
 

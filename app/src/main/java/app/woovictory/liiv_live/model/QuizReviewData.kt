@@ -4,5 +4,6 @@ package app.woovictory.liiv_live.model
  * Created by VictoryWoo
  */
 data class QuizReviewData (
-    var quizTitle : String
+    var quizTitle : String,
+    var checkFlag : Int
 )
