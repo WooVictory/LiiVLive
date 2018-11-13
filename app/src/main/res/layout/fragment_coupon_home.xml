@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <RelativeLayout
+
+                    android:layout_marginTop="28dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                <TextView
+                        android:id="@+id/coupon_text_one"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="#363636"
+                        android:lineSpacingExtra="4sp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:includeFontPadding="false"
+                        android:text="라이브도 참여하고"
+                />
+
+                <TextView
+                        android:id="@+id/coupon_text_two"
+                        android:layout_below="@+id/coupon_text_one"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="#363636"
+                        android:lineSpacingExtra="4sp"
+                        android:fontFamily="@font/nanumsquarebold"
+                        android:includeFontPadding="false"
+                        android:text="포인트리로 쇼핑도 하자"
+                />
+
+                <ImageView
+                        android:layout_marginTop="-10dp"
+                        android:layout_below="@+id/coupon_text_two"
+                        android:background="@android:color/darker_gray"
+                        android:layout_width="match_parent"
+                        android:layout_height="183dp"/>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                    android:layout_marginTop="32dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/coupon_shop_coupon_icon"/>
+                <TextView
+                        android:layout_marginLeft="11dp"
+                        android:fontFamily="@font/nanumsquarebold"
+                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#707070"
+                        android:lineSpacingExtra="2sp"
+                        android:text="쿠폰샵 추천 테마상품"
+                />
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:id="@+id/goToCoffee"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/border_sliding_layout_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="265dp">
+
+                <ImageView
+                        android:background="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"/>
+
+                <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:fontFamily="@font/nanumsquarebold"
+                            android:includeFontPadding="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="2sp"
+                            android:text="추운 겨울에 즐기는"
+                    />
+
+                    <TextView
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/nanumsquarebold"
+                            android:includeFontPadding="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="2sp"
+                            android:text="따뜻한 커피"
+                    />
+
+                    <TextView
+                            android:layout_marginTop="11dp"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:includeFontPadding="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="#a2a2a2"
+                            android:lineSpacingExtra="1sp"
+                            android:text="다양한 종류의 커피를 맛 보세요"
+                    />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_marginTop="12dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/border_sliding_layout_background"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_height="265dp">
+
+                <ImageView
+                        android:background="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"/>
+
+                <LinearLayout
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:fontFamily="@font/nanumsquarebold"
+                            android:includeFontPadding="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="2sp"
+                            android:text="건강에도 좋은"
+                    />
+
+                    <TextView
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/nanumsquarebold"
+                            android:includeFontPadding="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="2sp"
+                            android:text="수제버거/햄버거"
+                    />
+
+                    <TextView
+                            android:layout_marginTop="11dp"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:includeFontPadding="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="#a2a2a2"
+                            android:lineSpacingExtra="1sp"
+                            android:text="수제 버거와 브랜드의 햄버거"
+                    />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

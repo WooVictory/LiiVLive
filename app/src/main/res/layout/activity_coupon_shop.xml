@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.coupon.CouponShopActivity"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            android:elevation="2dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="#3d3d3d"
+                android:lineSpacingExtra="7sp"
+                android:text="쿠폰샵"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
+        />
+
+        <RelativeLayout
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mypage_x_btn"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:orientation="horizontal">
+
+        <RelativeLayout
+                android:id="@+id/home_tab_btn"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:fontFamily="@font/nanumsquarebold"
+                    android:includeFontPadding="false"
+                    android:gravity="center_horizontal"
+                    android:text="홈"
+            />
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/sale_tab_btn"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:fontFamily="@font/nanumsquarebold"
+                    android:includeFontPadding="false"
+                    android:gravity="center_horizontal"
+                    android:text="특가"
+            />
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/brand_tab_btn"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:fontFamily="@font/nanumsquarebold"
+                    android:includeFontPadding="false"
+                    android:gravity="center_horizontal"
+                    android:text="브랜드"
+            />
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/price_tab_btn"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:fontFamily="@font/nanumsquarebold"
+                    android:includeFontPadding="false"
+                    android:gravity="center_horizontal"
+                    android:text="가격 "
+            />
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/purchase_tab_btn"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_centerInParent="true"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:fontFamily="@font/nanumsquarebold"
+                    android:includeFontPadding="false"
+                    android:gravity="center_horizontal"
+                    android:text="구매"
+            />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+            android:id="@+id/couponContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+</LinearLayout>

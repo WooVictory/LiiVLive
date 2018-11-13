@@ -31,6 +31,7 @@ import kotlinx.android.synthetic.main.sliding_layout.*
 import org.jetbrains.anko.startActivity
 import android.widget.RelativeLayout
 import app.woovictory.liiv_live.util.dialoog.SurveyDialog
+import app.woovictory.liiv_live.view.coupon.CouponShopActivity
 import app.woovictory.liiv_live.view.exchange.ExchageActivity
 import app.woovictory.liiv_live.view.mypage.MypageActivity
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
@@ -62,6 +63,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             pointree_go_btn -> startActivity<PointreeHistoryActivity>()
             homeGoToMypageBtn -> startActivity<MypageActivity>()
             goToExchangeBtn -> startActivity<ExchageActivity>()
+            goToCouponShopBtn -> startActivity<CouponShopActivity>()
             /*sliding_up_panel_layout->{
                 toast("들어오니111?")
                 if(sliding_up_panel_layout.anchorPoint == 1f){
@@ -101,6 +103,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         sliding_up_panel_layout.setOnClickListener(this)
         homeGoToMypageBtn.setOnClickListener(this)
         goToExchangeBtn.setOnClickListener(this)
+        goToCouponShopBtn.setOnClickListener(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -6,6 +6,992 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.stock.StockAndFundActivity"
+        android:background="@android:color/white"
         android:orientation="vertical">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/white"
+                    android:elevation="2dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#3d3d3d"
+                        android:lineSpacingExtra="7sp"
+                        android:text="주식/펀드"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/nanumsquarebold"
+                        android:includeFontPadding="false"
+                />
+
+                <RelativeLayout
+                        android:id="@+id/stockXBtn"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent">
+
+
+                    <ImageView
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/mypage_x_btn"/>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/stockTextOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="#363636"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="4sp"
+                        android:text="포인트리로"
+                />
+
+                <TextView
+                        android:id="@+id/stockTextTwo"
+                        android:layout_below="@+id/stockTextOne"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumsquarebold"
+                        android:includeFontPadding="false"
+                        android:textSize="22sp"
+                        android:textColor="#363636"
+                        android:lineSpacingExtra="4sp"
+                        android:text="작은 투자를 시작해보세요"
+                />
+
+                <RelativeLayout
+                        android:layout_below="@+id/stockTextTwo"
+                        android:layout_marginTop="-10dp"
+                        android:layout_width="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:layout_height="183dp"/>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginLeft="16dp"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/main_slide_stock_icon"/>
+                <TextView
+                        android:layout_marginLeft="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#707070"
+                        android:layout_gravity="center_vertical"
+                        android:lineSpacingExtra="2sp"
+                        android:text="BEST 포인트리 주식"
+                />
+
+            </LinearLayout>
+
+            <View
+                    android:layout_marginTop="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp">
+
+                <TextView
+                        android:id="@+id/stock_num_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#fdbd37"
+                        android:layout_marginTop="10.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/nanumsquareextrabold"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="2sp"
+                        tools:text="01"
+                />
+
+                <RelativeLayout
+                        android:layout_toRightOf="@+id/stock_num_one"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:id="@+id/stock_one_image"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/stock_liiv_img"/>
+
+                <LinearLayout
+                        android:layout_toRightOf="@+id/stock_one_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/nanumsquarebold"
+                            android:includeFontPadding="false"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="2sp"
+                            android:text="카카오톡"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5.5dp"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:includeFontPadding="false"
+                            android:textSize="12sp"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="1sp"
+                            android:text="카카오톡 주식 설명 설명 등"
+                    />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp">
+
+                <TextView
+                        android:id="@+id/stock_num_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#fdbd37"
+                        android:layout_marginTop="10.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/nanumsquareextrabold"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="2sp"
+                        tools:text="02"
+                />
+
+                <RelativeLayout
+                        android:layout_toRightOf="@+id/stock_num_two"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:id="@+id/stock_two_image"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/stock_kakaotalk_img"/>
+
+                <LinearLayout
+                        android:layout_toRightOf="@+id/stock_two_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/nanumsquarebold"
+                            android:includeFontPadding="false"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="2sp"
+                            android:text="카카오톡"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5.5dp"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:includeFontPadding="false"
+                            android:textSize="12sp"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="1sp"
+                            android:text="카카오톡 주식 설명 설명 등"
+                    />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp">
+                <TextView
+                        android:id="@+id/stock_num_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#fdbd37"
+                        android:layout_marginTop="10.5dp"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/nanumsquareextrabold"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="2sp"
+                        tools:text="03"
+                />
+
+                <RelativeLayout
+                        android:layout_toRightOf="@+id/stock_num_three"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:id="@+id/stock_three_image"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/stock_kakaopay_img"/>
+
+                <LinearLayout
+                        android:layout_toRightOf="@+id/stock_three_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/nanumsquarebold"
+                            android:includeFontPadding="false"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="2sp"
+                            android:text="카카오톡"
+                    />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5.5dp"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:includeFontPadding="false"
+                            android:textSize="12sp"
+                            android:textColor="#757575"
+                            android:lineSpacingExtra="1sp"
+                            android:text="카카오톡 주식 설명 설명 등"
+                    />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/viewColor"/>
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginLeft="16dp"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/main_slide_stock_icon"/>
+                <TextView
+                        android:layout_marginLeft="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#707070"
+                        android:layout_gravity="center_vertical"
+                        android:lineSpacingExtra="2sp"
+                        android:text="KB리서치 추천주"
+                />
+
+            </LinearLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="17.5dp"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                <TextView
+                        android:id="@+id/research_recomm_one"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#757575"
+                        android:lineSpacingExtra="2sp"
+                        android:text="카카오톡"
+                />
+
+                <LinearLayout
+                        android:id="@+id/research_one_layout"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/research_up_text_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:gravity="end"
+                                android:text="70,200"
+                        />
+
+                        <ImageView
+                                android:layout_marginLeft="16dp"
+                                android:id="@+id/up_image_one"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/research_up_text_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"/>
+
+                        <TextView
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="72.5dp"
+                                android:layout_toRightOf="@+id/up_image_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:gravity="end"
+                                android:text="1500"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_marginLeft="217dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="#757575"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:text="111,624"
+                        />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:textSize="12sp"
+                                android:textColor="#e8312f"
+                                android:layout_alignParentRight="true"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                tools:text="2.18 %"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                <TextView
+                        android:id="@+id/research_recomm_two"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#757575"
+                        android:lineSpacingExtra="2sp"
+                        android:text="카카오톡"
+                />
+
+                <LinearLayout
+                        android:id="@+id/research_two_layout"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/research_up_text_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:gravity="end"
+                                android:text="70,200"
+                        />
+
+                        <ImageView
+                                android:layout_marginLeft="16dp"
+                                android:id="@+id/up_image_two"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/research_up_text_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"/>
+
+                        <TextView
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="72.5dp"
+                                android:layout_toRightOf="@+id/up_image_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:gravity="end"
+                                android:text="1500"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_marginLeft="217dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="#757575"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:text="111,624"
+                        />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:textSize="12sp"
+                                android:textColor="#e8312f"
+                                android:layout_alignParentRight="true"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                tools:text="2.18 %"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                <TextView
+                        android:id="@+id/research_recomm_three"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#757575"
+                        android:lineSpacingExtra="2sp"
+                        android:text="카카오톡"
+                />
+
+                <LinearLayout
+                        android:id="@+id/research_three_layout"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/research_up_text_three"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:gravity="end"
+                                android:text="70,200"
+                        />
+
+                        <ImageView
+                                android:layout_marginLeft="16dp"
+                                android:id="@+id/up_image_three"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/research_up_text_three"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"/>
+
+                        <TextView
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="72.5dp"
+                                android:layout_toRightOf="@+id/up_image_three"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:gravity="end"
+                                android:text="1500"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_marginLeft="217dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="#757575"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:text="111,624"
+                        />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:textSize="12sp"
+                                android:textColor="#e8312f"
+                                android:layout_alignParentRight="true"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                tools:text="2.18 %"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                <TextView
+                        android:id="@+id/research_recomm_four"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#757575"
+                        android:lineSpacingExtra="2sp"
+                        android:text="카카오톡"
+                />
+
+                <LinearLayout
+                        android:id="@+id/research_four_layout"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/research_up_text_four"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:gravity="end"
+                                android:text="70,200"
+                        />
+
+                        <ImageView
+                                android:layout_marginLeft="16dp"
+                                android:id="@+id/up_image_four"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/research_up_text_four"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"/>
+
+                        <TextView
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="72.5dp"
+                                android:layout_toRightOf="@+id/up_image_four"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:gravity="end"
+                                android:text="1500"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_marginLeft="217dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="#757575"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:text="111,624"
+                        />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:textSize="12sp"
+                                android:textColor="#e8312f"
+                                android:layout_alignParentRight="true"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                tools:text="2.18 %"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp">
+
+                <TextView
+                        android:id="@+id/research_recomm_five"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#757575"
+                        android:lineSpacingExtra="2sp"
+                        android:text="카카오톡"
+                />
+
+                <LinearLayout
+                        android:id="@+id/research_five_layout"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/research_up_text_five"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:gravity="end"
+                                android:text="70,200"
+                        />
+
+                        <ImageView
+                                android:layout_marginLeft="16dp"
+                                android:id="@+id/up_image_five"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/research_up_text_five"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"/>
+
+                        <TextView
+                                android:fontFamily="@font/nanumsquarebold"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="72.5dp"
+                                android:layout_toRightOf="@+id/up_image_five"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:textColor="#e8312f"
+                                android:lineSpacingExtra="2sp"
+                                android:gravity="end"
+                                android:text="1500"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                            android:layout_marginLeft="217dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="#757575"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:text="111,624"
+                        />
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:textSize="12sp"
+                                android:textColor="#e8312f"
+                                android:layout_alignParentRight="true"
+                                android:lineSpacingExtra="1sp"
+                                android:gravity="end"
+                                tools:text="2.18 %"
+                        />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/viewColor"/>
+
+            <ImageView
+                    android:layout_marginTop="31dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="39dp"
+                    android:src="@drawable/stock_start_btn"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
 
 </LinearLayout>
