@@ -90,7 +90,7 @@
             android:layout_marginTop="66dp"
             android:background="@null"/>
 
-    <app.woovictory.liiv_live.util.CircleAnimIndicator
+    <app.woovictory.liiv_live.util.indicator.CircleAnimIndicator
             android:layout_below="@+id/survey_viewpager"
             android:layout_centerHorizontal="true"
             android:id="@+id/survey_indicator"

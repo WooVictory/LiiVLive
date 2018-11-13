@@ -31,6 +31,8 @@ import kotlinx.android.synthetic.main.sliding_layout.*
 import org.jetbrains.anko.startActivity
 import android.widget.RelativeLayout
 import app.woovictory.liiv_live.util.dialoog.SurveyDialog
+import app.woovictory.liiv_live.view.exchange.ExchageActivity
+import app.woovictory.liiv_live.view.mypage.MypageActivity
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import org.jetbrains.anko.toast
 
@@ -40,24 +42,26 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (v!!) {
             checkLayout -> startActivity<CheckActivity>()
             quizLayout -> startActivity<QuizReviewActivity>()
-            surveyLayout -> startActivity<SurveyActivity >()
+            surveyLayout -> startActivity<SurveyActivity>()
             participantBtn -> {
                 //startActivity<MainActivity>()
                 val survey_dialog = SurveyDialog(this@HomeActivity)
-             /*   var params : WindowManager.LayoutParams = survey_dialog.window!!.attributes
-                params.width = WindowManager.LayoutParams.MATCH_PARENT
-                params.height = WindowManager.LayoutParams.MATCH_PARENT
+                /*   var params : WindowManager.LayoutParams = survey_dialog.window!!.attributes
+                   params.width = WindowManager.LayoutParams.MATCH_PARENT
+                   params.height = WindowManager.LayoutParams.MATCH_PARENT
 
-                survey_dialog.window.attributes = params
-                survey_dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                survey_dialog.setCanceledOnTouchOutside(true)*/
+                   survey_dialog.window.attributes = params
+                   survey_dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                   survey_dialog.setCanceledOnTouchOutside(true)*/
                 survey_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 survey_dialog.show()
-                var window : Window = survey_dialog.window
+                var window: Window = survey_dialog.window
                 window.setLayout(1300, WindowManager.LayoutParams.WRAP_CONTENT)
             }
             topLayout -> startActivity<PointreeHistoryActivity>()
             pointree_go_btn -> startActivity<PointreeHistoryActivity>()
+            homeGoToMypageBtn -> startActivity<MypageActivity>()
+            goToExchangeBtn -> startActivity<ExchageActivity>()
             /*sliding_up_panel_layout->{
                 toast("들어오니111?")
                 if(sliding_up_panel_layout.anchorPoint == 1f){
@@ -73,7 +77,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }*/
 
         }
-
 
 
     }
@@ -96,6 +99,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         topLayout.setOnClickListener(this)
         pointree_go_btn.setOnClickListener(this)
         sliding_up_panel_layout.setOnClickListener(this)
+        homeGoToMypageBtn.setOnClickListener(this)
+        goToExchangeBtn.setOnClickListener(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -108,13 +113,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         init()
 
-        if(sliding_up_panel_layout.panelState == SlidingUpPanelLayout.PanelState.EXPANDED){
+        if (sliding_up_panel_layout.panelState == SlidingUpPanelLayout.PanelState.EXPANDED) {
             toast("올라갔음")
         }
-        Log.v("woo 119",sliding_up_panel_layout.panelState.toString())
-
-
-
+        Log.v("woo 119", sliding_up_panel_layout.panelState.toString())
 
 
         //init()

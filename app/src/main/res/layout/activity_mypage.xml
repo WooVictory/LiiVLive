@@ -154,4 +154,203 @@
     </RelativeLayout>
 
 
+    <RelativeLayout
+            android:background="#f6f6f6"
+            android:layout_width="match_parent"
+            android:layout_height="112dp">
+
+        <RelativeLayout
+                android:elevation="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/border_sliding_layout_background">
+
+            <ImageView
+                    android:id="@+id/mypage_attendance_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/mypage_attendance_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20.4dp"/>
+
+            <LinearLayout
+                    android:id="@+id/mypage_check_text_layout"
+                    android:layout_marginLeft="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/mypage_attendance_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                <TextView
+                        android:fontFamily="@font/nanumsquarebold"
+                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#414141"
+                        android:lineSpacingExtra="2sp"
+                        android:text="출석체크"
+                />
+
+                <TextView
+                        android:layout_marginTop="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textColor="#afafaf"
+                        android:lineSpacingExtra="1sp"
+                        android:fontFamily="@font/nanumsquareregular"
+                        android:includeFontPadding="false"
+                        android:text="출첵하면 3P를 드립니다!"
+                />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                    android:id="@+id/goToCheckBtn"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent">
+
+
+                <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20.6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/main_slide_right_arrow_btn"/>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+        <TextView
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
+                android:textSize="16sp"
+                android:textColor="#414141"
+                android:lineSpacingExtra="2sp"
+                android:text="설정"
+        />
+
+        <RelativeLayout
+                android:id="@+id/goToSettingBtn"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="35.6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_slide_right_arrow_btn"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#858585"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+        <TextView
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
+                android:textSize="16sp"
+                android:textColor="#414141"
+                android:lineSpacingExtra="2sp"
+                android:text="FAQ"
+        />
+
+        <RelativeLayout
+                android:id="@+id/goToFAQBtn"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="35.6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_slide_right_arrow_btn"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#858585"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+        <TextView
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
+                android:textSize="16sp"
+                android:textColor="#414141"
+                android:lineSpacingExtra="2sp"
+                android:text="문의하기"
+        />
+
+        <RelativeLayout
+                android:id="@+id/goToQuestionBtn"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="35.6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/main_slide_right_arrow_btn"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#858585"/>
+
 </LinearLayout>

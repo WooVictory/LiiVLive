@@ -5,13 +5,15 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/white"
         tools:context=".view.pointree.PointreeHistoryActivity"
         android:orientation="vertical">
 
 
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
             android:elevation="1dp">
         <RelativeLayout
                 android:id="@+id/history_back_btn"

@@ -1,4 +1,4 @@
-package app.woovictory.liiv_live.util;
+package app.woovictory.liiv_live.util.indicator;
 
 import android.content.Context;
 import android.util.AttributeSet;

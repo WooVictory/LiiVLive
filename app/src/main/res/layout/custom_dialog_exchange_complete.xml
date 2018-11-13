@@ -4,10 +4,10 @@
         android:layout_width="match_parent"
         android:layout_height="145dp"
         android:background="@drawable/border_sliding_layout_background"
-        >
+>
 
     <ImageView
-            android:id="@+id/survey_complete_icon"
+            android:id="@+id/exchange_complete_icon"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="22dp"
             android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
             android:src="@drawable/complete_v_icon"/>
 
     <ImageView
-            android:id="@+id/survey_complete_x_button"
+            android:id="@+id/exchange_complete_x_button"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:layout_width="wrap_content"
@@ -24,8 +24,8 @@
             android:layout_alignParentRight="true"/>
 
     <TextView
-            android:id="@+id/survey_complete_text"
-            android:layout_below="@+id/survey_complete_icon"
+            android:id="@+id/exchange_complete_text"
+            android:layout_below="@+id/exchange_complete_icon"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="18dp"
             android:fontFamily="@font/nanumsquareextrabold"
@@ -35,11 +35,11 @@
             android:textSize="20sp"
             android:textColor="#fdbd37"
             android:lineSpacingExtra="3sp"
-            android:text="설문 완료:)"
+            android:text="보내기 완료!"
     />
 
     <TextView
-            android:layout_below="@+id/survey_complete_text"
+            android:layout_below="@+id/exchange_complete_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -50,7 +50,7 @@
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nanumsquareregular"
             android:includeFontPadding="false"
-            android:text="설문조사가 완료되었습니다."
+            android:text="계좌에 포인트리 보내기를 완료하였습니다."
     />
 
 </RelativeLayout>

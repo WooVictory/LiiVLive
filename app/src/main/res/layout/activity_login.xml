@@ -40,6 +40,7 @@
             android:layout_width="match_parent"
             android:fontFamily="@font/nanumsquareregular"
             android:includeFontPadding="false"
+            android:textSize="13sp"
             android:layout_height="38dp"
             android:background="@drawable/background_login_id"
     />
@@ -54,6 +55,7 @@
             android:fontFamily="@font/nanumsquareregular"
             android:includeFontPadding="false"
             android:paddingRight="20dp"
+            android:textSize="13sp"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:background="@drawable/background_login_id"

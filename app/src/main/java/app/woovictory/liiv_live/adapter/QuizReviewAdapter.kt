@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.PorterDuff
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,8 +14,6 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.model.QuizReviewData
-import app.woovictory.liiv_live.util.CustomProgress
-import kotlinx.android.synthetic.main.item_quiz_review.view.*
 
 /**
  * Created by VictoryWoo

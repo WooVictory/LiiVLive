@@ -92,6 +92,27 @@
                     </LinearLayout>
 
 
+                    <RelativeLayout
+                            android:id="@+id/homeGoToMypageBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_height="match_parent">
+
+                        <ImageView
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginRight="36dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/main_slide_right_arrow_btn"/>
+
+
+                    </RelativeLayout>
+
+
                 </RelativeLayout>
 
 
@@ -236,6 +257,7 @@
 
 
                             <LinearLayout
+                                    android:id="@+id/goToCouponShopBtn"
                                     android:layout_weight="1"
                                     android:layout_gravity="center_vertical"
                                     android:layout_width="0dp"
@@ -263,6 +285,7 @@
                             </LinearLayout>
 
                             <LinearLayout
+                                    android:id="@+id/goToStockBtn"
                                     android:layout_weight="1"
                                     android:layout_gravity="center_vertical"
                                     android:layout_width="0dp"
@@ -289,6 +312,7 @@
 
                             </LinearLayout>
                             <LinearLayout
+                                    android:id="@+id/goToExchangeBtn"
                                     android:layout_weight="1"
                                     android:layout_gravity="center_vertical"
                                     android:layout_width="0dp"
@@ -309,12 +333,13 @@
                                         android:textSize="14sp"
                                         android:textColor="#707070"
                                         android:lineSpacingExtra="2sp"
-                                        android:text="쿠폰샵"
+                                        android:text="환전하기"
                                 />
 
 
                             </LinearLayout>
                             <LinearLayout
+                                    android:id="@+id/goToQRBtn"
                                     android:layout_weight="1"
                                     android:layout_gravity="center_vertical"
                                     android:layout_width="0dp"
@@ -335,7 +360,7 @@
                                         android:textSize="14sp"
                                         android:textColor="#707070"
                                         android:lineSpacingExtra="2sp"
-                                        android:text="쿠폰샵"
+                                        android:text="QR결제"
                                 />
 
 
