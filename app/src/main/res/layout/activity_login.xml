@@ -239,27 +239,30 @@
         <ImageView
                 android:id="@+id/loginKaKaoBtn"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/kakao_login_btn"/>
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/login_kakao"/>
         <ImageView
                 android:id="@+id/loginFacebookBtn"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/facebook_login_btn"/>
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/login_facebook"/>
         <ImageView
                 android:id="@+id/loginGoogleBtn"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/google_login_btn"/>
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/login_google"/>
         <ImageView
                 android:id="@+id/loginKbBtn"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/kb_login_btn"/>
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:src="@drawable/login_kakao"/>
 
     </LinearLayout>
 </LinearLayout>
