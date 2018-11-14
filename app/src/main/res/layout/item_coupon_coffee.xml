@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_sliding_layout_background">
+
+    <ImageView
+            android:id="@+id/coffee_image_item"
+            android:layout_width="130dp"
+            android:src="@drawable/lotte_pepero"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:layout_height="130dp"
+    />
+
+    <View
+            android:layout_marginTop="17dp"
+            android:id="@+id/coffee_view"
+            android:layout_below="@+id/coffee_image_item"
+            android:layout_width="match_parent"
+            android:background="@color/viewColor"
+            android:layout_height="1dp"/>
+
+
+    <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/coffee_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/coffee_brand_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:lineSpacingExtra="1sp"
+                android:text="스타벅스"
+        />
+        <TextView
+                android:id="@+id/coffee_type_item"
+                android:layout_marginTop="3.5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:lineSpacingExtra="2sp"
+                android:text="HOT) 아메리카노"
+        />
+
+        <TextView
+                android:id="@+id/coffee_price_item"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/greyblue"
+                android:lineSpacingExtra="2sp"
+                android:text="4,100 원"
+                android:layout_marginBottom="15dp"
+        />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -9,7 +9,7 @@
     <ImageView
             android:id="@+id/survey_complete_icon"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="25dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/complete_v_icon"/>
@@ -27,7 +27,7 @@
             android:id="@+id/survey_complete_text"
             android:layout_below="@+id/survey_complete_icon"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/nanumsquareextrabold"
             android:includeFontPadding="false"
             android:layout_width="wrap_content"

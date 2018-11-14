@@ -134,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="11sp"
                 android:textColor="#afafaf"
+                android:layout_marginRight="10dp"
                 android:fontFamily="@font/nanumsquareregular"
                 android:includeFontPadding="false"
                 android:lineSpacingExtra="1sp"
@@ -153,10 +154,12 @@
         />
 
         <TextView
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="11sp"
+                android:layout_marginRight="10dp"
                 android:textColor="#afafaf"
                 android:fontFamily="@font/nanumsquareregular"
                 android:includeFontPadding="false"
@@ -177,7 +180,9 @@
                 android:text="｜"
         />
         <TextView
+                android:id="@+id/goToSignUp"
                 android:layout_weight="1"
+                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="11sp"

@@ -39,6 +39,9 @@ class QuizReviewAdapter(var items: ArrayList<QuizReviewData>, var context: Conte
         else
             holder.quiz_icon.setImageResource(R.drawable.quiz_review_o_btn)
 
+        holder.quiz_explain_button.setOnClickListener {
+            holder.quiz_explain_button.isSelected=true
+        }
 
         var animOf1 : Animation = AnimationUtils.loadAnimation(context, R.anim.quiz_review_progress_bar_anim_1)
         var animOf2 : Animation = AnimationUtils.loadAnimation(context, R.anim.quiz_review_progress_bar_anim_2)

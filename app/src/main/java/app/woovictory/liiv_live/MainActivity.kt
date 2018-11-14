@@ -1,12 +1,17 @@
 package app.woovictory.liiv_live
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Toast
+import app.woovictory.liiv_live.util.dialoog.SurveyDialog
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
@@ -109,6 +114,21 @@ class MainActivity : YouTubeBaseActivity(), View.OnClickListener, YouTubePlayer.
                     toast("눌린거지?")
                 }
             }
+            DialogBtn->{
+                val survey_dialog = SurveyDialog(this@MainActivity)
+                /*   var params : WindowManager.LayoutParams = survey_dialog.window!!.attributes
+                   params.width = WindowManager.LayoutParams.MATCH_PARENT
+                   params.height = WindowManager.LayoutParams.MATCH_PARENT
+
+                   survey_dialog.window.attributes = params
+                   survey_dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                   survey_dialog.setCanceledOnTouchOutside(true)*/
+                survey_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                survey_dialog.show()
+                var window: Window = survey_dialog.window
+                window.setLayout(1300, WindowManager.LayoutParams.WRAP_CONTENT)
+
+            }
         }
     }
 
@@ -139,7 +159,7 @@ class MainActivity : YouTubeBaseActivity(), View.OnClickListener, YouTubePlayer.
         setContentView(R.layout.activity_main)
         playBtn.setOnClickListener(this)
         pauseBtn.setOnClickListener(this)
-
+        DialogBtn.setOnClickListener(this)
 
         var customView : View = YouTubePlayerView.inflate(this,R.layout.custom_play_button,null)
 

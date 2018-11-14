@@ -12,18 +12,12 @@ import app.woovictory.liiv_live.fragment.HomeStepOneFragment
 import app.woovictory.liiv_live.fragment.HomeStepTwoFragment
 import kotlinx.android.synthetic.main.activity_coupon_shop.*
 import kotlinx.android.synthetic.main.fragment_coupon_home.*
+import org.jetbrains.anko.startActivity
 
 class CouponShopActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
-        when(v!!){
-            /*goToCoffee->{
-                var fragment = HomeStepOneFragment()
-                var fm = supportFragmentManager
-                var transaction = fm.beginTransaction()
-                transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right)
-                transaction.addToBackStack(null)
-                transaction.add(R.id.couponContainer,fragment).commit()
-            }*/
+        when (v!!) {
+
         }
     }
 
@@ -31,7 +25,7 @@ class CouponShopActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coupon_shop)
 
-        //goToCoffee.setOnClickListener(this)
+
         addFragment(CouponShopFragment())
 
 

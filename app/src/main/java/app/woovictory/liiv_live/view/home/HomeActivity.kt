@@ -34,6 +34,7 @@ import app.woovictory.liiv_live.util.dialoog.SurveyDialog
 import app.woovictory.liiv_live.view.coupon.CouponShopActivity
 import app.woovictory.liiv_live.view.exchange.ExchageActivity
 import app.woovictory.liiv_live.view.mypage.MypageActivity
+import app.woovictory.liiv_live.view.stock.StockAndFundActivity
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import org.jetbrains.anko.toast
 
@@ -43,7 +44,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (v!!) {
             checkLayout -> startActivity<CheckActivity>()
             quizLayout -> startActivity<QuizReviewActivity>()
-            surveyLayout -> startActivity<SurveyActivity>()
+            surveyLayout -> startActivity<MainActivity>()
             participantBtn -> {
                 //startActivity<MainActivity>()
                 val survey_dialog = SurveyDialog(this@HomeActivity)
@@ -64,6 +65,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             homeGoToMypageBtn -> startActivity<MypageActivity>()
             goToExchangeBtn -> startActivity<ExchageActivity>()
             goToCouponShopBtn -> startActivity<CouponShopActivity>()
+            goToStockBtn -> startActivity<StockAndFundActivity>()
             /*sliding_up_panel_layout->{
                 toast("들어오니111?")
                 if(sliding_up_panel_layout.anchorPoint == 1f){
@@ -104,6 +106,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         homeGoToMypageBtn.setOnClickListener(this)
         goToExchangeBtn.setOnClickListener(this)
         goToCouponShopBtn.setOnClickListener(this)
+        goToStockBtn.setOnClickListener(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

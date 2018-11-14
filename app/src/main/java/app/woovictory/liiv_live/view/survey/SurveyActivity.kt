@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
+import android.view.View
+import android.view.WindowManager
+import android.widget.RelativeLayout
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.SurveyFragmentAdapter
 import app.woovictory.liiv_live.util.MeasureViewpager
@@ -32,7 +35,7 @@ class SurveyActivity : AppCompatActivity() {
     var survey_num_items = listOf<String>("Q. 1","Q. 2","Q. 2-1","Q. 3","Q. 4","Q. 5","Q. 6")
     var survey_items = listOf<String>("현재 본인의 차를 보유하고 계신가요?","중고차를 판매해 본 경험이 있나요?"
         ,"어떤 채널을 통해 판매하셨나요?","차를 판매할 때 가장 어려운 점이 무엇인가요?","기존에 판매한 중고차 채널에 대한 만족도는?"
-    ,"추후 중고차 판매 시 어떤 채널을 이용해 판매할 계획인가요?")
+    ,"추후 중고차 판매 시 어떤 채널로 판매할 계획인가요?")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_survey)
@@ -47,10 +50,10 @@ class SurveyActivity : AppCompatActivity() {
         * 처음에 통신을 먼저해서 질문 갯수를 받아와서 통신 함수 안에서 사이즈 받고
         * for문으로 생성해주고
         * */
-        //surveyFragmentAdapter.addItem(SurveyDoubleFragment.newInstance("1"))
-        //surveyFragmentAdapter.addItem(SurveyDoubleFragment.newInstance("2"))
-        surveyFragmentAdapter.addItem(SurveyFragment.newInstance("1"))
-        surveyFragmentAdapter.addItem(SurveyFragment.newInstance("2"))
+        surveyFragmentAdapter.addItem(SurveyDoubleFragment.newInstance("1"))
+        surveyFragmentAdapter.addItem(SurveyDoubleFragment.newInstance("2"))
+        //surveyFragmentAdapter.addItem(SurveyFragment.newInstance("1"))
+        //surveyFragmentAdapter.addItem(SurveyFragment.newInstance("2"))
         surveyFragmentAdapter.addItem(SurveyFragment.newInstance("3"))
         surveyFragmentAdapter.addItem(SurveyFragment.newInstance("4"))
         surveyFragmentAdapter.addItem(SurveyFragment.newInstance("5"))
@@ -74,6 +77,7 @@ class SurveyActivity : AppCompatActivity() {
                 survey_indicator.selectDot(position)
                 survey_question_number.text = survey_num_items[position]
                 survey_question_title.text = survey_items[position]
+                //resize(position)
                 /*  when(position){
                       0->{
                           surveyFragmentAdapter.addItem(SurveyFragment.newInstance("1"))
@@ -101,5 +105,21 @@ class SurveyActivity : AppCompatActivity() {
 
         custom_vp.setCurrentItem(0)
         custom_vp.adapter = surveyFragmentAdapter
+    }
+
+    fun resize(position : Int){
+        var view : View = custom_vp.findViewWithTag(position)
+        if(view == null) return
+
+        view.measure(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT)
+
+        var width : Int = view.measuredWidth
+        var height : Int = view.measuredHeight
+
+
+        var params : RelativeLayout.LayoutParams = RelativeLayout.LayoutParams(width,height)
+        custom_vp.layoutParams = params
+
+
     }
 }

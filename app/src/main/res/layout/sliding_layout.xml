@@ -11,7 +11,8 @@
 
     <LinearLayout
             android:id="@+id/sliding_tops"
-            android:background="@drawable/boder_pointree_background"
+            android:elevation="1dp"
+            android:background="@drawable/border_sliding_background"
             android:layout_marginHorizontal="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -386,6 +387,91 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/main_slide_pointree_background_img"></RelativeLayout>
+
+                    <LinearLayout
+                            android:layout_marginTop="40dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                        <LinearLayout android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:orientation="horizontal">
+
+                            <TextView
+                                    android:id="@+id/sliding_text_one"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="19sp"
+                                    android:textColor="#707070"
+                                    android:lineSpacingExtra="3sp"
+                                    android:text="포인트리"
+                                    android:fontFamily="@font/nanumsquareextrabold"
+                                    android:includeFontPadding="false"
+                            />
+                            <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="19sp"
+                                    android:textColor="#707070"
+                                    android:lineSpacingExtra="3sp"
+                                    android:fontFamily="@font/nanumsquareregular"
+                                    android:includeFontPadding="false"
+                                    android:text="를 통해"
+                            />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                            <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="19sp"
+                                    android:textColor="#707070"
+                                    android:lineSpacingExtra="3sp"
+                                    android:text="작은 주식"
+                                    android:fontFamily="@font/nanumsquareextrabold"
+                                    android:includeFontPadding="false"
+                            />
+
+
+                            <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="19sp"
+                                    android:textColor="#707070"
+                                    android:lineSpacingExtra="3sp"
+                                    android:fontFamily="@font/nanumsquareregular"
+                                    android:includeFontPadding="false"
+                                    android:text="을 시작해 보세요!"
+                            />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                                android:layout_marginTop="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/nanumsquareregular"
+                                android:includeFontPadding="false"
+                                android:textColor="#a2a2a2"
+                                android:lineSpacingExtra="1sp"
+                                android:text="쉽고 간편한, 소액 투자"
+                        />
+
+                    </LinearLayout>
 
 
                 </RelativeLayout>

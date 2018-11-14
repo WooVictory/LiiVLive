@@ -14,8 +14,8 @@
             android:layout_height="30dp"
             android:background="#00000000"
             android:gravity="bottom"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
             android:orientation="horizontal">
 
         <ImageView
@@ -45,9 +45,10 @@
     <RelativeLayout
             android:id="@+id/dialog_view"
             android:layout_width="match_parent"
+            android:layout_marginHorizontal="28dp"
             android:layout_below="@+id/dialog_icons"
             android:background="@drawable/border_sliding_layout_background"
-            android:layout_height="220dp"
+            android:layout_height="200dp"
             android:orientation="vertical">
 
 
@@ -76,6 +77,8 @@
                 android:layout_marginTop="18.5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nanumsquareextrabold"
+                android:includeFontPadding="false"
                 android:textSize="20sp"
                 android:textColor="#fdbd37"
                 android:lineSpacingExtra="3sp"
@@ -92,6 +95,8 @@
                 android:textSize="12sp"
                 android:textColor="#c7c7c7"
                 android:lineSpacingExtra="1sp"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
                 android:text="설문에 참여하면 포인트리를 얻을 수 있어요."
         />
 
@@ -100,8 +105,8 @@
                 android:layout_below="@+id/three_title"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginHorizontal="75dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginHorizontal="85dp"
+                android:layout_marginTop="17dp"
                 android:background="@drawable/border_show_detail_btn_background">
 
             <TextView

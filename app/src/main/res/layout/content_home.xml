@@ -16,6 +16,8 @@
         android:backgroundTint="@android:color/transparent"
         android:gravity="bottom">
 
+    <!--umanoPanelHeight : sliding panel이 얼만큼 올라올건지!-->
+
     <ScrollView android:layout_width="match_parent" android:layout_height="626dp">
 
         <RelativeLayout

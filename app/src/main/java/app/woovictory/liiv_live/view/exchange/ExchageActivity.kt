@@ -27,7 +27,7 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
                 // 다이얼로그를 띄우면 dialog class는 화면의 폭이나 높이가 default로 고정되어 있기 때문에
                 // 아래의 방법을 써서 dialog의 window를 구해서 임의로 크기 값을 조정해준다.
                 var window: Window = exchange_dialog.window
-                window.setLayout(1100, WindowManager.LayoutParams.WRAP_CONTENT)
+                window.setLayout(1150, WindowManager.LayoutParams.WRAP_CONTENT)
             }
         }
     }

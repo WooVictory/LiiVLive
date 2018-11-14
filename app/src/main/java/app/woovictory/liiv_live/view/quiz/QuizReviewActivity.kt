@@ -31,10 +31,11 @@ class QuizReviewActivity : AppCompatActivity(), View.OnClickListener {
 
         quiz_review_back_btn.setOnClickListener(this)
 
-        for (i in 0..10)
-            item_list.add(QuizReviewData("Q. 주식 거래 정규 마감 시간은?",0))
+        for (i in 0..5) {
 
-        item_list.add(QuizReviewData("Q. 주식 거래 정규 마감 시간은?",1))
+            item_list.add(QuizReviewData("Q. 주식 거래 정규 마감 시간은?", 0))
+            item_list.add(QuizReviewData("Q. 주식 거래 정규 마감 시간은?", 1))
+        }
 
 
         var snapHelper: SnapHelper = PagerSnapHelper()
