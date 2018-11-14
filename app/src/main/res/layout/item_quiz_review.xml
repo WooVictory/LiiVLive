@@ -26,25 +26,24 @@
             android:src="@drawable/selector_quiz_review_button">
 
 
-
     </ImageView>
 
 
     <TextView
             android:id="@+id/quiz_title_item"
             android:layout_below="@+id/quiz_check_btn"
-            android:layout_marginLeft="16dp"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/nanumsquarebold"
             android:includeFontPadding="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:textSize="17sp"
             android:textColor="#414141"
             android:lineSpacingExtra="8sp"
-            android:text="Q. 주식 거래 정규 마감 시간은?"
+            android:text="Q. 주식 거래 정규 마감 시간sdsdddddddddddddd은?"
     />
-    
+
     <RelativeLayout
             android:id="@+id/quiz_answer_one"
             android:layout_marginHorizontal="16dp"
@@ -95,8 +94,6 @@
         />
 
 
-
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -124,10 +121,14 @@
         />
 
 
-
     </RelativeLayout>
 
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+    <RelativeLayout
+            android:id="@+id/quiz_explain_layout"
+            android:layout_below="@+id/quiz_check_btn"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
     </RelativeLayout>

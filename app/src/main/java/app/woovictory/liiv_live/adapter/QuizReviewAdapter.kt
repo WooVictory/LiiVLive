@@ -33,17 +33,25 @@ class QuizReviewAdapter(var items: ArrayList<QuizReviewData>, var context: Conte
         holder.quiz_title.text = items[position].quizTitle
 
         // 틀린 경우
-        if (items[position].checkFlag == 0)
+        if (items[position].checkFlag == 0){
             holder.quiz_icon.setImageResource(R.drawable.quiz_review_x_btn)
+            holder.quiz_answer_one.background.setColorFilter(ContextCompat.getColor(context, R.color.greyblue),PorterDuff.Mode.SRC_IN)
+        }
         // 맞은 경우
-        else
+        else{
             holder.quiz_icon.setImageResource(R.drawable.quiz_review_o_btn)
-
-        holder.quiz_explain_button.setOnClickListener {
-            holder.quiz_explain_button.isSelected=true
+            holder.quiz_answer_one.background.setColorFilter(ContextCompat.getColor(context, R.color.mainColor),PorterDuff.Mode.SRC_IN)
         }
 
-        var animOf1 : Animation = AnimationUtils.loadAnimation(context, R.anim.quiz_review_progress_bar_anim_1)
+        holder.quiz_explain_button.setOnClickListener {
+            if(!holder.quiz_explain_button.isSelected){
+                holder.quiz_explain_button.isSelected=true
+            }else{
+                holder.quiz_explain_button.isSelected=false
+            }
+        }
+
+      /*  var animOf1 : Animation = AnimationUtils.loadAnimation(context, R.anim.quiz_review_progress_bar_anim_1)
         var animOf2 : Animation = AnimationUtils.loadAnimation(context, R.anim.quiz_review_progress_bar_anim_2)
 
         animOf1.setAnimationListener(object : Animation.AnimationListener{
@@ -64,7 +72,9 @@ class QuizReviewAdapter(var items: ArrayList<QuizReviewData>, var context: Conte
 
         }
         )
-        holder.quiz_answer_one.startAnimation(animOf1)
+        holder.quiz_answer_one.startAnimation(animOf1)*/
+
+        //holder.quiz_answer_one.background.setColorFilter(ContextCompat.getColor(context, R.color.mainColor),PorterDuff.Mode.SRC_IN)
 
 
 
