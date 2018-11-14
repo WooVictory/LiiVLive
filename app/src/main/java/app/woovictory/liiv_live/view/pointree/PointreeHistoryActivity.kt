@@ -1,11 +1,13 @@
 package app.woovictory.liiv_live.view.pointree
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.PointreeHistoryAdapter
-import app.woovictory.liiv_live.model.PointreeHistoryData
+import app.woovictory.liiv_live.db.PointreeHistoryData
+import app.woovictory.liiv_live.db.SharedPreferenceController
+import app.woovictory.liiv_live.db.pointItemDataList
 import kotlinx.android.synthetic.main.activity_pointree_history.*
 
 class PointreeHistoryActivity : AppCompatActivity() {
@@ -16,19 +18,23 @@ class PointreeHistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pointree_history)
 
-        item_list = ArrayList()
+        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
+        pointItemDataList.addPointItemData("쿠폰샵", -600, "차감")
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 600)
+        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
+        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
+        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
+        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
+        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
+        point_history_act_point_tv.text = SharedPreferenceController.getMyPoint(applicationContext).toString()
 
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","차감"))
-        item_list.add(PointreeHistoryData("11.06(화)","쿠폰샵","-4,500P","획득"))
-
+        item_list = pointItemDataList.getPointItemData()
 
         pointreeHistoryRv.setHasFixedSize(true)
 

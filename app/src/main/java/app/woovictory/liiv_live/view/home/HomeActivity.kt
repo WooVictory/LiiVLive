@@ -1,41 +1,40 @@
 package app.woovictory.liiv_live.view.home
 
-import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import app.woovictory.liiv_live.R
-import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.app_bar_home.*
-import android.os.Build
 import android.annotation.TargetApi
-import android.app.ActionBar
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
+import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.support.v4.content.res.ResourcesCompat
+import android.support.v4.view.GravityCompat
 import android.support.v4.view.ViewPager
+import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.*
-import android.widget.LinearLayout
+import android.view.MenuItem
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import app.woovictory.liiv_live.MainActivity
+import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
-import app.woovictory.liiv_live.view.check.CheckActivity
-import app.woovictory.liiv_live.view.pointree.PointreeHistoryActivity
-import app.woovictory.liiv_live.view.quiz.QuizReviewActivity
-import app.woovictory.liiv_live.view.survey.SurveyActivity
-import kotlinx.android.synthetic.main.content_home.*
-import kotlinx.android.synthetic.main.sliding_layout.*
-import org.jetbrains.anko.startActivity
-import android.widget.RelativeLayout
+import app.woovictory.liiv_live.db.SharedPreferenceController
 import app.woovictory.liiv_live.util.dialoog.SurveyDialog
+import app.woovictory.liiv_live.view.check.CheckActivity
 import app.woovictory.liiv_live.view.coupon.CouponShopActivity
 import app.woovictory.liiv_live.view.exchange.ExchageActivity
 import app.woovictory.liiv_live.view.mypage.MypageActivity
+import app.woovictory.liiv_live.view.pointree.PointreeHistoryActivity
+import app.woovictory.liiv_live.view.quiz.QuizReviewActivity
 import app.woovictory.liiv_live.view.stock.StockAndFundActivity
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
+import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.app_bar_home.*
+import kotlinx.android.synthetic.main.content_home.*
+import kotlinx.android.synthetic.main.sliding_layout.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 
@@ -116,6 +115,25 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
+
+
+        // ID 넣기
+        SharedPreferenceController.setMyId(applicationContext, "여기에 아이디 넣어야됌")
+
+        // ID 가져오기
+        SharedPreferenceController.getMyId(applicationContext)
+
+        // Img 넣기
+        SharedPreferenceController.setMyImage(applicationContext, "여기에 이미지 넣어야됌")
+
+        // Img 가져오기
+        SharedPreferenceController.getMyImage(applicationContext)
+
+        // 포인트 넣기
+        SharedPreferenceController.setMyPoint(applicationContext, 3000)
+
+        // 포인트 가져오기
+        SharedPreferenceController.getMyPoint(applicationContext)
 
         init()
 

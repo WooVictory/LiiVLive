@@ -89,6 +89,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/point_history_act_point_tv"
                     android:layout_below="@+id/history_pointree_text"
                     android:layout_centerHorizontal="true"
                     android:layout_width="wrap_content"

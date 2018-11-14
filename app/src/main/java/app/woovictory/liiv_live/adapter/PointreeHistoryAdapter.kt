@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import app.woovictory.liiv_live.R
-import app.woovictory.liiv_live.model.PointreeHistoryData
-import kotlinx.android.synthetic.main.item_pointree_history.view.*
+import app.woovictory.liiv_live.db.PointreeHistoryData
 
 /**
  * Created by VictoryWoo
@@ -26,7 +25,7 @@ class PointreeHistoryAdapter(var items: ArrayList<PointreeHistoryData>, var cont
     override fun onBindViewHolder(holder: PointreeHistoryViewHolder, position: Int) {
 
         holder.historyMethod.text = items[position].history_method
-        holder.historyPoint.text = items[position].history_point
+        holder.historyPoint.text = items[position].history_point.toString() + " P"
         holder.historyDate.text = items[position].history_date
         holder.historyType.text = items[position].history_type
 
