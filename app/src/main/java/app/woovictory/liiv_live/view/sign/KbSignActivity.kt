@@ -52,7 +52,7 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kb_sign)
 
-        kbSignImage.setOnClickListener(this)
+        setOnClickListener()
 
         //setOnClickListener()
 
