@@ -66,4 +66,6 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 
+    // 통신코드필요.
+
 }

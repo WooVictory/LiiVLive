@@ -1,6 +1,7 @@
 package app.woovictory.liiv_live.Network
 
 import app.woovictory.liiv_live.Post.PostLoginResponse
+import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.Post.PostSignUpResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -25,4 +26,12 @@ interface NetworkService {
             @Field("id") id: String,
             @Field("pw") pw: String
     ): Call<PostLoginResponse>
+
+    // 로그인 하기
+    @FormUrlEncoded
+    @POST("refreshfcmtoken/")
+    fun postRefreshFcmTokenResponse(
+            @Field("userID") userID: String,
+            @Field("fcmToken") fcmToken: String
+    ): Call<PostRefreshFcmTokenResponse>
 }

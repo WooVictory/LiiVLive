@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         FirebaseMessaging.getInstance().subscribeToTopic("notice");
 
-        Log.v("TATATATA", FirebaseInstanceId.getInstance().getToken())
+        Log.v("TATATATA", FirebaseInstanceId.getInstance().getToken().toString())
 
         loginId.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
