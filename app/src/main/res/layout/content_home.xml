@@ -10,8 +10,8 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".view.home.HomeActivity"
-        app:umanoPanelHeight="250dp"
-        app:umanoParallaxOffset="100dp"
+        app:umanoPanelHeight="200dp"
+        app:umanoParallaxOffset="10dp"
         app:umanoShadowHeight="0dp"
         android:backgroundTint="@android:color/transparent"
         android:gravity="bottom">

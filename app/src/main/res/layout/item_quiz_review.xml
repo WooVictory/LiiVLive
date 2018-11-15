@@ -3,7 +3,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="282dp"
         android:layout_marginTop="30dp"
-        android:layout_height="wrap_content"
+        android:layout_height="320dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/border_sliding_layout_background">
@@ -29,109 +29,171 @@
     </ImageView>
 
 
-    <TextView
-            android:id="@+id/quiz_title_item"
+    <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/quiz_explain_before_layout"
+            android:layout_width="wrap_content"
             android:layout_below="@+id/quiz_check_btn"
-            android:layout_marginHorizontal="16dp"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/nanumsquarebold"
-            android:includeFontPadding="false"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:textSize="17sp"
-            android:textColor="#414141"
-            android:lineSpacingExtra="8sp"
-            android:text="Q. 주식 거래 정규 마감 시간sdsdddddddddddddd은?"
-    />
-
-    <RelativeLayout
-            android:id="@+id/quiz_answer_one"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="27dp"
-            android:layout_below="@+id/quiz_title_item"
-            android:background="@drawable/border_quiz_answer"
-            android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="wrap_content">
 
         <TextView
-                android:id="@+id/quiz_answer_one_tv"
-                android:layout_centerVertical="true"
-                android:paddingLeft="17dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#757575"
-                android:fontFamily="@font/nanumsquareregular"
+                android:id="@+id/quiz_title_item"
+                android:layout_marginHorizontal="16dp"
+                android:fontFamily="@font/nanumsquarebold"
                 android:includeFontPadding="false"
-                android:lineSpacingExtra="10sp"
-                android:text="PM 15:00"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:textColor="#414141"
+                android:lineSpacingExtra="8sp"
+                android:text="Q. 주식 거래 정규 마감 시간은?"
         />
+
+        <RelativeLayout
+                android:id="@+id/quiz_answer_one"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="27dp"
+                android:layout_below="@+id/quiz_title_item"
+                android:background="@drawable/border_quiz_answer"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            <TextView
+                    android:id="@+id/quiz_answer_one_tv"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#757575"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="10sp"
+                    android:text="PM 15:00"
+            />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/quiz_answer_two"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@+id/quiz_answer_one"
+                android:background="@drawable/border_percentage_quiz"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            <TextView
+                    android:id="@+id/quiz_answer_two_tv"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#757575"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="10sp"
+                    android:text="PM 15:00"
+            />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@+id/quiz_answer_two"
+                android:background="@drawable/border_percentage_quiz"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_height="40dp">
+
+
+            <TextView
+                    android:id="@+id/quiz_answer_three_tv"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#757575"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="10sp"
+                    android:text="PM 15:00"
+            />
+
+
+        </RelativeLayout>
 
 
     </RelativeLayout>
 
-    <RelativeLayout
-            android:id="@+id/quiz_answer_two"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="7dp"
-            android:layout_below="@+id/quiz_answer_one"
-            android:background="@drawable/border_percentage_quiz"
-            android:layout_width="match_parent"
-            android:layout_height="40dp">
-
-        <TextView
-                android:id="@+id/quiz_answer_two_tv"
-                android:layout_centerVertical="true"
-                android:paddingLeft="17dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#757575"
-                android:fontFamily="@font/nanumsquareregular"
-                android:includeFontPadding="false"
-                android:lineSpacingExtra="10sp"
-                android:text="PM 15:00"
-        />
-
-
-    </RelativeLayout>
 
     <RelativeLayout
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="7dp"
-            android:layout_below="@+id/quiz_answer_two"
-            android:background="@drawable/border_percentage_quiz"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="15dp"
-            android:layout_height="40dp">
-
-
-        <TextView
-                android:id="@+id/quiz_answer_three_tv"
-                android:layout_centerVertical="true"
-                android:paddingLeft="17dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#757575"
-                android:fontFamily="@font/nanumsquareregular"
-                android:includeFontPadding="false"
-                android:lineSpacingExtra="10sp"
-                android:text="PM 15:00"
-        />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-            android:id="@+id/quiz_explain_layout"
+            android:id="@+id/quiz_explain_after_layout"
+            android:visibility="visible"
             android:layout_below="@+id/quiz_check_btn"
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+        <TextView
+                android:id="@+id/quiz_answer_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:textColor="#414141"
+                android:lineSpacingExtra="9sp"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
+                android:text="정답"
+        />
+
+        <RelativeLayout
+                android:id="@+id/quiz_answer_after_layout"
+                android:layout_below="@+id/quiz_answer_layout"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_quiz_answer"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            <TextView
+                    android:id="@+id/quiz_answer_text"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#757575"
+                    android:fontFamily="@font/nanumsquareregular"
+                    android:includeFontPadding="false"
+                    android:lineSpacingExtra="10sp"
+                    android:text="PM 15:00"
+            />
+
+
+        </RelativeLayout>
+
+        <TextView
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+                android:layout_below="@+id/quiz_answer_after_layout"
+                android:layout_width="226dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#757575"
+                android:lineSpacingExtra="11sp"
+                android:text="스마트폰 등 온라인으로 상품이나
+서비스 주문을 받아 오프라인으로
+해결해주는 서비스를 O2O라고 한다."
+        />
+
 
     </RelativeLayout>
-
-
 </RelativeLayout>
