@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.Post.PostSignUpResponse
@@ -31,7 +32,14 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.InputStream
 
-class KbSignActivity : AppCompatActivity() {
+class KbSignActivity : AppCompatActivity(), View.OnClickListener {
+    override fun onClick(v: View?) {
+        when(v!!){
+            kbSignImage->{
+                requestReadExternalStoragePermission()
+            }
+        }
+    }
 
     val MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE: Int = 2001
     val REQUEST_CODE_SELECT_IMAGE: Int = 2002
@@ -44,7 +52,9 @@ class KbSignActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kb_sign)
 
-        setOnClickListener()
+        kbSignImage.setOnClickListener(this)
+
+        //setOnClickListener()
 
         kbSignId.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -171,13 +181,42 @@ class KbSignActivity : AppCompatActivity() {
     }
 
     private fun requestReadExternalStoragePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+            != PackageManager.PERMISSION_GRANTED) {
+            Log.v("11","11")
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Log.v("12","11")
+                ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE)
             } else {
+                Log.v("13","11")
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE)
             }
         } else {
+            Log.v("14","11")
             changeImage()
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        Log.v("woo 119","들어오니??")
+        when (requestCode) {
+            MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE -> {
+                Log.v("woo 119 - 2","11")
+                Log.v("woo 119 - 2.1",grantResults.size.toString())
+                Log.v("woo 119 - 2.2",grantResults[0].toString())
+                Log.v("woo 119 - 2.3",PackageManager.PERMISSION_GRANTED.toString())
+                if (grantResults.size > 0 && grantResults[0] == -1) {
+                    Log.v("woo 119 - 3","11")
+                    val intent = Intent(Intent.ACTION_PICK)
+                    intent.type = android.provider.MediaStore.Images.Media.CONTENT_TYPE
+                    intent.data = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                    startActivityForResult(intent, REQUEST_CODE_SELECT_IMAGE)
+                } else {
+                    Log.v("woo 119 -4","11")
+                    requestReadExternalStoragePermission()
+                }
+                return
+            }
         }
     }
 
@@ -211,19 +250,5 @@ class KbSignActivity : AppCompatActivity() {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        when (requestCode) {
-            MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE -> {
-                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    val intent = Intent(Intent.ACTION_PICK)
-                    intent.type = android.provider.MediaStore.Images.Media.CONTENT_TYPE
-                    intent.data = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
-                    startActivityForResult(intent, REQUEST_CODE_SELECT_IMAGE)
-                } else {
-                    requestReadExternalStoragePermission()
-                }
-                return
-            }
-        }
-    }
+
 }

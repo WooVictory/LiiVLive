@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.live.LiveActivity"
+        android:background="@drawable/live_back_img"
+        android:orientation="vertical">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/live_vp">
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView
+                android:layout_centerVertical="true"
+                android:layout_width="match_parent"
+                android:id="@+id/live_youtube_plyer_view"
+                android:layout_height="wrap_content"
+        />
+
+
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/live_vp"
+            android:layout_above="@+id/live_indicator"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+    <app.woovictory.liiv_live.util.indicator.CircleAnimIndicator
+            android:id="@+id/live_indicator"
+            android:layout_alignParentBottom="true"
+            android:layout_width="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_height="30dp"/>
+</RelativeLayout>

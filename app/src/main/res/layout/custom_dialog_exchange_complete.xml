@@ -2,7 +2,7 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="155dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/border_sliding_layout_background"
 >
 
@@ -39,7 +39,7 @@
     />
 
     <TextView
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/exchange_complete_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"

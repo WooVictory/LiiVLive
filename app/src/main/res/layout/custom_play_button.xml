@@ -49,14 +49,17 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true" />
 
-    <Button
+    <RelativeLayout
             android:id="@+id/play_pause_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:text="Play/Pause"
-
+            android:background="@color/mainColor"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true" >
+
+
+    </RelativeLayout>
 
     <Button
             android:id="@+id/enter_exit_fullscreen_button"

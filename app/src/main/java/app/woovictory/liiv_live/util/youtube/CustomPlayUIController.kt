@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RelativeLayout
 import android.widget.TextView
 
 
@@ -29,7 +30,7 @@ internal class CustomPlayerUIController(
     private var progressbar: View? = null
     private var videoCurrentTimeTextView: TextView? = null
     private var videoDurationTextView: TextView? = null
-    private var playPauseButton: Button? = null
+    private var playPauseButton: RelativeLayout? = null
     private var enterExitFullscreenButton: Button? = null
 
     private var playing = true

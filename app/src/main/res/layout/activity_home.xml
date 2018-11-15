@@ -171,6 +171,7 @@
                 />
 
                 <RelativeLayout
+                        android:id="@+id/goToLive"
                         android:layout_width="match_parent"
                         android:layout_height="55dp">
 
@@ -203,6 +204,7 @@
                         android:background="#f6f6f6"
                         android:layout_height="10dp"/>
                 <RelativeLayout
+                        android:id="@+id/goToExam"
                         android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="55dp">

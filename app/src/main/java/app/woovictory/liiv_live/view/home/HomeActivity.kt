@@ -22,13 +22,16 @@ import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
 import app.woovictory.liiv_live.db.SharedPreferenceController
 import app.woovictory.liiv_live.util.dialoog.SurveyDialog
+import app.woovictory.liiv_live.view.ExamActivity
 import app.woovictory.liiv_live.view.check.CheckActivity
 import app.woovictory.liiv_live.view.coupon.CouponShopActivity
 import app.woovictory.liiv_live.view.exchange.ExchageActivity
+import app.woovictory.liiv_live.view.live.LiveActivity
 import app.woovictory.liiv_live.view.mypage.MypageActivity
 import app.woovictory.liiv_live.view.pointree.PointreeHistoryActivity
 import app.woovictory.liiv_live.view.quiz.QuizReviewActivity
 import app.woovictory.liiv_live.view.stock.StockAndFundActivity
+import app.woovictory.liiv_live.view.survey.SurveyActivity
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
@@ -43,7 +46,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (v!!) {
             checkLayout -> startActivity<CheckActivity>()
             quizLayout -> startActivity<QuizReviewActivity>()
-            surveyLayout -> startActivity<MainActivity>()
+            surveyLayout -> startActivity<SurveyActivity>()
             participantBtn -> {
                 //startActivity<MainActivity>()
                 val survey_dialog = SurveyDialog(this@HomeActivity)
@@ -65,6 +68,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             goToExchangeBtn -> startActivity<ExchageActivity>()
             goToCouponShopBtn -> startActivity<CouponShopActivity>()
             goToStockBtn -> startActivity<StockAndFundActivity>()
+            goToExam -> startActivity<ExamActivity>()
+            goToLive -> startActivity<LiveActivity>()
             /*sliding_up_panel_layout->{
                 toast("들어오니111?")
                 if(sliding_up_panel_layout.anchorPoint == 1f){
@@ -106,6 +111,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         goToExchangeBtn.setOnClickListener(this)
         goToCouponShopBtn.setOnClickListener(this)
         goToStockBtn.setOnClickListener(this)
+        goToExam.setOnClickListener(this)
+        goToLive.setOnClickListener(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
