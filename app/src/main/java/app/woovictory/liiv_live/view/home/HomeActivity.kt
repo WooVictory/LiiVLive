@@ -13,8 +13,12 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.*
-import app.woovictory.liiv_live.MainActivity
+import android.view.Gravity
+import android.view.MenuItem
+import android.view.View
+import android.view.Window
+import app.woovictory.liiv_live.Network.ApplicationController
+import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
@@ -30,6 +34,7 @@ import app.woovictory.liiv_live.view.pointree.PointreeHistoryActivity
 import app.woovictory.liiv_live.view.quiz.QuizReviewActivity
 import app.woovictory.liiv_live.view.stock.StockAndFundActivity
 import app.woovictory.liiv_live.view.survey.SurveyActivity
+import com.google.firebase.iid.FirebaseInstanceId
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
@@ -37,6 +42,9 @@ import kotlinx.android.synthetic.main.content_home.*
 import kotlinx.android.synthetic.main.sliding_layout.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -132,27 +140,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
-
-
-        // ID 넣기
-        SharedPreferenceController.setMyId(applicationContext, "여기에 아이디 넣어야됌")
-
-        // ID 가져오기
-        SharedPreferenceController.getMyId(applicationContext)
-
-        // Img 넣기
-        SharedPreferenceController.setMyImage(applicationContext, "여기에 이미지 넣어야됌")
-
-        // Img 가져오기
-        SharedPreferenceController.getMyImage(applicationContext)
-
-        // 포인트 넣기
-        SharedPreferenceController.setMyPoint(applicationContext, 3000)
-
-        // 포인트 가져오기
-        SharedPreferenceController.getMyPoint(applicationContext)
-
         init()
+        refreshFcmToekn(SharedPreferenceController.getMyId(applicationContext), FirebaseInstanceId.getInstance().getToken().toString())
+        Log.v("TAG", FirebaseInstanceId.getInstance().getToken().toString() + "   이것은 fcm 토큰이다.")
 
         if (sliding_up_panel_layout.panelState == SlidingUpPanelLayout.PanelState.EXPANDED) {
             toast("올라갔음")
@@ -256,5 +246,23 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    fun refreshFcmToekn(userID: String, fcmToken: String) {
+        val networkService = ApplicationController.instance.networkService
+        val postRefreshFcmTokenResponse = networkService.postRefreshFcmTokenResponse(userID, fcmToken)
+
+        postRefreshFcmTokenResponse.enqueue(object : Callback<PostRefreshFcmTokenResponse> {
+            override fun onResponse(call: Call<PostRefreshFcmTokenResponse>, response: Response<PostRefreshFcmTokenResponse>) {
+                if (response.isSuccessful) {
+                    SharedPreferenceController.setMyFcmToken(applicationContext, fcmToken)
+                    Log.v("fcmToken =", fcmToken)
+                }
+            }
+
+            override fun onFailure(call: Call<PostRefreshFcmTokenResponse>, t: Throwable) {
+                Log.e("FCM REFRESH 통신 실패", t.toString())
+            }
+        })
     }
 }
