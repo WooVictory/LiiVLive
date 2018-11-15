@@ -13,17 +13,18 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.Post.PostSignUpResponse
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.view.login.LoginActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_kb_sign.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -140,18 +141,23 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
         var id = RequestBody.create(MediaType.parse("text/plain"), kbSignId.text.toString())
         var pw = RequestBody.create(MediaType.parse("text/plain"), kbSignPw.text.toString())
         var nickname = RequestBody.create(MediaType.parse("text/plain"), kbSignNickname.text.toString())
-        Log.v("lll", img.toString())
 
         if (img == null) {
             val postSignUpResponse = networkService.postSignUpResponse(id, pw, nickname, null)
             postSignUpResponse.enqueue(object : Callback<PostSignUpResponse> {
                 override fun onFailure(call: Call<PostSignUpResponse>?, t: Throwable?) {
-                    Log.e("회원가입 실패", t.toString())
+                    toast("회원가입 실패")
                 }
 
                 override fun onResponse(call: Call<PostSignUpResponse>?, response: Response<PostSignUpResponse>?) {
                     if (response!!.isSuccessful) {
-                        toast("회원가입 성공")
+                        if (response!!.body()!!.message == "존재하는 아이디 있음"){
+                            toast("존재하는 아이디 있음")
+
+                        } else {
+                            toast("회원가입 성공")
+                            startActivity<LoginActivity>()
+                        }
                     }
                 }
             })
@@ -159,12 +165,18 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
             val postSignUpResponse = networkService.postSignUpResponse(id, pw, nickname, img)
             postSignUpResponse.enqueue(object : Callback<PostSignUpResponse> {
                 override fun onFailure(call: Call<PostSignUpResponse>?, t: Throwable?) {
-                    Log.e("회원가입 실패", t.toString())
+                    toast("회원가입 실패")
                 }
 
                 override fun onResponse(call: Call<PostSignUpResponse>?, response: Response<PostSignUpResponse>?) {
                     if (response!!.isSuccessful) {
-                        toast("회원가입 성공")
+                        if (response!!.body()!!.message == "존재하는 아이디 있음"){
+                            toast("존재하는 아이디 있음")
+
+                        } else {
+                            toast("회원가입 성공")
+                            startActivity<LoginActivity>()
+                        }
                     }
                 }
             })
@@ -183,36 +195,25 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
     private fun requestReadExternalStoragePermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
             != PackageManager.PERMISSION_GRANTED) {
-            Log.v("11","11")
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                Log.v("12","11")
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE)
             } else {
-                Log.v("13","11")
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE)
             }
         } else {
-            Log.v("14","11")
             changeImage()
         }
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        Log.v("woo 119","들어오니??")
         when (requestCode) {
             MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE -> {
-                Log.v("woo 119 - 2","11")
-                Log.v("woo 119 - 2.1",grantResults.size.toString())
-                Log.v("woo 119 - 2.2",grantResults[0].toString())
-                Log.v("woo 119 - 2.3",PackageManager.PERMISSION_GRANTED.toString())
                 if (grantResults.size > 0 && grantResults[0] == -1) {
-                    Log.v("woo 119 - 3","11")
                     val intent = Intent(Intent.ACTION_PICK)
                     intent.type = android.provider.MediaStore.Images.Media.CONTENT_TYPE
                     intent.data = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
                     startActivityForResult(intent, REQUEST_CODE_SELECT_IMAGE)
                 } else {
-                    Log.v("woo 119 -4","11")
                     requestReadExternalStoragePermission()
                 }
                 return

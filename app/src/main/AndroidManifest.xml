@@ -3,7 +3,7 @@
           package="app.woovictory.liiv_live">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
             android:name=".Network.ApplicationController"
@@ -12,6 +12,25 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/AppTheme">
+
+        <!-- Firebase Service -->
+        <service
+                android:name=".fcm.FirebaseMessagingService"
+                android:enabled="true"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+                android:name=".fcm.FirebaseInstanceIDService"
+                android:enabled="true"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
         <activity android:name=".view.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -54,6 +73,17 @@
         </activity>
         <activity android:name=".view.live.LiveActivity">
         </activity>
+        <activity
+
+                android:name="SOSPopupActivity"
+
+                android:launchMode="singleInstance"
+
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.Transparent"
+        >
+
+    </activity>
     </application>
 
 </manifest>

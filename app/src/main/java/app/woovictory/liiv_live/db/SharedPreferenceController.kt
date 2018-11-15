@@ -7,6 +7,7 @@ object SharedPreferenceController {
     private val my_id = "my_id"
     private val my_img = "my_img"
     private val my_point = "my_point"
+    private val my_fcmtoken = "my_fcmtoken"
 
     fun setMyId(context: Context, id : String){
         val pref = context.getSharedPreferences(USER_NAME, Context.MODE_PRIVATE) //현재 내 기기에서만 볼수 있는 데이터
@@ -42,6 +43,18 @@ object SharedPreferenceController {
     fun getMyPoint(context: Context) : Int {
         val pref = context.getSharedPreferences(USER_NAME, Context.MODE_PRIVATE) //현재 내 기기에서만 볼수 있는 데이터
         return pref.getInt(my_point, 0)
+    }
+
+    fun setMyFcmToken(context: Context, fcmToken : String){
+        val pref = context.getSharedPreferences(USER_NAME, Context.MODE_PRIVATE) //현재 내 기기에서만 볼수 있는 데이터
+        val editor = pref.edit()
+        editor.putString(my_fcmtoken, fcmToken)
+        editor.commit()
+    }
+
+    fun getMyFcmToken(context: Context) : String {
+        val pref = context.getSharedPreferences(USER_NAME, Context.MODE_PRIVATE) //현재 내 기기에서만 볼수 있는 데이터
+        return pref.getString(my_fcmtoken, "")
     }
 
 
