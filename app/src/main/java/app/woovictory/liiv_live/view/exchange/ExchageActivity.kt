@@ -26,18 +26,20 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
                 // 다이얼로그의 백그라운드를 투명으로 만듦.
                 exchange_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 // 다이얼로그를 보여줌.
-                exchange_dialog.window.setGravity(Gravity.BOTTOM)
+                //exchange_dialog.window.setGravity(Gravity.BOTTOM)
                 exchange_dialog.show()
                 // 다이얼로그를 띄우면 dialog class는 화면의 폭이나 높이가 default로 고정되어 있기 때문에
                 // 아래의 방법을 써서 dialog의 window를 구해서 임의로 크기 값을 조정해준다.
 
 
+                // 디스플레이의 해상도를 가지고 온다.
                 var display = windowManager.defaultDisplay
                 var size = Point()
                 display.getSize(size)
                 Log.v("woo size : ", display.getSize(size).toString())
-                var window: Window = exchange_dialog.window
 
+                // 비율에 맞게 다이얼로그 크기를 조정.
+                var window: Window = exchange_dialog.window
 
                 var x = (size.x * 0.8f).toInt()
                 // 이 값을 조정하고 bottom으로 해야지 정중앙으로 배치가 됨...
@@ -55,8 +57,8 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
 
     fun init() {
         exchange_stock_layout.background.setColorFilter(
-            ContextCompat.getColor(this, R.color.mainColor),
-            PorterDuff.Mode.SRC_IN
+                ContextCompat.getColor(this, R.color.mainColor),
+                PorterDuff.Mode.SRC_IN
         )
         //setBackgroundColor(ContextCompat.getColor(this, R.color.mainColor))
         exchange_stock_text.setTextColor(ContextCompat.getColor(this, R.color.white))

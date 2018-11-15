@@ -262,7 +262,7 @@
                 android:layout_weight="1"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:src="@drawable/login_kakao"/>
+                android:src="@drawable/login_kb"/>
 
     </LinearLayout>
 </LinearLayout>

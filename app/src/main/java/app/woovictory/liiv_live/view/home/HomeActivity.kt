@@ -2,6 +2,7 @@ package app.woovictory.liiv_live.view.home
 
 import android.annotation.TargetApi
 import android.graphics.Color
+import android.graphics.Point
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
@@ -12,10 +13,7 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.MenuItem
-import android.view.View
-import android.view.Window
-import android.view.WindowManager
+import android.view.*
 import app.woovictory.liiv_live.MainActivity
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
@@ -59,8 +57,20 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                    survey_dialog.setCanceledOnTouchOutside(true)*/
                 survey_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 survey_dialog.show()
+
+                var display = windowManager.defaultDisplay
+                var size = Point()
+
+                display.getSize(size)
+
+                var x = (size.x * 0.8f).toInt()
+                var y = (size.y * 0.6f).toInt()
+
                 var window: Window = survey_dialog.window
-                window.setLayout(1300, WindowManager.LayoutParams.WRAP_CONTENT)
+                window.setGravity(Gravity.BOTTOM)
+                window.setLayout(x,y)
+
+                //window.setLayout(1300, WindowManager.LayoutParams.WRAP_CONTENT)
             }
             topLayout -> startActivity<PointreeHistoryActivity>()
             pointree_go_btn -> startActivity<PointreeHistoryActivity>()

@@ -31,12 +31,20 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 requestLogin()
             }
             goToSignUp -> startActivity<KbLoginActivity>()
+            loginKaKaoBtn -> startActivity<KbLoginActivity>()
+            loginFacebookBtn -> startActivity<KbLoginActivity>()
+            loginGoogleBtn -> startActivity<KbLoginActivity>()
+            loginKbBtn -> startActivity<KbLoginActivity>()
         }
     }
 
     fun init() {
         loginBtn.setOnClickListener(this)
         goToSignUp.setOnClickListener(this)
+        loginKaKaoBtn.setOnClickListener(this)
+        loginFacebookBtn.setOnClickListener(this)
+        loginGoogleBtn.setOnClickListener(this)
+        loginKbBtn.setOnClickListener(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

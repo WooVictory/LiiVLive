@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.R.id.quiz_explain_before_layout
 import app.woovictory.liiv_live.model.QuizReviewData
 
 /**
@@ -46,8 +47,13 @@ class QuizReviewAdapter(var items: ArrayList<QuizReviewData>, var context: Conte
         holder.quiz_explain_button.setOnClickListener {
             if(!holder.quiz_explain_button.isSelected){
                 holder.quiz_explain_button.isSelected=true
+                holder.explain_before_layout.visibility = View.GONE
+                holder.explain_after_layout.visibility = View.VISIBLE
+
             }else{
                 holder.quiz_explain_button.isSelected=false
+                holder.explain_before_layout.visibility = View.VISIBLE
+                holder.explain_after_layout.visibility = View.GONE
             }
         }
 
@@ -86,5 +92,7 @@ class QuizReviewAdapter(var items: ArrayList<QuizReviewData>, var context: Conte
         var quiz_explain_button: ImageView = itemView.findViewById(R.id.explain_btn)
         var quiz_answer_one: RelativeLayout = itemView.findViewById(R.id.quiz_answer_one)
         var quiz_answer_one_text : TextView = itemView.findViewById(R.id.quiz_answer_one_tv)
+        var explain_before_layout : RelativeLayout = itemView.findViewById(R.id.quiz_explain_before_layout)
+        var explain_after_layout : RelativeLayout = itemView.findViewById(R.id.quiz_explain_after_layout)
     }
 }

@@ -44,6 +44,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.google.firebase:firebase-core:11.8.0'
     implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+//1b16f82b298c5b890339fe04bf29822cbcb7585d
 }
 
 apply plugin: 'com.google.gms.google-services'
