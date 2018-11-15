@@ -234,9 +234,9 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
         if (requestCode == REQ_CODE_SELECT_IMAGE) {
             if (resultCode == Activity.RESULT_OK) {
                 data?.let {
-                    var seletedPictureUri = it.data
+                    var  seletedPictureUri = it.data
                     val options = BitmapFactory.Options()
-                    val inputStream: InputStream = contentResolver.openInputStream(seletedPictureUri)
+                    val inputStream : InputStream = contentResolver.openInputStream(seletedPictureUri)
                     val bitmap = BitmapFactory.decodeStream(inputStream, null, options)
                     val byteArrayOutputStream = ByteArrayOutputStream()
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream)
