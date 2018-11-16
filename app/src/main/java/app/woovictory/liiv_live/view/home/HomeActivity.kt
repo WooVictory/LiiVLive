@@ -269,6 +269,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun requestUserMain(userID : String){
+        Log.v("TAG", "들어오니?")
 
         var userID = userID
         var networkService : NetworkService = ApplicationController.instance.networkService
@@ -283,7 +284,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             override fun onResponse(call: Call<GetUserMainResponse>?, response: Response<GetUserMainResponse>?) {
                 if(response!!.isSuccessful){
                     // 유저 아이디 : String
-                    Log.v("TAG", response.body()!!.data.id)
+                    Log.v("TAG 539", response.body()!!.data.id)
 
                     // img : String
                     Log.v("TAG", response.body()!!.data.img)

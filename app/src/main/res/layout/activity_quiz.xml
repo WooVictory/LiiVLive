@@ -5,50 +5,19 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/black"
-        tools:context=".view.quiz.QuizActivity">
+        android:background="@android:color/transparent"
+>
 
 
-    <RelativeLayout
-            
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-20dp"
-            android:background="@drawable/border_circle">
-
-
-    </RelativeLayout>
 
     <RelativeLayout
+
             android:id="@+id/live_quiz_layout"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_centerInParent="true"
             android:layout_width="match_parent"
-
-            android:layout_height="320dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="36dp"
             android:background="@drawable/border_sliding_layout_background">
-
-        <ImageView
-                android:id="@+id/quiz_check_btn"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/quiz_review_x_btn"/>
-
-        <ImageView
-                android:id="@+id/explain_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/selector_quiz_review_button">
-
-
-        </ImageView>
 
 
         <RelativeLayout
@@ -62,20 +31,21 @@
             <TextView
                     android:id="@+id/quiz_title_item"
                     android:layout_marginHorizontal="16dp"
+                    android:gravity="center_horizontal"
                     android:fontFamily="@font/nanumsquarebold"
                     android:includeFontPadding="false"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:textSize="15sp"
+                    android:textSize="17sp"
                     android:textColor="#414141"
                     android:lineSpacingExtra="8sp"
                     android:text="Q. 주식 거래 정규 마감 시간은?"
             />
 
             <RelativeLayout
-                    android:id="@+id/quiz_answer_one"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="27dp"
+                    android:id="@+id/live_quiz_answer_one"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="20dp"
                     android:layout_below="@+id/quiz_title_item"
                     android:background="@drawable/border_quiz_answer"
                     android:layout_width="match_parent"
@@ -99,10 +69,10 @@
             </RelativeLayout>
 
             <RelativeLayout
-                    android:id="@+id/quiz_answer_two"
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="7dp"
-                    android:layout_below="@+id/quiz_answer_one"
+                    android:id="@+id/live_quiz_answer_two"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/live_quiz_answer_one"
                     android:background="@drawable/border_percentage_quiz"
                     android:layout_width="match_parent"
                     android:layout_height="40dp">
@@ -118,19 +88,20 @@
                         android:fontFamily="@font/nanumsquareregular"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="10sp"
-                        android:text="PM 15:00"
+                        android:text="PM 15:30"
                 />
 
 
             </RelativeLayout>
 
             <RelativeLayout
-                    android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="7dp"
-                    android:layout_below="@+id/quiz_answer_two"
+                    android:id="@+id/live_quiz_answer_three"
+                    android:layout_marginHorizontal="36dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/live_quiz_answer_two"
                     android:background="@drawable/border_percentage_quiz"
                     android:layout_width="match_parent"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="38dp"
                     android:layout_height="40dp">
 
 
@@ -145,7 +116,7 @@
                         android:fontFamily="@font/nanumsquareregular"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="10sp"
-                        android:text="PM 15:00"
+                        android:text="PM 16:00"
                 />
 
 
@@ -155,69 +126,57 @@
         </RelativeLayout>
 
 
-        <RelativeLayout
-                android:layout_marginHorizontal="16dp"
-                android:id="@+id/quiz_explain_after_layout"
-                android:visibility="gone"
-                android:layout_below="@+id/quiz_check_btn"
-                android:layout_marginTop="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TextView
-                    android:id="@+id/quiz_answer_layout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="17sp"
-                    android:textColor="#414141"
-                    android:lineSpacingExtra="9sp"
-                    android:fontFamily="@font/nanumsquarebold"
-                    android:includeFontPadding="false"
-                    android:text="정답"
-            />
-
-            <RelativeLayout
-                    android:id="@+id/quiz_answer_after_layout"
-                    android:layout_below="@+id/quiz_answer_layout"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/border_quiz_answer"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp">
-
-                <TextView
-                        android:id="@+id/quiz_answer_text"
-                        android:layout_centerVertical="true"
-                        android:paddingLeft="17dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:textColor="#757575"
-                        android:fontFamily="@font/nanumsquareregular"
-                        android:includeFontPadding="false"
-                        android:lineSpacingExtra="10sp"
-                        android:text="PM 15:00"
-                />
-
-
-            </RelativeLayout>
-
-            <TextView
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="@font/nanumsquareregular"
-                    android:includeFontPadding="false"
-                    android:layout_below="@+id/quiz_answer_after_layout"
-                    android:layout_width="226dp"
-                    android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="#757575"
-                    android:lineSpacingExtra="11sp"
-                    android:text="스마트폰 등 온라인으로 상품이나
-서비스 주문을 받아 오프라인으로
-해결해주는 서비스를 O2O라고 한다."
-            />
-
-
-        </RelativeLayout>
     </RelativeLayout>
+
+    <RelativeLayout
+            android:visibility="gone"
+            android:layout_above="@+id/live_quiz_layout"
+            android:id="@+id/circle_layout"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-23dp"
+            android:background="@drawable/border_circle">
+
+        <ImageView
+                android:padding="5dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/quiz_review_x_btn"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_above="@+id/live_quiz_layout"
+            android:id="@+id/circle_layout2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-23dp"
+            android:visibility="visible"
+            android:background="@drawable/border_circle_blue">
+
+        <TextView
+                android:id="@+id/quiz_text"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/nanumsquareextrabold"
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:textColor="#414141"
+                android:lineSpacingExtra="-3sp"
+                android:text="Q"
+        />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
 
 </RelativeLayout>

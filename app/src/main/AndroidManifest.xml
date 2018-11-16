@@ -9,7 +9,7 @@
             android:name=".Network.ApplicationController"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
+
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/AppTheme">
 
@@ -31,7 +31,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".view.SplashActivity">
+        <activity android:name=".view.login.LoginActivity">
         </activity>
         <activity android:name=".MainActivity">
         </activity>
@@ -42,7 +42,7 @@
         <activity android:name=".view.sign.KbSignActivity">
         </activity>
         <activity
-                android:name=".view.login.LoginActivity"
+                android:name=".view.SplashActivity"
                 android:label="@string/title_activity_home"
                 android:theme="@style/AppTheme">
             <intent-filter>
@@ -85,7 +85,10 @@
                 android:screenOrientation="portrait"
                 android:theme="@style/Theme.Transparent">
         </activity>
-        <activity android:name=".view.quiz.QuizActivity">
+        <activity android:name=".view.quiz.QuizActivity"
+                  android:launchMode="singleInstance"
+
+                  android:theme="@style/Theme.Transparent">
         </activity>
     </application>
 

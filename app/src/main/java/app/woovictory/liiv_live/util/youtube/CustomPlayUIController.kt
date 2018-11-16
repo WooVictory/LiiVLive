@@ -11,11 +11,13 @@ import android.widget.TextView
 
 
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.view.quiz.QuizActivity
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayerView
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.YouTubePlayerFullScreenListener
+import org.jetbrains.anko.startActivity
 
 
 internal class CustomPlayerUIController(
@@ -59,12 +61,15 @@ internal class CustomPlayerUIController(
         }
 
         enterExitFullscreenButton!!.setOnClickListener { view ->
-            if (fullscreen)
+
+
+            context.startActivity<QuizActivity>()
+    /*        if (fullscreen)
                 youTubePlayerView.exitFullScreen()
             else
                 youTubePlayerView.enterFullScreen()
 
-            fullscreen = !fullscreen
+            fullscreen = !fullscreen*/
         }
     }
 

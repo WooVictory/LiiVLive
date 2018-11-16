@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         when (v!!) {
             loginBtn -> {
                 requestLogin()
+                //startActivity<HomeActivity>()
             }
             goToSignUp -> startActivity<KbLoginActivity>()
             loginKaKaoBtn -> startActivity<KbLoginActivity>()

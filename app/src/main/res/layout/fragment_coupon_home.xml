@@ -58,7 +58,7 @@
                         android:layout_marginTop="-10dp"
                         android:layout_below="@+id/coupon_text_two"
                         android:src="@drawable/couponshop_img"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="183dp"/>
             </RelativeLayout>
 
