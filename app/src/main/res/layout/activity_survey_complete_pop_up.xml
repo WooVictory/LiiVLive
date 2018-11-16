@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        tools:context=".SurveyCompletePopUpActivity">
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="28dp"
+            android:background="@drawable/border_sliding_layout_background"
+    >
+
+        <ImageView
+                android:id="@+id/exchange_complete_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="27dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/complete_v_icon"/>
+
+        <ImageView
+                android:id="@+id/exchange_complete_x_button"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/survey_popup_x_btn"
+                android:layout_alignParentRight="true"/>
+
+        <TextView
+                android:id="@+id/exchange_complete_text"
+                android:layout_below="@+id/exchange_complete_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nanumsquareextrabold"
+                android:includeFontPadding="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:textColor="#fdbd37"
+                android:lineSpacingExtra="3sp"
+                android:text="보내기 완료!"
+        />
+
+        <TextView
+                android:layout_below="@+id/exchange_complete_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#858585"
+                android:layout_marginBottom="27dp"
+                android:layout_centerHorizontal="true"
+                android:lineSpacingExtra="2sp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/nanumsquareregular"
+                android:includeFontPadding="false"
+                android:text="계좌에 포인트리 보내기를 완료하였습니다."
+        />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -8,9 +8,11 @@ import android.support.v4.app.Fragment
 import android.view.*
 import android.widget.RadioButton
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.SurveyCompletePopUpActivity
 import app.woovictory.liiv_live.util.dialoog.SurveyCompleteDialog
 import kotlinx.android.synthetic.main.fragment_survey.*
 import kotlinx.android.synthetic.main.fragment_survey.view.*
+import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.windowManager
 
@@ -48,14 +50,14 @@ class SurveyFragment : Fragment() {
                     * dialog의 백그라운드 색상을 투명하게 만듦.
                     * dialog를 사용자에게 보여줌.
                     * */
-                    var survey_complete_dialog = SurveyCompleteDialog(context!!)
+            /*        var survey_complete_dialog = SurveyCompleteDialog(context!!)
                     survey_complete_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                     survey_complete_dialog.show()
 
 
-                    /*FIXME
+                    *//*FIXME
                     * 현재 기기의 화면을 구한다.
-                    * */
+                    * *//*
                     var display = context!!.windowManager.defaultDisplay
                     var size = Point()
                     display.getSize(size)
@@ -65,7 +67,9 @@ class SurveyFragment : Fragment() {
                     var x = (size.x  * 0.8f).toInt()
                     var y = (size.y * 0.6f).toInt()
                     window.setGravity(Gravity.BOTTOM)
-                    window.setLayout(x,y)
+                    window.setLayout(x,y)*/
+
+                    startActivity<SurveyCompletePopUpActivity>()
 
 
 

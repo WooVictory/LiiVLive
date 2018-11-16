@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "10751809832",
+    "firebase_url": "https://liivlive-b7758.firebaseio.com",
+    "project_id": "liivlive-b7758",
+    "storage_bucket": "liivlive-b7758.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10751809832:android:c4a96ce18c865be9",
+        "android_client_info": {
+          "package_name": "app.woovictory.liiv_live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10751809832-dcnjvnvuuciuhrjjibivbh6ess2345kr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.woovictory.liiv_live",
+            "certificate_hash": "742cec6c1e0b33ea62a492005e77048e37721260"
+          }
+        },
+        {
+          "client_id": "10751809832-osc5ov4cug1cvoi7f5dcul4ekogctr71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH8nqixWmLEiZoX9MJUcI3LaoAYrOvHW0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10751809832-osc5ov4cug1cvoi7f5dcul4ekogctr71.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

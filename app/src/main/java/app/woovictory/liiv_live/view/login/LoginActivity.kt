@@ -148,6 +148,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun requestLogin(){
 
+        Log.v("woo 441","들어오님?")
 //        var idText = loginId.text.toString()
 //        var pwText = loginPw.text.toString()
 
@@ -171,6 +172,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     response?.let {
                         if (response.isSuccessful){
                             if(response.body()!!.message == "로그인 완료"){
+                                Log.e("woo 441 login : ", response!!.message())
                                 SharedPreferenceController.clearSPC(applicationContext)
                                 SharedPreferenceController.setMyId(applicationContext, response.body()!!.data[0].id)
                                 SharedPreferenceController.setMyImage(applicationContext, response.body()!!.data[0].img)
