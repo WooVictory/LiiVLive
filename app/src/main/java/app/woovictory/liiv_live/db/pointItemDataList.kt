@@ -7,7 +7,7 @@ object pointItemDataList {
     var dataList : ArrayList<PointreeHistoryData> = ArrayList()
     var level : String = ""
 
-    fun setLevel()
+
 
     fun addPointItemData(history_type: String, history_point: Int, history_method: String){
 

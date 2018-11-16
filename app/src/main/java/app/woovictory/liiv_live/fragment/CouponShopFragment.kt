@@ -42,7 +42,7 @@ class CouponShopFragment : Fragment(), View.OnClickListener {
         var view = inflater.inflate(R.layout.fragment_coupon_home, container, false)
 
         view.goToCoffee.setOnClickListener(this)
-        view.coupon_coffee_x_btn.setOnClickListener(this)
+
         return view
     }
 }
