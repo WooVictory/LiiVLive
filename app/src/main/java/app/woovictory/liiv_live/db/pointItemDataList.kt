@@ -5,6 +5,9 @@ import java.util.*
 
 object pointItemDataList {
     var dataList : ArrayList<PointreeHistoryData> = ArrayList()
+    var level : String = ""
+
+
 
     fun addPointItemData(history_type: String, history_point: Int, history_method: String){
 
