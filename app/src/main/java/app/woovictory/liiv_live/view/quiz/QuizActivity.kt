@@ -2,13 +2,15 @@ package app.woovictory.liiv_live.view.quiz
 
 import android.graphics.PorterDuff
 import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
-import android.view.Window
+import app.woovictory.liiv_live.Get.GetQuizData
 import app.woovictory.liiv_live.R
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_quiz.*
 
 class QuizActivity : AppCompatActivity(), View.OnClickListener {
@@ -57,6 +59,26 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_quiz)
         quiz_text
         init()
+
+        var s = intent.getStringExtra("json")
+        Log.v("TAG", s)
+
+//        var obj  = JSONObject(s)
+//        var a: ArrayList<GetQuizData> = ArrayList()
+//        var gson: Gson = Gson()
+//
+//        val json = """ +
+//   { "title": "Most elegant way of using Gson + Kotlin with default values and null safety",
+//     "body": null,
+//     "viewCount": 9999,
+//     "payWall": false,
+//     "ignoredProperty": "Ignored"
+//   }
+//"""
+        val data = Gson().fromJson(s, GetQuizData::class.java)
+
+        Log.v("TAG", "이 밑")
+        Log.v("TAG", data.question.question)
 
 
 
