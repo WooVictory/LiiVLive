@@ -17,7 +17,9 @@ import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import android.view.Window
+import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Network.ApplicationController
+import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
@@ -103,8 +105,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }*/
 
         }
-
-
     }
 
 
@@ -141,6 +141,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
         init()
+
+        requestUserMain(SharedPreferenceController.getMyId(applicationContext))
         refreshFcmToekn(SharedPreferenceController.getMyId(applicationContext), FirebaseInstanceId.getInstance().getToken().toString())
         Log.v("TAG", FirebaseInstanceId.getInstance().getToken().toString() + "   이것은 fcm 토큰이다.")
 
@@ -264,5 +266,37 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Log.e("FCM REFRESH 통신 실패", t.toString())
             }
         })
+    }
+
+    fun requestUserMain(userID : String){
+
+        var userID = userID
+        var networkService : NetworkService = ApplicationController.instance.networkService
+
+        var GetUserMainResponse = networkService.getUserMain(userID)
+
+        GetUserMainResponse.enqueue(object : Callback<GetUserMainResponse> {
+            override fun onFailure(call: Call<GetUserMainResponse>?, t: Throwable?) {
+                Log.v("TAG", "유저 메인 통신 실패")
+            }
+
+            override fun onResponse(call: Call<GetUserMainResponse>?, response: Response<GetUserMainResponse>?) {
+                if(response!!.isSuccessful){
+                    // 유저 아이디 : String
+                    Log.v("TAG", response.body()!!.data.id)
+
+                    // img : String
+                    Log.v("TAG", response.body()!!.data.img)
+
+                    // level : Int
+                    Log.v("TAG", response.body()!!.data.level.toString())
+
+                    // nickname : String
+                    Log.v("TAG", response.body()!!.data.nickname)
+                }
+            }
+        })
+
+
     }
 }
