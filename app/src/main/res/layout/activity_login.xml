@@ -57,6 +57,7 @@
             android:fontFamily="@font/nanumsquareregular"
             android:includeFontPadding="false"
             android:paddingRight="20dp"
+            android:password="true"
             android:textSize="13sp"
             android:layout_width="match_parent"
             android:layout_height="42dp"

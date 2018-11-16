@@ -21,6 +21,7 @@ import app.woovictory.liiv_live.view.popup.SOSPopupActivity
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
 import app.woovictory.liiv_live.db.SharedPreferenceController
+import app.woovictory.liiv_live.db.pointItemDataList
 import app.woovictory.liiv_live.view.ExamActivity
 import app.woovictory.liiv_live.view.check.CheckActivity
 import app.woovictory.liiv_live.view.coupon.CouponShopActivity
@@ -31,6 +32,7 @@ import app.woovictory.liiv_live.view.pointree.PointreeHistoryActivity
 import app.woovictory.liiv_live.view.quiz.QuizReviewActivity
 import app.woovictory.liiv_live.view.stock.StockAndFundActivity
 import app.woovictory.liiv_live.view.survey.SurveyActivity
+import com.bumptech.glide.Glide
 import com.google.firebase.iid.FirebaseInstanceId
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
@@ -290,15 +292,19 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 if(response!!.isSuccessful){
                     // 유저 아이디 : String
                     Log.v("TAG 539", response.body()!!.data.id)
+                    home_nick.text = response.body()!!.data.id
 
                     // img : String
                     Log.v("TAG", response.body()!!.data.img)
+                    Glide.with(this@HomeActivity).load(response.body()!!.data.img).into(main_image)
 
                     // level : Int
                     Log.v("TAG", response.body()!!.data.level.toString())
+                    pointItemDataList.level = response.body()!!.data.level.toString()
 
                     // nickname : String
                     Log.v("TAG", response.body()!!.data.nickname)
+                    home_nick.text = response.body()!!.data.nickname
                 }
             }
         })
