@@ -1,5 +1,6 @@
 package app.woovictory.liiv_live.Network
 
+import app.woovictory.liiv_live.Get.GetMypageResponse
 import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Post.PostLoginResponse
 import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
@@ -41,4 +42,10 @@ interface NetworkService {
     fun getUserMain(
             @Path("userID") userID: String
     ): Call<GetUserMainResponse>
+
+    //카테고리 상세보기 통신
+    @GET("mypage/{userID}")
+    fun getMyPageMain(
+            @Path("userID") userID: String
+    ): Call<GetMypageResponse>
 }
