@@ -1,7 +1,8 @@
-package app.woovictory.liiv_live
+package app.woovictory.liiv_live.view.popup
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import app.woovictory.liiv_live.R
 
 class SurveyCompletePopUpActivity : AppCompatActivity() {
 

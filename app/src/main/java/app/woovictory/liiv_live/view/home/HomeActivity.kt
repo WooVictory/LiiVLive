@@ -1,9 +1,6 @@
 package app.woovictory.liiv_live.view.home
 
 import android.annotation.TargetApi
-import android.graphics.Color
-import android.graphics.Point
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -13,19 +10,17 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
-import android.view.Window
 import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.view.popup.SOSPopupActivity
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
 import app.woovictory.liiv_live.db.SharedPreferenceController
-import app.woovictory.liiv_live.util.dialoog.SurveyDialog
 import app.woovictory.liiv_live.view.ExamActivity
 import app.woovictory.liiv_live.view.check.CheckActivity
 import app.woovictory.liiv_live.view.coupon.CouponShopActivity
@@ -57,7 +52,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             surveyLayout -> startActivity<SurveyActivity>()
             participantBtn -> {
                 //startActivity<MainActivity>()
-                val survey_dialog = SurveyDialog(this@HomeActivity)
+
+
+                // 아래의 방법은 또 다른 다이얼로그 띄우는 방법
                 /*   var params : WindowManager.LayoutParams = survey_dialog.window!!.attributes
                    params.width = WindowManager.LayoutParams.MATCH_PARENT
                    params.height = WindowManager.LayoutParams.MATCH_PARENT
@@ -65,6 +62,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                    survey_dialog.window.attributes = params
                    survey_dialog!!.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                    survey_dialog.setCanceledOnTouchOutside(true)*/
+
+                // 밑에가 진퉁 방법임.
+          /*      val survey_dialog = SurveyDialog(this@HomeActivity)
+
                 survey_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                 survey_dialog.show()
 
@@ -80,6 +81,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 window.setGravity(Gravity.BOTTOM)
                 window.setLayout(x,y)
 
+
+*/
+
+                startActivity<LiveActivity>()
                 //window.setLayout(1300, WindowManager.LayoutParams.WRAP_CONTENT)
             }
             topLayout -> startActivity<PointreeHistoryActivity>()
@@ -89,7 +94,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             goToCouponShopBtn -> startActivity<CouponShopActivity>()
             goToStockBtn -> startActivity<StockAndFundActivity>()
             goToExam -> startActivity<ExamActivity>()
-            goToLive -> startActivity<LiveActivity>()
+            goToLive -> startActivity<CouponShopActivity>()
             /*sliding_up_panel_layout->{
                 toast("들어오니111?")
                 if(sliding_up_panel_layout.anchorPoint == 1f){

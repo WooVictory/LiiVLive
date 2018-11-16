@@ -12,7 +12,12 @@ import android.view.Gravity
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import app.woovictory.liiv_live.Network.ApplicationController
+import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.db.PointreeHistoryData
+import app.woovictory.liiv_live.db.SharedPreferenceController
+import app.woovictory.liiv_live.db.pointItemDataList
 import app.woovictory.liiv_live.util.dialoog.ExchangeDialog
 import kotlinx.android.synthetic.main.activity_exchage.*
 
@@ -52,21 +57,47 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
                 //window.setLayout(WindowManager.LayoutParams.MATCH_PARENT-1300, WindowManager.LayoutParams.WRAP_CONTENT)
             }
             exchangeXBtn -> finish()
+            exchange_chen -> {
+                exchange_will_use_pointree.setText("1,000 P")
+                pointItemDataList.addPointItemData("환전하기",-1000,"차감")
+                SharedPreferenceController.setMyPoint(this,
+                    SharedPreferenceController.getMyPoint(this@ExchageActivity)-1000)
+            }
+            exchange_ten_man -> {
+                exchange_will_use_pointree.setText("100,000 P")
+                pointItemDataList.addPointItemData("환전하기",-100000,"차감")
+                SharedPreferenceController.setMyPoint(this,
+                    SharedPreferenceController.getMyPoint(this@ExchageActivity)-100000)
+            }
+            exchange_man -> {
+                exchange_will_use_pointree.setText("10,000 P")
+                pointItemDataList.addPointItemData("환전하기",-10000,"차감")
+                SharedPreferenceController.setMyPoint(this,
+                    SharedPreferenceController.getMyPoint(this@ExchageActivity)-10000)
+            }
         }
     }
 
     fun init() {
         exchange_stock_layout.background.setColorFilter(
-                ContextCompat.getColor(this, R.color.mainColor),
-                PorterDuff.Mode.SRC_IN
+            ContextCompat.getColor(this, R.color.mainColor),
+            PorterDuff.Mode.SRC_IN
         )
         //setBackgroundColor(ContextCompat.getColor(this, R.color.mainColor))
         exchange_stock_text.setTextColor(ContextCompat.getColor(this, R.color.white))
 
         exchangeCompleteBtn.setOnClickListener(this)
         exchangeXBtn.setOnClickListener(this)
+        exchange_ten_man.setOnClickListener(this)
+        exchange_man.setOnClickListener(this)
+        exchange_chen.setOnClickListener(this)
+        networkService = ApplicationController.instance.networkService
+        exchange_my_point.text = SharedPreferenceController.getMyPoint(this@ExchageActivity).toString()
+
     }
 
+    lateinit var networkService: NetworkService
+    lateinit var item_list : ArrayList<PointreeHistoryData>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exchage)

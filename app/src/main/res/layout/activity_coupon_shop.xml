@@ -29,6 +29,7 @@
         />
 
         <RelativeLayout
+                android:id="@+id/coupon_x_btn"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"

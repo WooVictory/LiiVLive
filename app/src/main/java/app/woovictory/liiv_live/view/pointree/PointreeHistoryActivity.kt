@@ -18,7 +18,7 @@ class PointreeHistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pointree_history)
 
-        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
+    /*    pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
         SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
         pointItemDataList.addPointItemData("쿠폰샵", -600, "차감")
         SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 600)
@@ -30,9 +30,9 @@ class PointreeHistoryActivity : AppCompatActivity() {
         SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
         pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
         SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
-        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")
-        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext) - 400)
-        point_history_act_point_tv.text = SharedPreferenceController.getMyPoint(applicationContext).toString()
+        pointItemDataList.addPointItemData("쿠폰샵", -400, "차감")*/
+        SharedPreferenceController.setMyPoint(applicationContext,SharedPreferenceController.getMyPoint(applicationContext))
+        point_history_act_point_tv.text = SharedPreferenceController.getMyPoint(applicationContext).toString()+" P"
 
         item_list = pointItemDataList.getPointItemData()
 

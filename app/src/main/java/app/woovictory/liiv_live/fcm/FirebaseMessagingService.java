@@ -12,9 +12,8 @@ import android.net.Uri;
 import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-import android.widget.Toast;
 import app.woovictory.liiv_live.R;
-import app.woovictory.liiv_live.SOSPopupActivity;
+import app.woovictory.liiv_live.view.popup.SOSPopupActivity;
 import app.woovictory.liiv_live.view.login.LoginActivity;
 import com.google.firebase.messaging.RemoteMessage;
 

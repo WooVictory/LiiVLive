@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.view.coupon.CouponCoffeeActivity
+import kotlinx.android.synthetic.main.activity_coupon_coffee.*
+import kotlinx.android.synthetic.main.activity_coupon_coffee.view.*
 import kotlinx.android.synthetic.main.fragment_coupon_home.*
 import kotlinx.android.synthetic.main.fragment_coupon_home.view.*
 import org.jetbrains.anko.startActivity
@@ -32,6 +34,7 @@ class CouponShopFragment : Fragment(), View.OnClickListener {
                 transaction.add(R.id.frame,fragment).commit()*/
 
             }
+            coupon_coffee_x_btn -> activity!!.finish()
         }
     }
 
@@ -39,6 +42,7 @@ class CouponShopFragment : Fragment(), View.OnClickListener {
         var view = inflater.inflate(R.layout.fragment_coupon_home, container, false)
 
         view.goToCoffee.setOnClickListener(this)
+        view.coupon_coffee_x_btn.setOnClickListener(this)
         return view
     }
 }

@@ -71,16 +71,17 @@
         </activity>
         <activity android:name=".view.coupon.CouponCoffeeActivity">
         </activity>
-        <activity android:name=".view.live.LiveActivity">
+        <activity android:name=".view.live.LiveActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize|layoutDirection">
         </activity>
         <activity
-                android:name=".SOSPopupActivity"
+                android:name=".view.popup.SOSPopupActivity"
                 android:launchMode="singleInstance"
                 android:screenOrientation="portrait"
                 android:theme="@style/Theme.Transparent">
         </activity>
         <activity
-                android:name=".SurveyCompletePopUpActivity"
+                android:name=".view.popup.SurveyCompletePopUpActivity"
                 android:launchMode="singleInstance"
                 android:screenOrientation="portrait"
                 android:theme="@style/Theme.Transparent">

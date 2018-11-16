@@ -17,13 +17,14 @@ import org.jetbrains.anko.startActivity
 class CouponShopActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!) {
-
+            coupon_x_btn -> finish()
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coupon_shop)
+        coupon_x_btn.setOnClickListener(this)
 
 
         addFragment(CouponShopFragment())

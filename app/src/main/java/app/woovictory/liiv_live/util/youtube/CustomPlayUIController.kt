@@ -64,7 +64,7 @@ internal class CustomPlayerUIController(
 
 
             context.startActivity<QuizActivity>()
-    /*        if (fullscreen)
+      /*      if (fullscreen)
                 youTubePlayerView.exitFullScreen()
             else
                 youTubePlayerView.enterFullScreen()
@@ -84,7 +84,9 @@ internal class CustomPlayerUIController(
             panel!!.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent))
     }
 
-    @SuppressLint("SetTextI18n")
+
+    // 계속 변경되는 사항이 뷰의 텍스트 뷰에 뿌려짐!!
+/*    @SuppressLint("SetTextI18n")
     override fun onCurrentSecond(second: Float) {
         videoCurrentTimeTextView!!.text = second.toString() + ""
     }
@@ -92,7 +94,7 @@ internal class CustomPlayerUIController(
     @SuppressLint("SetTextI18n")
     override fun onVideoDuration(duration: Float) {
         videoDurationTextView!!.text = duration.toString() + ""
-    }
+    }*/
 
     override fun onYouTubePlayerEnterFullScreen() {
         val viewParams = playerUI.layoutParams

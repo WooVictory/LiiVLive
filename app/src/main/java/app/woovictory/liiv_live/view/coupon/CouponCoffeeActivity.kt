@@ -29,7 +29,7 @@ class CouponCoffeeActivity : AppCompatActivity() {
         coffee_rv.adapter = coffeeAdapter
 
         val spanCount = 2 // 3 columns
-        val spacing = 40 // 50px
+        val spacing = 25 // 50px
         val includeEdge = true
         coffee_rv.addItemDecoration(GridSpacingItemDecoration(spanCount, spacing, includeEdge))
     }

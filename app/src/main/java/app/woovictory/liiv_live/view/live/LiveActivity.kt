@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.content_home.*
 
 class LiveActivity : AppCompatActivity() {
 
-    private val videoIds = arrayOf("98-1s3ls26c", "98-1s3ls26c")
+    private val videoIds = arrayOf("98-1s3ls26c", "rkKQxHoPiTs")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live)

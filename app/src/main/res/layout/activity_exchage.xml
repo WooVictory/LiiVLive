@@ -80,6 +80,7 @@
             />
 
             <TextView
+                    android:id="@+id/exchange_my_point"
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -256,7 +257,7 @@
             android:textSize="14sp"
             android:textColor="#a2a2a2"
             android:lineSpacingExtra="2sp"
-            android:text="내 포인트리"
+            android:text="계좌번호"
     />
 
     <EditText
@@ -282,6 +283,7 @@
     />
 
     <EditText
+            android:id="@+id/exchange_will_use_pointree"
             android:theme="@style/Theme.App.Base"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -301,6 +303,7 @@
     >
 
         <RelativeLayout
+                android:id="@+id/exchange_ten_man"
                 android:background="@drawable/border_button_yellow_templete"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -323,6 +326,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+                android:id="@+id/exchange_man"
                 android:layout_width="0dp"
                 android:background="@drawable/border_button_yellow_templete"
                 android:layout_weight="1"
@@ -344,6 +348,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+                android:id="@+id/exchange_chen"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="6dp"

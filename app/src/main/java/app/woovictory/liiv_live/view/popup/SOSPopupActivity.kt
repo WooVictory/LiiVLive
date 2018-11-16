@@ -1,7 +1,8 @@
-package app.woovictory.liiv_live
+package app.woovictory.liiv_live.view.popup
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.view.survey.SurveyActivity
 import kotlinx.android.synthetic.main.activity_sospopup.*
 import org.jetbrains.anko.startActivity
@@ -22,6 +23,7 @@ class SOSPopupActivity : AppCompatActivity() {
         // 설문하기 버튼
         goToSurveyBtn.setOnClickListener {
             startActivity<SurveyActivity>()
+            finish()
         }
 
         // X 버튼

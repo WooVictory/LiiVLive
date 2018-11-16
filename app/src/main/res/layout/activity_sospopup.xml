@@ -52,7 +52,7 @@
                 android:layout_marginHorizontal="28dp"
                 android:layout_below="@+id/dialog_icons"
                 android:background="@drawable/border_sliding_layout_background"
-                android:layout_height="200dp"
+                android:layout_height="210dp"
                 android:orientation="vertical">
 
 

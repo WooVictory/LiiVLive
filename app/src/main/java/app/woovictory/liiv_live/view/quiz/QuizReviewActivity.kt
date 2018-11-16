@@ -39,12 +39,29 @@ class QuizReviewActivity : AppCompatActivity(), View.OnClickListener {
 
 
         var snapHelper: SnapHelper = PagerSnapHelper()
-        snapHelper.attachToRecyclerView(quizReviewRv)
-        quizReviewRv.setHasFixedSize(true)
+        snapHelper.attachToRecyclerView(quizReviewRvOne)
+        quizReviewRvOne.setHasFixedSize(true)
         quizReviewAdapter = QuizReviewAdapter(item_list, this)
 
-        quizReviewRv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        quizReviewRv.adapter = quizReviewAdapter
+        quizReviewRvOne.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        quizReviewRvOne.adapter = quizReviewAdapter
+
+        snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(quizReviewRvTwo)
+        quizReviewRvTwo.setHasFixedSize(true)
+
+        quizReviewRvTwo.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        quizReviewRvTwo.adapter = quizReviewAdapter
+
+        snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(quizReviewRvThree)
+        quizReviewRvThree.setHasFixedSize(true)
+
+        quizReviewRvThree.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        quizReviewRvThree.adapter = quizReviewAdapter
+
+
+
 
 
     }

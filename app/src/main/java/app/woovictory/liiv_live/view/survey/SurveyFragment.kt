@@ -1,20 +1,14 @@
 package app.woovictory.liiv_live.view.survey
 
-import android.graphics.Color
-import android.graphics.Point
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
-import android.widget.RadioButton
 import app.woovictory.liiv_live.R
-import app.woovictory.liiv_live.SurveyCompletePopUpActivity
-import app.woovictory.liiv_live.util.dialoog.SurveyCompleteDialog
+import app.woovictory.liiv_live.view.popup.SurveyCompletePopUpActivity
 import kotlinx.android.synthetic.main.fragment_survey.*
 import kotlinx.android.synthetic.main.fragment_survey.view.*
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
-import org.jetbrains.anko.windowManager
 
 /**
  * Created by VictoryWoo
