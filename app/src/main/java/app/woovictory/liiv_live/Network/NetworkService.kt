@@ -1,6 +1,7 @@
 package app.woovictory.liiv_live.Network
 
 import app.woovictory.liiv_live.Get.GetMypageResponse
+import app.woovictory.liiv_live.Get.GetQuizResponse
 import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Post.PostLoginResponse
 import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
@@ -48,4 +49,19 @@ interface NetworkService {
     fun getMyPageMain(
             @Path("userID") userID: String
     ): Call<GetMypageResponse>
+
+    // 문제보기
+    @GET("quiz/getQuiz")
+    fun getQuiz(
+    ): Call<GetQuizResponse>
+
+    // 문제 제출
+    @FormUrlEncoded
+    @POST("quiz/")
+    fun postQuizResponse(
+            @Field("quizID") quizID: String,
+            @Field("quizExampleID") quizExampleID: String,
+            @Field("userID") userID: String
+    ): Call<PostRefreshFcmTokenResponse>
+
 }
