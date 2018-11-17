@@ -30,14 +30,18 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!) {
             loginBtn -> {
-                requestLogin()
+                var idText = loginId.text.toString()
+                var pwText = loginPw.text.toString()
+                requestLogin(idText, pwText)
                 //startActivity<HomeActivity>()
             }
             goToSignUp -> startActivity<KbLoginActivity>()
             loginKaKaoBtn -> startActivity<KbLoginActivity>()
             loginFacebookBtn -> startActivity<KbLoginActivity>()
             loginGoogleBtn -> startActivity<KbLoginActivity>()
-            loginKbBtn -> startActivity<KbLoginActivity>()
+            loginKbBtn -> {
+                requestLogin("milkho11", "0465")
+            }
             loginCheckBtn -> {
                 if (!loginCheckBtn.isSelected)
                     loginCheckBtn.isSelected = true
@@ -163,14 +167,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
 
     // 로그인 함수 - 통신
-    private fun requestLogin() {
+    private fun requestLogin(idText: String, pwText: String) {
 
-        Log.v("woo 441", "들어오님?")
+//        Log.v("woo 441", "들어오님?")
 //        var idText = loginId.text.toString()
 //        var pwText = loginPw.text.toString()
-
-        var idText = "milkho11"
-        var pwText = "0465"
+//
+//        var idText = "milkho11"
+//        var pwText = "0465"
         // id가 작성돼있지 않을 때
         if (idText.length <= 0) {
             toast("ID를 작성해주세요!")
@@ -195,7 +199,10 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                                 SharedPreferenceController.setMyId(applicationContext, response.body()!!.data[0].id)
                                 SharedPreferenceController.setMyImage(applicationContext, response.body()!!.data[0].img)
                                 SharedPreferenceController.setMyPoint(applicationContext, 3000)
-                                SharedPreferenceController.setMyNick(applicationContext,response.body()!!.data[0].nickname)
+                                SharedPreferenceController.setMyNick(
+                                    applicationContext,
+                                    response.body()!!.data[0].nickname
+                                )
                                 startActivity<HomeActivity>()
                                 finish()
                             } // 로그인 실패
