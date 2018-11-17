@@ -34,6 +34,9 @@ import app.woovictory.liiv_live.view.stock.StockAndFundActivity
 import app.woovictory.liiv_live.view.survey.SurveyActivity
 import com.bumptech.glide.Glide
 import com.google.firebase.iid.FirebaseInstanceId
+import com.sendbird.android.SendBird
+import com.sendbird.android.SendBirdException
+import com.sendbird.android.User
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
@@ -66,27 +69,39 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                    survey_dialog.setCanceledOnTouchOutside(true)*/
 
                 // 밑에가 진퉁 방법임.
-          /*      val survey_dialog = SurveyDialog(this@HomeActivity)
+                /*      val survey_dialog = SurveyDialog(this@HomeActivity)
 
-                survey_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-                survey_dialog.show()
+                      survey_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                      survey_dialog.show()
 
-                var display = windowManager.defaultDisplay
-                var size = Point()
+                      var display = windowManager.defaultDisplay
+                      var size = Point()
 
-                display.getSize(size)
+                      display.getSize(size)
 
-                var x = (size.x * 0.8f).toInt()
-                var y = (size.y * 0.6f).toInt()
+                      var x = (size.x * 0.8f).toInt()
+                      var y = (size.y * 0.6f).toInt()
 
-                var window: Window = survey_dialog.window
-                window.setGravity(Gravity.BOTTOM)
-                window.setLayout(x,y)
+                      var window: Window = survey_dialog.window
+                      window.setGravity(Gravity.BOTTOM)
+                      window.setLayout(x,y)
 
 
-*/
+      */
 
-                startActivity<LiveActivity>()
+                //startActivity<LiveActivity>()
+
+                SendBird.init(APP_ID, this)
+
+                var userId = SharedPreferenceController.getMyId(this)
+
+                // userId의 모든 공간 삭제
+                userId = userId.replace("\\s", "")
+                var nick = SharedPreferenceController.getMyNick(this)
+
+                var userNickname = nick
+
+                connectToSendBird(userId, userNickname)
                 //window.setLayout(1300, WindowManager.LayoutParams.WRAP_CONTENT)
             }
             topLayout -> startActivity<PointreeHistoryActivity>()
@@ -140,6 +155,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         goToLive.setOnClickListener(this)
     }
 
+    val APP_ID = "2A8C97EE-D8F7-473B-AEA5-B37A877DAB31"
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -149,8 +167,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
         init()
 
+
+
         requestUserMain(SharedPreferenceController.getMyId(applicationContext))
-        refreshFcmToekn(SharedPreferenceController.getMyId(applicationContext), FirebaseInstanceId.getInstance().getToken().toString())
+        refreshFcmToekn(
+            SharedPreferenceController.getMyId(applicationContext),
+            FirebaseInstanceId.getInstance().getToken().toString()
+        )
         Log.v("TAG", FirebaseInstanceId.getInstance().getToken().toString() + "   이것은 fcm 토큰이다.")
 
         if (sliding_up_panel_layout.panelState == SlidingUpPanelLayout.PanelState.EXPANDED) {
@@ -229,6 +252,38 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    fun connectToSendBird(userId : String, userNickname: String){
+
+
+        SendBird.connect(userId, object :SendBird.ConnectHandler {
+            override fun onConnected(user: User?, e: SendBirdException?) {
+                if(e != null) {
+                    // Error!
+                    Log.v("TAG", "connectToSendBird 에러 발생")
+                }
+                // Update the user's nickname
+                updateCurrentUserInfo(userNickname)
+
+                startActivity<LiveActivity>()
+                finish()
+            }
+        })
+    }
+
+    fun updateCurrentUserInfo(userNickName : String) {
+        SendBird.updateCurrentUserInfo(userNickName, null, object: SendBird.UserInfoUpdateHandler{
+            override fun onUpdated(e: SendBirdException?) {
+                if (e != null){
+
+                    toast("" + e.code + ":" + e.message)
+
+                    return
+                }
+            }
+        })
+
+    }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
@@ -262,7 +317,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val postRefreshFcmTokenResponse = networkService.postRefreshFcmTokenResponse(userID, fcmToken)
 
         postRefreshFcmTokenResponse.enqueue(object : Callback<PostRefreshFcmTokenResponse> {
-            override fun onResponse(call: Call<PostRefreshFcmTokenResponse>, response: Response<PostRefreshFcmTokenResponse>) {
+            override fun onResponse(
+                call: Call<PostRefreshFcmTokenResponse>,
+                response: Response<PostRefreshFcmTokenResponse>
+            ) {
                 if (response.isSuccessful) {
                     SharedPreferenceController.setMyFcmToken(applicationContext, fcmToken)
                     Log.v("fcmToken =", fcmToken)
@@ -275,11 +333,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         })
     }
 
-    fun requestUserMain(userID : String){
+    fun requestUserMain(userID: String) {
         Log.v("TAG", "들어오니?")
 
         var userID = userID
-        var networkService : NetworkService = ApplicationController.instance.networkService
+        var networkService: NetworkService = ApplicationController.instance.networkService
 
         var GetUserMainResponse = networkService.getUserMain(userID)
 
@@ -289,7 +347,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             override fun onResponse(call: Call<GetUserMainResponse>?, response: Response<GetUserMainResponse>?) {
-                if(response!!.isSuccessful){
+                if (response!!.isSuccessful) {
                     // 유저 아이디 : String
                     Log.v("TAG 539", response.body()!!.data.id)
                     home_nick.text = response.body()!!.data.id

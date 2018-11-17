@@ -61,6 +61,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         loginPw.transformationMethod = PasswordTransformationMethod.getInstance()
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -194,6 +195,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                                 SharedPreferenceController.setMyId(applicationContext, response.body()!!.data[0].id)
                                 SharedPreferenceController.setMyImage(applicationContext, response.body()!!.data[0].img)
                                 SharedPreferenceController.setMyPoint(applicationContext, 3000)
+                                SharedPreferenceController.setMyNick(applicationContext,response.body()!!.data[0].nickname)
                                 startActivity<HomeActivity>()
                                 finish()
                             } // 로그인 실패
