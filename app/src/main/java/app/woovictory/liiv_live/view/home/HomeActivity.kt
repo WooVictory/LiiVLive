@@ -265,7 +265,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 updateCurrentUserInfo(userNickname)
 
                 startActivity<LiveActivity>()
-                finish()
+
             }
         })
     }

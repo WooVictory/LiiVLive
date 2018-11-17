@@ -49,7 +49,7 @@ internal class CustomPlayerUIController(
         videoCurrentTimeTextView = playerUI.findViewById(R.id.video_current_time)
         videoDurationTextView = playerUI.findViewById(R.id.video_duration)
         playPauseButton = playerUI.findViewById(R.id.play_pause_button)
-        enterExitFullscreenButton = playerUI.findViewById(R.id.enter_exit_fullscreen_button)
+        //enterExitFullscreenButton = playerUI.findViewById(R.id.enter_exit_fullscreen_button)
 
         playPauseButton!!.setOnClickListener { view ->
             if (playing)
@@ -60,17 +60,17 @@ internal class CustomPlayerUIController(
             playing = !playing
         }
 
-        enterExitFullscreenButton!!.setOnClickListener { view ->
+ /*       enterExitFullscreenButton!!.setOnClickListener { view ->
 
 
             context.startActivity<QuizActivity>()
-      /*      if (fullscreen)
+            if (fullscreen)
                 youTubePlayerView.exitFullScreen()
             else
                 youTubePlayerView.enterFullScreen()
 
-            fullscreen = !fullscreen*/
-        }
+            fullscreen = !fullscreen
+        }*/
     }
 
     override fun onReady() {

@@ -1,6 +1,7 @@
 package app.woovictory.liiv_live.Network
 
 import app.woovictory.liiv_live.Get.GetMypageResponse
+import app.woovictory.liiv_live.Get.GetQuizAnswerResponse
 import app.woovictory.liiv_live.Get.GetQuizResponse
 import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Post.PostLoginResponse
@@ -62,6 +63,6 @@ interface NetworkService {
             @Field("quizID") quizID: String,
             @Field("quizExampleID") quizExampleID: String,
             @Field("userID") userID: String
-    ): Call<PostRefreshFcmTokenResponse>
+    ): Call<GetQuizAnswerResponse>
 
 }

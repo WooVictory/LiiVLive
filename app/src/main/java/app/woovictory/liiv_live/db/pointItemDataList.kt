@@ -6,6 +6,7 @@ import java.util.*
 object pointItemDataList {
     var dataList : ArrayList<PointreeHistoryData> = ArrayList()
     var level : String = ""
+    var count : Int = 0
 
 
 
