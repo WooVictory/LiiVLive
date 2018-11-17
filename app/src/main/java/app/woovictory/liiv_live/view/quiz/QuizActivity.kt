@@ -80,7 +80,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         Log.v("TAG", "이 밑")
         Log.v("TAG", data.question.question)
 
-        // 
+        //
         quiz_title_item.text = data.question.question
         quiz_answer_one_tv.text = data.question_example[0].content
         quiz_answer_two_tv.text = data.question_example[1].content
