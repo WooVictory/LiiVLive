@@ -1,12 +1,14 @@
 package app.woovictory.liiv_live.Network
 
 import app.woovictory.liiv_live.Get.GetMypageResponse
+import app.woovictory.liiv_live.Get.GetQuizAnswerReviewResponse
 import app.woovictory.liiv_live.Get.GetQuizAnswerResponse
 import app.woovictory.liiv_live.Get.GetQuizResponse
 import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Post.PostLoginResponse
 import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.Post.PostSignUpResponse
+import app.woovictory.liiv_live.model.GetQuizReviewResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -65,4 +67,21 @@ interface NetworkService {
             @Field("userID") userID: String
     ): Call<GetQuizAnswerResponse>
 
+//    // 퀴즈 리뷰 보기
+//    @GET("quizreview/{userID}")
+//    fun getQuizReview(
+//        @Path("userID") userID: String
+//    ): Call<GetQuizReviewResponse>
+
+    // 문제 답 보기
+    @GET("quizreview/answer/{quizID}")
+    fun getQuizAnswerReview(
+        @Path("quizID") quizID: Int
+    ): Call<GetQuizAnswerReviewResponse>
+
+    //문제 리뷰
+    @GET("quizreview/{userID}")
+    fun getQuizReview(
+        @Path("userID") userID: String
+    ): Call<GetQuizReviewResponse>
 }
