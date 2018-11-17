@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/white"
-            android:elevation="2dp">
+            android:elevation="1dp">
 
         <TextView
                 android:layout_width="wrap_content"
@@ -28,6 +28,7 @@
         />
 
         <RelativeLayout
+                android:id="@+id/mypage_x_btn"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"

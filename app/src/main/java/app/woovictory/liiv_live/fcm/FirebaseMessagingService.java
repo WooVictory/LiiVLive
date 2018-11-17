@@ -11,7 +11,9 @@ import android.net.Uri;
 import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
 import app.woovictory.liiv_live.R;
+import app.woovictory.liiv_live.db.pointItemDataList;
 import app.woovictory.liiv_live.view.login.LoginActivity;
 import app.woovictory.liiv_live.view.popup.SOSPopupActivity;
 import app.woovictory.liiv_live.view.quiz.QuizActivity;
@@ -63,9 +65,17 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
                 if(json.equals("퀴즈 소진")){
                     Log.v("TAG", "퀴즈 소진");
                 }else{
-                    Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
-                    intent.putExtra("json", json);
-                    getApplicationContext().startActivity(intent);
+                    int count = pointItemDataList.INSTANCE.getCount();
+                    if(count >= 3){
+                        //Toast.makeText(getApplicationContext(), "3문제를 푸셨습니다.",Toast.LENGTH_LONG).show();
+                        Log.v("woo 948","3문제를 푸셨습니당.");
+                        pointItemDataList.INSTANCE.setCount(0);
+                    }else {
+                        Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
+                        intent.putExtra("json", json);
+                        getApplicationContext().startActivity(intent);
+                    }
+
                 }
 
             } else {
