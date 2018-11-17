@@ -3,6 +3,7 @@ package app.woovictory.liiv_live.view.mypage
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import app.woovictory.liiv_live.Get.GetMypageResponse
 import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
@@ -14,12 +15,18 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MypageActivity : AppCompatActivity() {
+class MypageActivity : AppCompatActivity(),View.OnClickListener {
+    override fun onClick(v: View?) {
+        when(v!!){
+            mypage_x_btn-> finish()
+        }
+    }
 
     lateinit var networkService: NetworkService
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mypage)
+        mypage_x_btn.setOnClickListener(this)
 
         networkService = ApplicationController.instance.networkService
         var id = SharedPreferenceController.getMyId(this)

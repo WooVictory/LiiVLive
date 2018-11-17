@@ -94,7 +94,13 @@
                 android:screenOrientation="portrait"
                 android:theme="@style/Theme.Transparent">
         </activity>
-        <activity android:name=".view.quiz.QuizAnswerActivity"
+        <activity
+                android:name=".view.quiz.QuizAnswerActivity"
+                android:launchMode="singleInstance"
+                android:screenOrientation="portrait"
+                android:theme="@style/Theme.Transparent">
+        </activity>
+        <activity android:name=".view.popup.LiveExitPopUpActivity"
                   android:launchMode="singleInstance"
                   android:screenOrientation="portrait"
                   android:theme="@style/Theme.Transparent">

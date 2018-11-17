@@ -13,7 +13,14 @@ import app.woovictory.liiv_live.util.MeasureViewpager
 import kotlinx.android.synthetic.main.activity_survey.*
 import kotlinx.android.synthetic.main.content_home.*
 
-class SurveyActivity : AppCompatActivity() {
+class SurveyActivity : AppCompatActivity(), View.OnClickListener {
+    override fun onClick(v: View?) {
+        when(v!!){
+            survey_x_btn->{
+                finish()
+            }
+        }
+    }
 
 
     fun addFragment(fragment: Fragment) {
@@ -41,6 +48,7 @@ class SurveyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_survey)
 
         custom_vp = survey_viewpager
+        survey_x_btn.setOnClickListener(this)
 
         //addFragment(SurveyFragment.newInstance("1"))
 

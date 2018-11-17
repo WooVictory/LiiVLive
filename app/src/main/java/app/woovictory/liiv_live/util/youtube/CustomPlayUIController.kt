@@ -3,14 +3,17 @@ package app.woovictory.liiv_live.util.youtube
 import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v4.content.ContextCompat
+import android.support.v4.content.ContextCompat.startActivity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 
 
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.view.popup.LiveExitPopUpActivity
 import app.woovictory.liiv_live.view.quiz.QuizActivity
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.YouTubePlayer
@@ -34,6 +37,7 @@ internal class CustomPlayerUIController(
     private var videoDurationTextView: TextView? = null
     private var playPauseButton: RelativeLayout? = null
     private var enterExitFullscreenButton: Button? = null
+    private lateinit var live_x_button : ImageView
 
     private var playing = true
     private var fullscreen = false
@@ -49,6 +53,7 @@ internal class CustomPlayerUIController(
         videoCurrentTimeTextView = playerUI.findViewById(R.id.video_current_time)
         videoDurationTextView = playerUI.findViewById(R.id.video_duration)
         playPauseButton = playerUI.findViewById(R.id.play_pause_button)
+        live_x_button = playerUI.findViewById(R.id.live_x_btn)
         //enterExitFullscreenButton = playerUI.findViewById(R.id.enter_exit_fullscreen_button)
 
         playPauseButton!!.setOnClickListener { view ->
@@ -59,6 +64,11 @@ internal class CustomPlayerUIController(
 
             playing = !playing
         }
+        live_x_button.setOnClickListener {
+            context.startActivity<LiveExitPopUpActivity>()
+        }
+
+
 
  /*       enterExitFullscreenButton!!.setOnClickListener { view ->
 

@@ -91,9 +91,9 @@ class QuizAnswerActivity : AppCompatActivity() {
                         total += arr[i].select_people
                     }
                     if (response.body()!!.msg == "퀴즈 틀림")
-                        Glide.with(this@QuizAnswerActivity).load(R.drawable.quiz_review_x_btn).into(quiz_answer_image)
+                        Glide.with(this@QuizAnswerActivity).load(R.drawable.live_x_icon).into(quiz_answer_image)
                     else
-                        Glide.with(this@QuizAnswerActivity).load(R.drawable.quiz_review_o_btn).into(quiz_answer_image)
+                        Glide.with(this@QuizAnswerActivity).load(R.drawable.live_o_icon).into(quiz_answer_image)
 
                     quiz_answer_text_view_one.text = arr[0].content
                     quiz_answer_people_text_one.text = arr[0].select_people.toString()
