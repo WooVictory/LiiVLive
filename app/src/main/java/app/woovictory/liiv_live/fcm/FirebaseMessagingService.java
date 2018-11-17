@@ -59,9 +59,15 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
                 Log.v("TAG", "퀴즈 푸시이다.");
 
                 String json = remoteMessage.getNotification().getBody();
-                Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
-                intent.putExtra("json", json);
-                getApplicationContext().startActivity(intent);
+
+                if(json.equals("퀴즈 소진")){
+                    Log.v("TAG", "퀴즈 소진");
+                }else{
+                    Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
+                    intent.putExtra("json", json);
+                    getApplicationContext().startActivity(intent);
+                }
+
             } else {
                 //Toast.makeText(getApplicationContext(),"안됨.",Toast.LENGTH_LONG).show();
                 Log.v("TAG 839", info.topActivity.getClassName().toString());
