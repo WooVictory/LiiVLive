@@ -62,12 +62,13 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
             if (info.topActivity.getClassName().equals("app.woovictory.liiv_live.view.live.LiveActivity")){
                 String quiz_id = remoteMessage.getData().get("quiz_id");
                 String user_select_example_id = remoteMessage.getData().get("user_select_example_id");
-
+                String question = remoteMessage.getData().get("question");
                 Log.v("TAG", "퀴즈정답푸시일경우 이쪽으로 들어옴2");
 
                 Intent intent = new Intent(getApplicationContext(), QuizAnswerActivity.class);
                 intent.putExtra("quiz_id", quiz_id);
                 intent.putExtra("select_answer", user_select_example_id);
+                intent.putExtra("quiz_title", question);
                 // 이거만해
 //                intent.putExtra("quiz_title", SharedPreferenceController.INSTANCE.getMyId(getApplicationContext()));
                 getApplicationContext().startActivity(intent);

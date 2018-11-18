@@ -85,4 +85,12 @@ interface NetworkService {
     fun getYoutubeUrl(
 
     ) : Call<getYoutubeResponse>
+
+    @FormUrlEncoded
+    @POST("quiz/noinsert/")
+    fun postQuizNoInsertResponse(
+        @Field("quizID") quizID: String,
+        @Field("quizExampleID") quizExampleID: String,
+        @Field("userID") userID: String
+    ): Call<GetQuizAnswerResponse>
 }

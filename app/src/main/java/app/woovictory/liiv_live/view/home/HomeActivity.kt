@@ -128,7 +128,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             goToExchangeBtn -> startActivity<ExchageActivity>()
             goToCouponShopBtn -> startActivity<CouponShopActivity>()
             goToStockBtn -> startActivity<StockAndFundActivity>()
-            goToExam -> startActivity<ExamActivity>()
             goToLive -> startActivity<CouponShopActivity>()
             /*sliding_up_panel_layout->{
                 toast("들어오니111?")
@@ -169,7 +168,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         goToExchangeBtn.setOnClickListener(this)
         goToCouponShopBtn.setOnClickListener(this)
         goToStockBtn.setOnClickListener(this)
-        goToExam.setOnClickListener(this)
         goToLive.setOnClickListener(this)
         slide_up_btn.setOnClickListener(this)
         sliding_tops.setOnClickListener(this)

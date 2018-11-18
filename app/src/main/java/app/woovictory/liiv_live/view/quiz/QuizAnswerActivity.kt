@@ -48,7 +48,7 @@ class QuizAnswerActivity : AppCompatActivity() {
 
     fun postQuiz(quizId: String, selectAnswer: String) {
         var quiz_check_answer = selectAnswer
-        var quizResponse = networkService.postQuizResponse(
+        var quizResponse = networkService.postQuizNoInsertResponse(
             quizId, quiz_check_answer
             , SharedPreferenceController.getMyId(this)
         )

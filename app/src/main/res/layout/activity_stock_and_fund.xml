@@ -154,7 +154,7 @@
                         android:id="@+id/stock_one_image"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/stock_liiv_img"/>
+                        android:background="@drawable/stock_kb"/>
 
                 <LinearLayout
                         android:layout_toRightOf="@+id/stock_one_image"
@@ -222,7 +222,7 @@
                         android:id="@+id/stock_two_image"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/stock_kakaotalk_img"/>
+                        android:background="@drawable/stock_seoul_auction"/>
 
                 <LinearLayout
                         android:layout_toRightOf="@+id/stock_two_image"
@@ -287,7 +287,7 @@
                         android:id="@+id/stock_three_image"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:background="@drawable/stock_kakaopay_img"/>
+                        android:background="@drawable/stock_google"/>
 
                 <LinearLayout
                         android:layout_toRightOf="@+id/stock_three_image"
