@@ -85,10 +85,6 @@
                 android:layout_marginBottom="5dp"
                 android:text="Less than 5 a year"/>
 
-        <View
-                android:background="#f0f0f1"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
 
     </RadioGroup>
