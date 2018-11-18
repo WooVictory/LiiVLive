@@ -1,10 +1,8 @@
 package app.woovictory.liiv_live.view.quiz
 
-import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.AsyncTask
 import android.os.Bundle
-import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -12,17 +10,10 @@ import android.view.View
 import app.woovictory.liiv_live.Get.GetQuizData
 import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
-import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.R
-import app.woovictory.liiv_live.db.SharedPreferenceController
-import app.woovictory.liiv_live.db.pointItemDataList
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_quiz.*
-import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class QuizActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
@@ -171,18 +162,18 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
             quiz_text.text = "1"
             //postQuiz(answer)
             finish()
-            var intent : Intent = Intent(applicationContext, QuizAnswerActivity::class.java)
-
-            intent.putExtra("quiz_id",quiz_id)
-            intent.putExtra("select_answer",select_answer)
-            intent.putExtra("quiz_title",quiz_title)
+//            var intent : Intent = Intent(applicationContext, QuizAnswerActivity::class.java)
+//
+//            intent.putExtra("quiz_id",quiz_id)
+//            intent.putExtra("select_answer",select_answer)
+//            intent.putExtra("quiz_title",quiz_title)
           /*  if(pointItemDataList.count == 3){
                 toast("하루 3문제를 푸셨습니다. 내일 풀어주세요.")
                 pointItemDataList.count = 0
             }else{
 
             }*/
-            startActivity(intent)
+//            startActivity(intent)
 
 
 
