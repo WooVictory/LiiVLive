@@ -52,7 +52,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_below="@+id/circleAnimIndicator"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/selector_participant_btn"
+                    android:src="@drawable/main_quiz_enter_blue_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 

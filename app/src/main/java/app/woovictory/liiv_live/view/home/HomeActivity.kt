@@ -41,6 +41,7 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.content_home.*
+import kotlinx.android.synthetic.main.nav_header_home.*
 import kotlinx.android.synthetic.main.sliding_layout.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -55,20 +56,21 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             checkLayout -> startActivity<CheckActivity>()
             quizLayout -> startActivity<QuizReviewActivity>()
             surveyLayout -> startActivity<SurveyActivity>()
-            slide_up_btn->{
-                if(!click_flag){
+            goToDetailStockBtn -> startActivity<StockAndFundActivity>()
+            slide_up_btn -> {
+                if (!click_flag) {
                     click_flag = true
                     custom_scroll_view.setEnableScrolling(true)
-                }else{
+                } else {
                     click_flag = false
                     custom_scroll_view.setEnableScrolling(false)
                 }
             }
-            sliding_tops->{
-                if(!click_flag){
+            sliding_tops -> {
+                if (!click_flag) {
                     click_flag = true
                     custom_scroll_view.setEnableScrolling(true)
-                }else{
+                } else {
                     click_flag = false
                     custom_scroll_view.setEnableScrolling(false)
                 }
@@ -171,10 +173,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         goToLive.setOnClickListener(this)
         slide_up_btn.setOnClickListener(this)
         sliding_tops.setOnClickListener(this)
+        goToDetailStockBtn.setOnClickListener(this)
     }
 
     val APP_ID = "2A8C97EE-D8F7-473B-AEA5-B37A877DAB31"
-    var click_flag : Boolean = false
+    var click_flag: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -185,6 +188,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
         init()
+
+        // 네비게이션 바 쉐어드에서 이름 꺼내와서 달기.
+        var nickname : String = SharedPreferenceController.getMyNick(this@HomeActivity)
+        Log.v("woo 1155 : ", nickname.toString())
+        nick.text = nickname
 
 
 
@@ -271,12 +279,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    fun connectToSendBird(userId : String, userNickname: String){
+    fun connectToSendBird(userId: String, userNickname: String) {
 
 
-        SendBird.connect(userId, object :SendBird.ConnectHandler {
+        SendBird.connect(userId, object : SendBird.ConnectHandler {
             override fun onConnected(user: User?, e: SendBirdException?) {
-                if(e != null) {
+                if (e != null) {
                     // Error!
                     Log.v("TAG", "connectToSendBird 에러 발생")
                 }
@@ -289,10 +297,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         })
     }
 
-    fun updateCurrentUserInfo(userNickName : String) {
-        SendBird.updateCurrentUserInfo(userNickName, null, object: SendBird.UserInfoUpdateHandler{
+    fun updateCurrentUserInfo(userNickName: String) {
+        SendBird.updateCurrentUserInfo(userNickName, null, object : SendBird.UserInfoUpdateHandler {
             override fun onUpdated(e: SendBirdException?) {
-                if (e != null){
+                if (e != null) {
 
                     toast("" + e.code + ":" + e.message)
 

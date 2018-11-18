@@ -199,7 +199,6 @@
                     android:layout_height="500dp">
 
                 <android.support.v7.widget.RecyclerView
-                        android:layout_marginHorizontal="14dp"
                         android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:id="@+id/coffee_rv"

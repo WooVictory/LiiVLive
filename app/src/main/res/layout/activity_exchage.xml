@@ -179,6 +179,7 @@
             android:background="@color/backColor">
 
         <RelativeLayout
+                android:id="@+id/exchange_stock_layout1"
                 android:background="@drawable/border_button_templete"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -201,7 +202,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-                android:id="@+id/exchange_stock_layout"
+                android:id="@+id/exchange_stock_layout2"
                 android:layout_width="0dp"
                 android:background="@drawable/border_button_templete"
                 android:layout_weight="1"
@@ -224,6 +225,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+                android:id="@+id/exchange_stock_layout3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="6dp"

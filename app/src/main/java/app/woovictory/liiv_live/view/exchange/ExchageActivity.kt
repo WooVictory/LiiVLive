@@ -24,6 +24,10 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!) {
             exchangeCompleteBtn -> {
+
+                pointItemDataList.addPointItemData("환전하기",money,"차감")
+                SharedPreferenceController.setMyPoint(this,
+                    SharedPreferenceController.getMyPoint(this@ExchageActivity)-money)
                 var exchange_dialog = ExchangeDialog(this)
 
 
@@ -58,30 +62,44 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
             exchangeXBtn -> finish()
             exchange_chen -> {
                 exchange_will_use_pointree.setText("1,000 P")
-                pointItemDataList.addPointItemData("환전하기",-1000,"차감")
-                SharedPreferenceController.setMyPoint(this,
-                    SharedPreferenceController.getMyPoint(this@ExchageActivity)-1000)
+                money = -1000
+
             }
             exchange_ten_man -> {
                 exchange_will_use_pointree.setText("100,000 P")
-                pointItemDataList.addPointItemData("환전하기",-100000,"차감")
-                SharedPreferenceController.setMyPoint(this,
-                    SharedPreferenceController.getMyPoint(this@ExchageActivity)-100000)
+                money = -100000
             }
             exchange_man -> {
                 exchange_will_use_pointree.setText("10,000 P")
+                money = -10000
                 pointItemDataList.addPointItemData("환전하기",-10000,"차감")
-                SharedPreferenceController.setMyPoint(this,
-                    SharedPreferenceController.getMyPoint(this@ExchageActivity)-10000)
             }
+            exchange_stock_layout1->{
+                if(!exchange_stock_layout1.isSelected){
+                    exchange_stock_layout1.isSelected = true
+                    exchange_stock_layout1.background.setColorFilter(ContextCompat.getColor(this, R.color.mainColor),
+                        PorterDuff.Mode.SRC_IN)
+                    exchange_stock_layout2.isSelected = false
+                    exchange_stock_layout3.isSelected = false
+                }else{
+                    exchange_stock_layout1.isSelected = false
+                    exchange_stock_layout1.background = getDrawable(R.drawable.border_button_templete)
+                }
+
+            }
+            exchange_stock_layout2->{
+
+            }
+            exchange_stock_layout3->{}
+
         }
     }
 
     fun init() {
-        exchange_stock_layout.background.setColorFilter(
+       /* exchange_stock_layout2.background.setColorFilter(
             ContextCompat.getColor(this, R.color.mainColor),
             PorterDuff.Mode.SRC_IN
-        )
+        )*/
         //setBackgroundColor(ContextCompat.getColor(this, R.color.mainColor))
         exchange_stock_text.setTextColor(ContextCompat.getColor(this, R.color.white))
 
@@ -92,10 +110,14 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
         exchange_chen.setOnClickListener(this)
         networkService = ApplicationController.instance.networkService
         exchange_my_point.text = SharedPreferenceController.getMyPoint(this@ExchageActivity).toString()
+        exchange_stock_layout1.setOnClickListener(this)
+        exchange_stock_layout2.setOnClickListener(this)
+        exchange_stock_layout3.setOnClickListener(this)
 
     }
 
     lateinit var networkService: NetworkService
+    var money : Int = 0
     lateinit var item_list : ArrayList<PointreeHistoryData>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

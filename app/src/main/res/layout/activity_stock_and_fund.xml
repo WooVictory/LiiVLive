@@ -134,12 +134,12 @@
                     android:layout_height="64dp">
 
                 <TextView
+                        android:layout_centerVertical="true"
                         android:id="@+id/stock_num_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="#fdbd37"
-                        android:layout_marginTop="10.5dp"
                         android:layout_marginLeft="16dp"
                         android:fontFamily="@font/nanumsquareextrabold"
                         android:includeFontPadding="false"
@@ -207,7 +207,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="#fdbd37"
-                        android:layout_marginTop="10.5dp"
+                        android:layout_centerVertical="true"
                         android:layout_marginLeft="16dp"
                         android:fontFamily="@font/nanumsquareextrabold"
                         android:includeFontPadding="false"
@@ -272,7 +272,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:textColor="#fdbd37"
-                        android:layout_marginTop="10.5dp"
+                        android:layout_centerVertical="true"
                         android:layout_marginLeft="16dp"
                         android:fontFamily="@font/nanumsquareextrabold"
                         android:includeFontPadding="false"

@@ -18,6 +18,7 @@ import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.Post.PostSignUpResponse
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.db.SharedPreferenceController
 import app.woovictory.liiv_live.view.login.LoginActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_kb_sign.*
@@ -156,6 +157,7 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
 
                         } else {
                             toast("회원가입 성공")
+                            SharedPreferenceController.setMyNick(this@KbSignActivity, kbSignNickname.text.toString())
                             startActivity<LoginActivity>()
                         }
                     }
@@ -175,6 +177,7 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
 
                         } else {
                             toast("회원가입 성공")
+                            SharedPreferenceController.setMyNick(this@KbSignActivity, kbSignNickname.text.toString())
                             startActivity<LoginActivity>()
                         }
                     }

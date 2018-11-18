@@ -12,6 +12,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.Window
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.db.SharedPreferenceController
 import app.woovictory.liiv_live.db.pointItemDataList
 import app.woovictory.liiv_live.util.dialog.CheckCompleteDialog
 import kotlinx.android.synthetic.main.activity_check.*
@@ -23,7 +24,7 @@ class CheckActivity : AppCompatActivity(), View.OnClickListener {
             check_okay_btn->{
                 if(!flag){
                     flag = true
-                    check_calendar_image.setImageResource(R.drawable.calendar_checked)
+                    check_calendar_image.setImageResource(R.drawable.calendar_check)
                     check_okay_btn.background.setColorFilter(ContextCompat.getColor(this, R.color.viewColor),PorterDuff.Mode.SRC_IN)
                     check_okay_btn.isClickable = false
                     check_btn_text.text = "출석 완료"
@@ -60,8 +61,13 @@ class CheckActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check)
 
+
+        // 출석체크 화면에서 닉네임 쉐어드에서 꺼내서 넣기.
+        var nickname = SharedPreferenceController.getMyNick(this@CheckActivity)
+        check_nickname.text = nickname
+
         if(pointItemDataList.check_flag == 1){
-            check_calendar_image.setImageResource(R.drawable.calendar_checked)
+            check_calendar_image.setImageResource(R.drawable.calendar_check)
             check_okay_btn.background.setColorFilter(ContextCompat.getColor(this, R.color.viewColor),PorterDuff.Mode.SRC_IN)
             check_okay_btn.isClickable = false
             check_btn_text.text = "출석 완료"
