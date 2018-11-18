@@ -8,6 +8,7 @@ object pointItemDataList {
     var level : String = ""
     var count : Int = 0
     var check_flag : Int = 0
+    var fragment_flag : Int = 0
 
 
 

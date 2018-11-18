@@ -55,6 +55,24 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             checkLayout -> startActivity<CheckActivity>()
             quizLayout -> startActivity<QuizReviewActivity>()
             surveyLayout -> startActivity<SurveyActivity>()
+            slide_up_btn->{
+                if(!click_flag){
+                    click_flag = true
+                    custom_scroll_view.setEnableScrolling(true)
+                }else{
+                    click_flag = false
+                    custom_scroll_view.setEnableScrolling(false)
+                }
+            }
+            sliding_tops->{
+                if(!click_flag){
+                    click_flag = true
+                    custom_scroll_view.setEnableScrolling(true)
+                }else{
+                    click_flag = false
+                    custom_scroll_view.setEnableScrolling(false)
+                }
+            }
             participantBtn -> {
                 //startActivity<MainActivity>()
 
@@ -153,15 +171,18 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         goToStockBtn.setOnClickListener(this)
         goToExam.setOnClickListener(this)
         goToLive.setOnClickListener(this)
+        slide_up_btn.setOnClickListener(this)
+        sliding_tops.setOnClickListener(this)
     }
 
     val APP_ID = "2A8C97EE-D8F7-473B-AEA5-B37A877DAB31"
-
+    var click_flag : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         setSupportActionBar(toolbar)
+        custom_scroll_view.setEnableScrolling(false)
 
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)

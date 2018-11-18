@@ -4,6 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/white"
         android:orientation="vertical">
 
 
@@ -57,10 +58,10 @@
                 <ImageView
                         android:layout_marginTop="-10dp"
                         android:layout_below="@+id/coupon_text_two"
-                        android:src="@drawable/couponshop_illust_img"
-                        android:layout_width="wrap_content"
+                        android:background="@drawable/couponshop_illust_img"
+                        android:layout_width="match_parent"
                         android:layout_centerHorizontal="true"
-                        android:layout_height="183dp"/>
+                        android:layout_height="200dp"/>
             </RelativeLayout>
 
 
@@ -99,8 +100,9 @@
                     android:layout_height="265dp">
 
                 <ImageView
-                        android:background="@android:color/black"
+                        android:background="@drawable/couponshop_coffee_img"
                         android:layout_width="match_parent"
+
                         android:layout_height="160dp"/>
 
                 <LinearLayout
@@ -161,7 +163,7 @@
                     android:layout_height="265dp">
 
                 <ImageView
-                        android:background="@android:color/black"
+                        android:background="@drawable/couponshop_hamburger_img"
                         android:layout_width="match_parent"
                         android:layout_height="160dp"/>
 

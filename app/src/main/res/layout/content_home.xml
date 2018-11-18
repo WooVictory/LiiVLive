@@ -10,22 +10,24 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".view.home.HomeActivity"
-        app:umanoPanelHeight="100dp"
+        app:umanoPanelHeight="200dp"
         app:umanoParallaxOffset="10dp"
         app:umanoShadowHeight="0dp"
-        android:backgroundTint="@android:color/transparent"
+        android:backgroundTint="@android:color/white"
         android:gravity="bottom">
 
     <!--umanoPanelHeight : sliding panel이 얼만큼 올라올건지!-->
 
-    <ScrollView android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-    android:background="@drawable/main_background_img">
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
         <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                >
+                android:background="@drawable/back_img"
+        >
 
             <android.support.v4.view.ViewPager
                     android:layout_marginTop="30dp"

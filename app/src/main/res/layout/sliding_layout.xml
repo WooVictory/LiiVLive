@@ -13,22 +13,33 @@
     android:layout_marginHorizontal="16dp" 추가하면됨.
     -->
     <LinearLayout
+            android:layout_marginHorizontal="16dp"
             android:id="@+id/sliding_tops"
             android:elevation="1dp"
             android:background="@drawable/border_sliding_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-        <ImageView
-                android:layout_marginTop="10dp"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/home_slide_btn"
-                android:layout_gravity="center_horizontal"/>
 
-        <ScrollView
+        <RelativeLayout
+                android:id="@+id/slide_up_btn"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_margin="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/home_slide_btn"
+                    android:layout_gravity="center_horizontal"/>
+        </RelativeLayout>
+
+
+        <app.woovictory.liiv_live.util.CustomScrollView
+                android:id="@+id/custom_scroll_view"
                 android:scrollbars="none"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -36,8 +47,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-
-
 
 
                 <RelativeLayout
@@ -709,7 +718,7 @@
             </LinearLayout>
 
 
-        </ScrollView>
+        </app.woovictory.liiv_live.util.CustomScrollView>
     </LinearLayout>
 
 

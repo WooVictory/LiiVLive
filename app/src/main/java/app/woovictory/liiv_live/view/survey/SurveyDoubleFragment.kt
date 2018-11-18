@@ -38,7 +38,6 @@ class SurveyDoubleFragment: Fragment() {
         when(args){
             "1"->{
                 //view.parent_radio_group.removeView(view.option5)
-                toast("11일?")
                 view.double_option1.text = "예"
                 view.double_option2.text = "아니오"
             }
