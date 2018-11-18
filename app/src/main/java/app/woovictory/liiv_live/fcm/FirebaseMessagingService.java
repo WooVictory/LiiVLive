@@ -40,7 +40,6 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 //        sendPushNotification(remoteMessage.getData().get("message"));
 //        Log.v("123456", getApplicationContext().getClass().getSimpleName().trim());
 
-        Log.v("TAG",  remoteMessage.getNotification().getTitle().toString());
         // 설문 푸시일 경우
         if(remoteMessage.getNotification().getTitle().equals("설문푸시")){
             // ### 논리처리 설문 푸시

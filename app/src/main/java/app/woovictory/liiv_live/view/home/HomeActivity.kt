@@ -17,12 +17,10 @@ import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.R
-import app.woovictory.liiv_live.view.popup.SOSPopupActivity
 import app.woovictory.liiv_live.adapter.HomeFragmentAdapter
 import app.woovictory.liiv_live.adapter.NaviAdapter
 import app.woovictory.liiv_live.db.SharedPreferenceController
 import app.woovictory.liiv_live.db.pointItemDataList
-import app.woovictory.liiv_live.view.ExamActivity
 import app.woovictory.liiv_live.view.check.CheckActivity
 import app.woovictory.liiv_live.view.coupon.CouponShopActivity
 import app.woovictory.liiv_live.view.exchange.ExchageActivity
@@ -41,13 +39,13 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.content_home.*
-import kotlinx.android.synthetic.main.nav_header_home.*
 import kotlinx.android.synthetic.main.sliding_layout.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -56,7 +54,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             checkLayout -> startActivity<CheckActivity>()
             quizLayout -> startActivity<QuizReviewActivity>()
             surveyLayout -> startActivity<SurveyActivity>()
-            goToDetailStockBtn -> startActivity<StockAndFundActivity>()
             slide_up_btn -> {
                 if (!click_flag) {
                     click_flag = true
@@ -188,6 +185,18 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         getSupportActionBar()!!.setDisplayShowTitleEnabled(false)
         getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
         init()
+
+        val random = Random()
+        val num = random.nextInt(2)
+        redrawHomeAct(num)
+
+        goToDetailStockBtn.setOnClickListener {
+            if(num == 0){
+                startActivity<CouponShopActivity>()
+            }else{
+                startActivity<StockAndFundActivity>()
+            }
+        }
 
         // 네비게이션 바 쉐어드에서 이름 꺼내와서 달기.
         var nickname : String = SharedPreferenceController.getMyNick(this@HomeActivity)
@@ -393,7 +402,40 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
             }
         })
+    }
 
+    fun redrawHomeAct(flag : Int){
+        if(flag == 0)
+        {
+            sliding_text_one.text = "쿠폰샵"
+            two_tv.text = "에서"
+            three_tv.text = "다양한 상품"
+            four_tv.text = "을 구입해보세요!"
+            five_tv.text = "편의점부터 브랜드샵까지!"
 
+            six_icon.setImageResource(R.drawable.coupon_shop_coupon_icon)
+            seven_tv.text = "쿠폰샵 BEST 상품"
+            eight_iv.setImageResource(R.drawable.starbucks_americano)
+            eight_tv.text = "스타벅스 아메..."
+            nine_iv.setImageResource(R.drawable.lotte_pepero)
+            nine_tv.text = "롯데)빼빼로"
+            ten_iv.setImageResource(R.drawable.ediya_cafe_latte)
+            ten_tv.text = "이디야 카페라.."
+        }else{
+            sliding_text_one.text = "포인트리"
+            two_tv.text = "를 이용해"
+            three_tv.text = "작은 주식"
+            four_tv.text = "을 시작해보세요!"
+            five_tv.text = "편의점부터 브랜드샵까지!"
+
+            six_icon.setImageResource(R.drawable.main_slide_best_pointree_icon)
+            seven_tv.text = "BEST 포인트리 주식"
+            eight_iv.setImageResource(R.drawable.home_slide_stock_kb)
+            eight_tv.text = "KB"
+            nine_iv.setImageResource(R.drawable.home_slide_stock_seoul_auction)
+            nine_tv.text = "서울옥션"
+            ten_iv.setImageResource(R.drawable.home_slide_stock_google)
+            ten_tv.text = "구글"
+        }
     }
 }
