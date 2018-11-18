@@ -192,7 +192,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // 네비게이션 바 쉐어드에서 이름 꺼내와서 달기.
         var nickname : String = SharedPreferenceController.getMyNick(this@HomeActivity)
         Log.v("woo 1155 : ", nickname.toString())
-        nick.text = nickname
+        //nick.text = nickname
 
 
 

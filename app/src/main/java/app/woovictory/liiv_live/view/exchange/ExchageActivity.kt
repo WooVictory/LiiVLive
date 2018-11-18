@@ -25,7 +25,7 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
         when (v!!) {
             exchangeCompleteBtn -> {
 
-                pointItemDataList.addPointItemData("환전하기",money,"차감")
+                pointItemDataList.addPointItemData("환전하기",-money,"차감")
                 SharedPreferenceController.setMyPoint(this,
                     SharedPreferenceController.getMyPoint(this@ExchageActivity)-money)
                 var exchange_dialog = ExchangeDialog(this)
@@ -62,17 +62,17 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
             exchangeXBtn -> finish()
             exchange_chen -> {
                 exchange_will_use_pointree.setText("1,000 P")
-                money = -1000
+                money = 1000
 
             }
             exchange_ten_man -> {
                 exchange_will_use_pointree.setText("100,000 P")
-                money = -100000
+                money = 100000
             }
             exchange_man -> {
                 exchange_will_use_pointree.setText("10,000 P")
-                money = -10000
-                pointItemDataList.addPointItemData("환전하기",-10000,"차감")
+                money = 10000
+
             }
             exchange_stock_layout1->{
                 if(!exchange_stock_layout1.isSelected){
@@ -88,9 +88,30 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
 
             }
             exchange_stock_layout2->{
+                if(!exchange_stock_layout2.isSelected){
+                    exchange_stock_layout2.isSelected = true
+                    exchange_stock_layout2.background.setColorFilter(ContextCompat.getColor(this, R.color.mainColor),
+                        PorterDuff.Mode.SRC_IN)
+                    exchange_stock_layout1.isSelected = false
+                    exchange_stock_layout3.isSelected = false
+                }else{
+                    exchange_stock_layout2.isSelected = false
+                    exchange_stock_layout2.background = getDrawable(R.drawable.border_button_templete)
+                }
 
             }
-            exchange_stock_layout3->{}
+            exchange_stock_layout3->{
+                if(!exchange_stock_layout3.isSelected){
+                    exchange_stock_layout3.isSelected = true
+                    exchange_stock_layout3.background.setColorFilter(ContextCompat.getColor(this, R.color.mainColor),
+                        PorterDuff.Mode.SRC_IN)
+                    exchange_stock_layout1.isSelected = false
+                    exchange_stock_layout2.isSelected = false
+                }else{
+                    exchange_stock_layout3.isSelected = false
+                    exchange_stock_layout3.background = getDrawable(R.drawable.border_button_templete)
+                }
+            }
 
         }
     }
@@ -101,7 +122,7 @@ class ExchageActivity : AppCompatActivity(), View.OnClickListener {
             PorterDuff.Mode.SRC_IN
         )*/
         //setBackgroundColor(ContextCompat.getColor(this, R.color.mainColor))
-        exchange_stock_text.setTextColor(ContextCompat.getColor(this, R.color.white))
+        //  exchange_stock_text.setTextColor(ContextCompat.getColor(this, R.color.white))
 
         exchangeCompleteBtn.setOnClickListener(this)
         exchangeXBtn.setOnClickListener(this)
