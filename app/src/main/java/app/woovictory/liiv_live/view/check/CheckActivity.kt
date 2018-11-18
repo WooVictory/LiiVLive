@@ -12,6 +12,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.Window
 import app.woovictory.liiv_live.R
+import app.woovictory.liiv_live.db.pointItemDataList
 import app.woovictory.liiv_live.util.dialog.CheckCompleteDialog
 import kotlinx.android.synthetic.main.activity_check.*
 
@@ -26,6 +27,7 @@ class CheckActivity : AppCompatActivity(), View.OnClickListener {
                     check_okay_btn.background.setColorFilter(ContextCompat.getColor(this, R.color.viewColor),PorterDuff.Mode.SRC_IN)
                     check_okay_btn.isClickable = false
                     check_btn_text.text = "출석 완료"
+                    pointItemDataList.check_flag = 1
 
                     var check_dialog = CheckCompleteDialog(this@CheckActivity)
                     check_dialog.setCanceledOnTouchOutside(false)
@@ -57,6 +59,13 @@ class CheckActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check)
+
+        if(pointItemDataList.check_flag == 1){
+            check_calendar_image.setImageResource(R.drawable.calendar_checked)
+            check_okay_btn.background.setColorFilter(ContextCompat.getColor(this, R.color.viewColor),PorterDuff.Mode.SRC_IN)
+            check_okay_btn.isClickable = false
+            check_btn_text.text = "출석 완료"
+        }
 
         check_back_btn.setOnClickListener(this)
         check_okay_btn.setOnClickListener(this)

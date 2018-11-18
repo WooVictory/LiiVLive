@@ -94,7 +94,7 @@
                         android:layout_marginTop="-10dp"
                         android:layout_width="match_parent"
                         android:background="@drawable/stock_illust_img"
-                        android:layout_height="183dp"/>
+                        android:layout_height="wrap_content"/>
 
 
             </RelativeLayout>
@@ -144,7 +144,7 @@
                         android:fontFamily="@font/nanumsquareextrabold"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="2sp"
-                        tools:text="01"
+                        android:text="01"
                 />
 
                 <RelativeLayout
@@ -212,7 +212,7 @@
                         android:fontFamily="@font/nanumsquareextrabold"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="2sp"
-                        tools:text="02"
+                        android:text="02"
                 />
 
                 <RelativeLayout
@@ -277,7 +277,7 @@
                         android:fontFamily="@font/nanumsquareextrabold"
                         android:includeFontPadding="false"
                         android:lineSpacingExtra="2sp"
-                        tools:text="03"
+                        android:text="03"
                 />
 
                 <RelativeLayout
@@ -470,7 +470,7 @@
                                 android:layout_alignParentRight="true"
                                 android:lineSpacingExtra="1sp"
                                 android:gravity="end"
-                                tools:text="2.18 %"
+                                android:text="2.18 %"
                         />
 
 
@@ -593,7 +593,7 @@
                                 android:layout_alignParentRight="true"
                                 android:lineSpacingExtra="1sp"
                                 android:gravity="end"
-                                tools:text="2.18 %"
+                                android:text="2.18 %"
                         />
 
 
@@ -716,7 +716,7 @@
                                 android:layout_alignParentRight="true"
                                 android:lineSpacingExtra="1sp"
                                 android:gravity="end"
-                                tools:text="2.18 %"
+                                android:text="2.18 %"
                         />
 
 
@@ -839,7 +839,7 @@
                                 android:layout_alignParentRight="true"
                                 android:lineSpacingExtra="1sp"
                                 android:gravity="end"
-                                tools:text="2.18 %"
+                                android:text="2.18 %"
                         />
 
 
@@ -962,7 +962,7 @@
                                 android:layout_alignParentRight="true"
                                 android:lineSpacingExtra="1sp"
                                 android:gravity="end"
-                                tools:text="2.18 %"
+                                android:text="2.18 %"
                         />
 
 

@@ -15,7 +15,7 @@
         <RadioButton
                 android:background="@drawable/ripple_survey"
                 android:layout_marginLeft="13dp"
-                android:id="@+id/option1"
+                android:id="@+id/double_option1"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:buttonTint="@color/mainColor"
@@ -30,7 +30,7 @@
                 android:layout_height="1dp"/>
 
         <RadioButton
-                android:id="@+id/option2"
+                android:id="@+id/double_option2"
                 android:layout_marginLeft="13dp"
                 android:layout_width="match_parent"
                 android:buttonTint="@color/mainColor"

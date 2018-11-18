@@ -81,23 +81,26 @@ class SurveyFragment : Fragment() {
         view.option1.setOnClickListener(radioButtonClickListener)
 
         when(args){
-            "1"->{
-                view.parent_radio_group.removeView(view.option5)
-                //view.option5.visibility = View.GONE
-                //view.option1.text = "바뀐거니? 1"
-                toast("11일?")
-            }
-            "2"->{
-
-            }
             "3"->{
-
+                view.option1.text = "오프라인 딜러"
+                view.option2.text = "중고차 전시장"
+                view.option3.text = "온라인 웹사이트"
+                view.option4.text = "어플리케이션"
+                view.option5.text = "기타"
             }
             "4"->{
-
+                view.option1.text = "가격 책정"
+                view.option2.text = "중고차 전시장"
+                view.option3.text = "복잡한 서류절차"
+                view.option4.text = "어플리케이션"
+                view.option5.text = "기타"
             }
             "5"->{
-
+                view.option1.text = "매우만"
+                view.option2.text = "중고차 전시장"
+                view.option3.text = "온라인 웹사이트"
+                view.option4.text = "어플리케이션"
+                view.option5.text = "기타"
             }
             "6"->{
                 view.option1.text = "6번의 1번 답지"

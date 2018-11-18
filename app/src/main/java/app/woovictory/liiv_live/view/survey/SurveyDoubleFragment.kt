@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import app.woovictory.liiv_live.R
 import kotlinx.android.synthetic.main.fragment_survey.view.*
+import kotlinx.android.synthetic.main.fragment_survey_double.view.*
 import org.jetbrains.anko.support.v4.toast
 
 /**
@@ -38,9 +39,12 @@ class SurveyDoubleFragment: Fragment() {
             "1"->{
                 //view.parent_radio_group.removeView(view.option5)
                 toast("11일?")
+                view.double_option1.text = "예"
+                view.double_option2.text = "아니오"
             }
             "2"->{
-
+                view.double_option1.text = "예"
+                view.double_option2.text = "아니오"
             }
         }
     }
