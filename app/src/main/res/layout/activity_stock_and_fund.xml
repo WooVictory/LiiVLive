@@ -172,7 +172,7 @@
                             android:includeFontPadding="false"
                             android:textColor="#757575"
                             android:lineSpacingExtra="2sp"
-                            android:text="카카오톡"
+                            android:text="KB금융"
                     />
 
                     <TextView
@@ -184,7 +184,7 @@
                             android:textSize="12sp"
                             android:textColor="#757575"
                             android:lineSpacingExtra="1sp"
-                            android:text="카카오톡 주식 설명 설명 등"
+                            android:text="금융생활은 역시 KB금융"
                     />
 
                 </LinearLayout>
@@ -240,7 +240,7 @@
                             android:includeFontPadding="false"
                             android:textColor="#757575"
                             android:lineSpacingExtra="2sp"
-                            android:text="카카오톡"
+                            android:text="서울옥션"
                     />
 
                     <TextView
@@ -252,7 +252,7 @@
                             android:textSize="12sp"
                             android:textColor="#757575"
                             android:lineSpacingExtra="1sp"
-                            android:text="카카오톡 주식 설명 설명 등"
+                            android:text="중소형주 추천종목을 확인해보세요"
                     />
 
                 </LinearLayout>
@@ -305,7 +305,7 @@
                             android:includeFontPadding="false"
                             android:textColor="#757575"
                             android:lineSpacingExtra="2sp"
-                            android:text="카카오톡"
+                            android:text="구글"
                     />
 
                     <TextView
@@ -317,7 +317,7 @@
                             android:textSize="12sp"
                             android:textColor="#757575"
                             android:lineSpacingExtra="1sp"
-                            android:text="카카오톡 주식 설명 설명 등"
+                            android:text="포인트리로 해외주식을 시작해보세요"
                     />
 
                 </LinearLayout>
@@ -376,108 +376,86 @@
                         android:textSize="16sp"
                         android:textColor="#757575"
                         android:lineSpacingExtra="2sp"
-                        android:text="카카오톡"
+                        android:text="KB금융"
                 />
 
-                <LinearLayout
-                        android:id="@+id/research_one_layout"
-                        android:layout_alignParentRight="true"
+
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+                        android:layout_centerInParent="true"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="       47,100"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
                     <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:id="@+id/research_up_text_one"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="#e8312f"
-                                android:lineSpacingExtra="2sp"
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:gravity="end"
-                                android:text="70,200"
-                        />
-
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/research_recomm_center_box_tv_one"
+                            android:layout_alignTop="@+id/research_recomm_center_box_tv_one"
+                            android:layout_alignBottom="@+id/research_recomm_center_box_tv_one"
+                            android:layout_marginLeft="16dp">
                         <ImageView
-                                android:layout_marginLeft="16dp"
-                                android:id="@+id/up_image_one"
+                                android:id="@+id/research_recomm_center_iv_one"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"
                                 android:layout_centerVertical="true"
-                                android:layout_toRightOf="@+id/research_up_text_one"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/stock_red_arrow_img"/>
-
-                        <TextView
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:layout_marginLeft="72.5dp"
-                                android:layout_toRightOf="@+id/up_image_one"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="#e8312f"
-                                android:lineSpacingExtra="2sp"
-                                android:gravity="end"
-                                android:text="1500"
                         />
-
-
                     </RelativeLayout>
 
-                </LinearLayout>
 
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_one_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="753,419"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_center_box_tv_one"
+                            android:layout_below="@+id/research_recomm_center_box_tv_one"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
 
-                <LinearLayout
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentRight="true"
+                </RelativeLayout>
+
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:orientation="vertical">
-
-                    <RelativeLayout
-                            android:layout_marginLeft="217dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_one"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"
-                                android:textColor="#757575"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:text="111,624"
-                        />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:textSize="12sp"
-                                android:textColor="#e8312f"
-                                android:layout_alignParentRight="true"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:text="2.18 %"
-                        />
+                            android:layout_height="wrap_content"
+                            android:text="       100"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
 
-                    </RelativeLayout>
 
-                </LinearLayout>
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_one_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0.31 %"
+                            android:textColor="@color/redColor"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_right_box_tv_one"
+                            android:layout_below="@+id/research_recomm_right_box_tv_one"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
 
+                </RelativeLayout>
 
             </RelativeLayout>
             <View
@@ -499,108 +477,85 @@
                         android:textSize="16sp"
                         android:textColor="#757575"
                         android:lineSpacingExtra="2sp"
-                        android:text="카카오톡"
+                        android:text="두산인프라코어"
                 />
 
-                <LinearLayout
-                        android:id="@+id/research_two_layout"
-                        android:layout_alignParentRight="true"
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+                        android:layout_centerInParent="true"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="          8,340"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
                     <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:id="@+id/research_up_text_two"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/blueColor"
-                                android:lineSpacingExtra="2sp"
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:gravity="end"
-                                android:text="23,650"
-                        />
-
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/research_recomm_center_box_tv_two"
+                            android:layout_alignTop="@+id/research_recomm_center_box_tv_two"
+                            android:layout_alignBottom="@+id/research_recomm_center_box_tv_two"
+                            android:layout_marginLeft="16dp">
                         <ImageView
-                                android:layout_marginLeft="16dp"
-                                android:id="@+id/up_image_two"
+                                android:id="@+id/research_recomm_center_iv_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"
                                 android:layout_centerVertical="true"
-                                android:layout_toRightOf="@+id/research_up_text_two"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/stock_blue_arrow_img"/>
-
-                        <TextView
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:layout_marginLeft="72.5dp"
-                                android:layout_toRightOf="@+id/up_image_two"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/blueColor"
-                                android:lineSpacingExtra="2sp"
-                                android:gravity="end"
-                                android:text="1000"
                         />
-
-
                     </RelativeLayout>
 
-                </LinearLayout>
 
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_two_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="1,237,282"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_center_box_tv_two"
+                            android:layout_below="@+id/research_recomm_center_box_tv_two"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
 
-                <LinearLayout
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentRight="true"
+                </RelativeLayout>
+
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:orientation="vertical">
-
-                    <RelativeLayout
-                            android:layout_marginLeft="217dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_two"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"
-                                android:textColor="#757575"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:text="111,624"
-                        />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:textSize="12sp"
-                                android:textColor="@color/blueColor"
-                                android:layout_alignParentRight="true"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:text="2.18 %"
-                        />
+                            android:layout_height="wrap_content"
+                            android:text="       50"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
 
-                    </RelativeLayout>
 
-                </LinearLayout>
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_two_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0.42 %"
+                            android:textColor="@color/redColor"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_right_box_tv_two"
+                            android:layout_below="@+id/research_recomm_right_box_tv_two"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
 
+                </RelativeLayout>
 
             </RelativeLayout>
             <View
@@ -622,107 +577,85 @@
                         android:textSize="16sp"
                         android:textColor="#757575"
                         android:lineSpacingExtra="2sp"
-                        android:text="카카오톡"
+                        android:text="대한해운"
                 />
 
-                <LinearLayout
-                        android:id="@+id/research_three_layout"
-                        android:layout_alignParentRight="true"
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+                        android:layout_centerInParent="true"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_three"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="        22,300"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
                     <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:id="@+id/research_up_text_three"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="#e8312f"
-                                android:lineSpacingExtra="2sp"
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:gravity="end"
-                                android:text="70,200"
-                        />
-
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/research_recomm_center_box_tv_three"
+                            android:layout_alignTop="@+id/research_recomm_center_box_tv_three"
+                            android:layout_alignBottom="@+id/research_recomm_center_box_tv_three"
+                            android:layout_marginLeft="16dp">
                         <ImageView
-                                android:layout_marginLeft="16dp"
-                                android:id="@+id/up_image_three"
+                                android:id="@+id/research_recomm_center_iv_three"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"
                                 android:layout_centerVertical="true"
-                                android:layout_toRightOf="@+id/research_up_text_three"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/stock_red_arrow_img"/>
-
-                        <TextView
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:layout_marginLeft="72.5dp"
-                                android:layout_toRightOf="@+id/up_image_three"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="#e8312f"
-                                android:lineSpacingExtra="2sp"
-                                android:gravity="end"
-                                android:text="1500"
                         />
-
-
                     </RelativeLayout>
 
-                </LinearLayout>
 
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_three_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="132,695"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_center_box_tv_three"
+                            android:layout_below="@+id/research_recomm_center_box_tv_three"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
 
-                <LinearLayout
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentRight="true"
+                </RelativeLayout>
+
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:orientation="vertical">
-
-                    <RelativeLayout
-                            android:layout_marginLeft="217dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_three"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"
-                                android:textColor="#757575"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:text="111,624"
-                        />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:textSize="12sp"
-                                android:textColor="#e8312f"
-                                android:layout_alignParentRight="true"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:text="2.18 %"
-                        />
+                            android:layout_height="wrap_content"
+                            android:text="       450"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
 
-                    </RelativeLayout>
 
-                </LinearLayout>
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_three_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="2.15 %"
+                            android:textColor="@color/redColor"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_right_box_tv_three"
+                            android:layout_below="@+id/research_recomm_right_box_tv_three"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
+
+                </RelativeLayout>
 
 
             </RelativeLayout>
@@ -745,107 +678,84 @@
                         android:textSize="16sp"
                         android:textColor="#757575"
                         android:lineSpacingExtra="2sp"
-                        android:text="카카오톡"
+                        android:text="브레인콘텐츠"
                 />
-
-                <LinearLayout
-                        android:id="@+id/research_four_layout"
-                        android:layout_alignParentRight="true"
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+                        android:layout_centerInParent="true"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="              945"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
                     <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:id="@+id/research_up_text_four"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="#e8312f"
-                                android:lineSpacingExtra="2sp"
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:gravity="end"
-                                android:text="70,200"
-                        />
-
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/research_recomm_center_box_tv_four"
+                            android:layout_alignTop="@+id/research_recomm_center_box_tv_four"
+                            android:layout_alignBottom="@+id/research_recomm_center_box_tv_four"
+                            android:layout_marginLeft="16dp">
                         <ImageView
-                                android:layout_marginLeft="16dp"
-                                android:id="@+id/up_image_four"
+                                android:id="@+id/research_recomm_center_iv_four"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_red_arrow_img"
                                 android:layout_centerVertical="true"
-                                android:layout_toRightOf="@+id/research_up_text_four"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/stock_red_arrow_img"/>
-
-                        <TextView
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:layout_marginLeft="72.5dp"
-                                android:layout_toRightOf="@+id/up_image_four"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="#e8312f"
-                                android:lineSpacingExtra="2sp"
-                                android:gravity="end"
-                                android:text="1500"
                         />
-
-
                     </RelativeLayout>
 
-                </LinearLayout>
 
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_four_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="1,948,760"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_center_box_tv_four"
+                            android:layout_below="@+id/research_recomm_center_box_tv_four"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
 
-                <LinearLayout
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentRight="true"
+                </RelativeLayout>
+
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:orientation="vertical">
-
-                    <RelativeLayout
-                            android:layout_marginLeft="217dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_four"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"
-                                android:textColor="#757575"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:text="111,624"
-                        />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:textSize="12sp"
-                                android:textColor="#e8312f"
-                                android:layout_alignParentRight="true"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:text="2.18 %"
-                        />
+                            android:layout_height="wrap_content"
+                            android:text="       31"
+                            android:textColor="@color/redColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
 
-                    </RelativeLayout>
 
-                </LinearLayout>
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_four_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="1.2 %"
+                            android:textColor="@color/redColor"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_right_box_tv_four"
+                            android:layout_below="@+id/research_recomm_right_box_tv_four"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
+
+                </RelativeLayout>
 
 
             </RelativeLayout>
@@ -868,107 +778,85 @@
                         android:textSize="16sp"
                         android:textColor="#757575"
                         android:lineSpacingExtra="2sp"
-                        android:text="카카오톡"
+                        android:text="서울옥션"
                 />
 
-                <LinearLayout
-                        android:id="@+id/research_five_layout"
-                        android:layout_alignParentRight="true"
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+                        android:layout_centerInParent="true"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="        13,650"
+                            android:textColor="@color/blueColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
                     <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:id="@+id/research_up_text_five"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/blueColor"
-                                android:lineSpacingExtra="2sp"
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:gravity="end"
-                                android:text="70,200"
-                        />
-
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/research_recomm_center_box_tv_5"
+                            android:layout_alignTop="@+id/research_recomm_center_box_tv_5"
+                            android:layout_alignBottom="@+id/research_recomm_center_box_tv_5"
+                            android:layout_marginLeft="16dp">
                         <ImageView
-                                android:layout_marginLeft="16dp"
-                                android:id="@+id/up_image_five"
+                                android:id="@+id/research_recomm_center_iv_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/stock_blue_arrow_img"
                                 android:layout_centerVertical="true"
-                                android:layout_toRightOf="@+id/research_up_text_five"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/stock_blue_arrow_img"/>
-
-                        <TextView
-                                android:fontFamily="@font/nanumsquarebold"
-                                android:includeFontPadding="false"
-                                android:layout_marginLeft="72.5dp"
-                                android:layout_toRightOf="@+id/up_image_five"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:textColor="@color/blueColor"
-                                android:lineSpacingExtra="2sp"
-                                android:gravity="end"
-                                android:text="1500"
                         />
-
-
                     </RelativeLayout>
 
-                </LinearLayout>
 
+                    <TextView
+                            android:id="@+id/research_recomm_center_box_tv_5_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="392,900"
+                            android:textColor="#757575"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_center_box_tv_5"
+                            android:layout_below="@+id/research_recomm_center_box_tv_5"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
 
-                <LinearLayout
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="10dp"
-                        android:layout_alignParentRight="true"
+                </RelativeLayout>
+
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="14dp"
-                        android:orientation="vertical">
-
-                    <RelativeLayout
-                            android:layout_marginLeft="217dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                >
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_5"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="12sp"
-                                android:textColor="#757575"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:text="111,624"
-                        />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanumsquareregular"
-                                android:includeFontPadding="false"
-                                android:textSize="12sp"
-                                android:textColor="@color/blueColor"
-                                android:layout_alignParentRight="true"
-                                android:lineSpacingExtra="1sp"
-                                android:gravity="end"
-                                android:text="2.18 %"
-                        />
+                            android:layout_height="wrap_content"
+                            android:text="         50"
+                            android:textColor="@color/blueColor"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/nanumsquarebold"/>
 
 
-                    </RelativeLayout>
 
-                </LinearLayout>
+                    <TextView
+                            android:id="@+id/research_recomm_right_box_tv_5_below"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="- 1.25 %"
+                            android:textColor="@color/blueColor"
+                            android:textSize="12sp"
+                            android:layout_alignRight="@+id/research_recomm_right_box_tv_5"
+                            android:layout_below="@+id/research_recomm_right_box_tv_5"
+                            android:fontFamily="@font/nanumsquareregular"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="right"/>
+
+                </RelativeLayout>
 
 
             </RelativeLayout>

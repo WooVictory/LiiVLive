@@ -1,6 +1,5 @@
 package app.woovictory.liiv_live.fragment
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -13,11 +12,8 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import app.woovictory.liiv_live.R
-import app.woovictory.liiv_live.adapter.ChatAdapter
 import com.sendbird.android.*
-import kotlinx.android.synthetic.main.fragment_chatting.*
 import kotlinx.android.synthetic.main.fragment_chatting.view.*
-import org.jetbrains.anko.textColor
 
 /**
  * Created by VictoryWoo
@@ -72,18 +68,20 @@ class ChattingFragment : Fragment() {
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-                if (dy > 0) {
-                    // 스크롤 내리는 이벤트
-                    convertPartlyRVitemScrollDown()
-                } else {
-                    // 스크롤 올리는 이벤트
-                    convertPartlyRVitemScrollUp()
-                }
+//                if (dy > 0) {
+//                    // 스크롤 내리는 이벤트
+//                    convertPartlyRVitemScrollDown()
+//                } else {
+//                    // 스크롤 올리는 이벤트
+//                    convertPartlyRVitemScrollUp()
+//                }
             }
 
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 if (mLayoutManager.findLastVisibleItemPosition() == mChatAdapter.itemCount - 1) {
                     mChatAdapter.loadPreviousMessages()
+//                    convertPartlyRVitemScrollUp()
+
                 }
 
             }
@@ -112,268 +110,268 @@ class ChattingFragment : Fragment() {
 
     }
 
-    fun convertPartlyRVitemScrollUp(){
-        // 스크롤 올리는 이벤트에 적용
-        if(mLayoutManager != null) {
-            var viewsIds = mLayoutManager.findLastCompletelyVisibleItemPosition()
-            if (viewsIds != 0 && viewsIds != 1 && viewsIds != 2 && viewsIds != 3 && viewsIds != 4 && viewsIds != 5 && viewsIds != 6) {
-
-                // 투명으로 변경해야할 항목
-                var viewsIds2 = mLayoutManager.findViewByPosition(viewsIds + 1)
-                var viewsIds3 = mLayoutManager.findViewByPosition(viewsIds)
-                var viewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 1)
-
-                // 투명값이 사라져야할 항목
-                var reverseViewsIds1 = mLayoutManager.findViewByPosition(viewsIds - 3)
-                var reverseViewsIds2 = mLayoutManager.findViewByPosition(viewsIds - 4)
-                var reverseViewsIds3 = mLayoutManager.findViewByPosition(viewsIds - 5)
-                var reverseViewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 6)
-                var reverseViewsIds5 = mLayoutManager.findViewByPosition(viewsIds - 7)
-                var reverseViewsIds6 = mLayoutManager.findViewByPosition(viewsIds - 8)
-                var reverseViewsIds7 = mLayoutManager.findViewByPosition(viewsIds - 9)
-                var reverseViewsIds8 = mLayoutManager.findViewByPosition(viewsIds - 10)
-                var reverseViewsIds9 = mLayoutManager.findViewByPosition(viewsIds - 11)
-                var reverseViewsIds10 = mLayoutManager.findViewByPosition(viewsIds - 12)
-
-                if (viewsIds2 != null) {
-                    var titleByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_name)
-                    var bodyByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_body)
-                    if (titleByviewsIds != null && bodyByviewsIds != null) {
-                        titleByviewsIds.textColor = Color.parseColor("#68ffffff")
-                        bodyByviewsIds.textColor = Color.parseColor("#68ffffff")
-                    }
-                }
-                if (viewsIds3 != null) {
-                    var titleByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_name)
-                    var bodyByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_body)
-                    if (titleByviewsIds != null && bodyByviewsIds != null) {
-                        titleByviewsIds.textColor = Color.parseColor("#84ffffff")
-                        bodyByviewsIds.textColor = Color.parseColor("#84ffffff")
-                    }
-                }
-                if (viewsIds4 != null) {
-                    var titleByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_name)
-                    var bodyByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_body)
-                    if (titleByviewsIds != null && bodyByviewsIds != null) {
-                        titleByviewsIds.textColor = Color.parseColor("#95ffffff")
-                        bodyByviewsIds.textColor = Color.parseColor("#95ffffff")
-                    }
-                }
-
-                // 투명값이 사라져야하는 항목
-                if (reverseViewsIds1 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds2 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds3 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds4 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds5 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds6 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds7 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds8 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds9 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds10 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds10!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds10!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-            }
-        }
-    }
-
-    fun convertPartlyRVitemScrollDown(){
-        // ScrollDown
-        if(mLayoutManager != null) {
-
-            // RecyclerView에 표시되는 Item중 최상단 Item
-            var viewsIds = mLayoutManager.findLastCompletelyVisibleItemPosition()
-
-            if (viewsIds != 0 && viewsIds != 1 && viewsIds != 2 && viewsIds != 3 && viewsIds != 4 && viewsIds != 5 && viewsIds != 6){
-
-                // 투명으로 바뀌어야하는 값
-                var viewsIds2 = mLayoutManager.findViewByPosition(viewsIds + 1)
-                var viewsIds3 = mLayoutManager.findViewByPosition(viewsIds)
-                var viewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 1)
-
-                // 투명에서 돌아와야하는 값
-                var reverseViewsIds1 = mLayoutManager.findViewByPosition(viewsIds - 3)
-                var reverseViewsIds2 = mLayoutManager.findViewByPosition(viewsIds - 4)
-                var reverseViewsIds3 = mLayoutManager.findViewByPosition(viewsIds - 5)
-                var reverseViewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 6)
-                var reverseViewsIds5 = mLayoutManager.findViewByPosition(viewsIds - 7)
-                var reverseViewsIds6 = mLayoutManager.findViewByPosition(viewsIds - 8)
-                var reverseViewsIds7 = mLayoutManager.findViewByPosition(viewsIds - 9)
-                var reverseViewsIds8 = mLayoutManager.findViewByPosition(viewsIds - 10)
-                var reverseViewsIds9 = mLayoutManager.findViewByPosition(viewsIds - 11)
-                var reverseViewsIds10 = mLayoutManager.findViewByPosition(viewsIds - 12)
-
-                // 투명해지는 처리
-                if (viewsIds2 != null) {
-                    var titleByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_name)
-                    var bodyByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_body)
-                    if (titleByviewsIds != null && bodyByviewsIds != null) {
-                        titleByviewsIds.textColor = Color.parseColor("#68ffffff")
-                        bodyByviewsIds.textColor = Color.parseColor("#68ffffff")
-                    }
-                }
-                if (viewsIds3 != null) {
-                    var titleByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_name)
-                    var bodyByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_body)
-                    if (titleByviewsIds != null && bodyByviewsIds != null) {
-                        titleByviewsIds.textColor = Color.parseColor("#84ffffff")
-                        bodyByviewsIds.textColor = Color.parseColor("#84ffffff")
-                    }
-                }
-                if (viewsIds4 != null) {
-                    var titleByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_name)
-                    var bodyByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_body)
-                    if (titleByviewsIds != null && bodyByviewsIds != null) {
-                        titleByviewsIds.textColor = Color.parseColor("#95ffffff")
-                        bodyByviewsIds.textColor = Color.parseColor("#95ffffff")
-                    }
-                }
-
-                // 투명값 사라지는 작업
-                if (reverseViewsIds1 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds2 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds3 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds4 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds5 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds6 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds7 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds8 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-                if (reverseViewsIds9 != null) {
-                    var reverseTitleByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_name)
-                    var reverseBodyByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_body)
-                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
-                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
-                    }
-                }
-            }
-
-        }
-    }
+//    fun convertPartlyRVitemScrollUp(){
+//        // 스크롤 올리는 이벤트에 적용
+//        if(mLayoutManager != null) {
+//            var viewsIds = mLayoutManager.findLastCompletelyVisibleItemPosition()
+//            if (viewsIds != 0 && viewsIds != 1 && viewsIds != 2 && viewsIds != 3 && viewsIds != 4 && viewsIds != 5 && viewsIds != 6) {
+//
+//                // 투명으로 변경해야할 항목
+//                var viewsIds2 = mLayoutManager.findViewByPosition(viewsIds + 1)
+//                var viewsIds3 = mLayoutManager.findViewByPosition(viewsIds)
+//                var viewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 1)
+//
+//                // 투명값이 사라져야할 항목
+//                var reverseViewsIds1 = mLayoutManager.findViewByPosition(viewsIds - 3)
+//                var reverseViewsIds2 = mLayoutManager.findViewByPosition(viewsIds - 4)
+//                var reverseViewsIds3 = mLayoutManager.findViewByPosition(viewsIds - 5)
+//                var reverseViewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 6)
+//                var reverseViewsIds5 = mLayoutManager.findViewByPosition(viewsIds - 7)
+//                var reverseViewsIds6 = mLayoutManager.findViewByPosition(viewsIds - 8)
+//                var reverseViewsIds7 = mLayoutManager.findViewByPosition(viewsIds - 9)
+//                var reverseViewsIds8 = mLayoutManager.findViewByPosition(viewsIds - 10)
+//                var reverseViewsIds9 = mLayoutManager.findViewByPosition(viewsIds - 11)
+//                var reverseViewsIds10 = mLayoutManager.findViewByPosition(viewsIds - 12)
+//
+//                if (viewsIds2 != null) {
+//                    var titleByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_name)
+//                    var bodyByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_body)
+//                    if (titleByviewsIds != null && bodyByviewsIds != null) {
+//                        titleByviewsIds.textColor = Color.parseColor("#68ffffff")
+//                        bodyByviewsIds.textColor = Color.parseColor("#68ffffff")
+//                    }
+//                }
+//                if (viewsIds3 != null) {
+//                    var titleByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_name)
+//                    var bodyByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_body)
+//                    if (titleByviewsIds != null && bodyByviewsIds != null) {
+//                        titleByviewsIds.textColor = Color.parseColor("#84ffffff")
+//                        bodyByviewsIds.textColor = Color.parseColor("#84ffffff")
+//                    }
+//                }
+//                if (viewsIds4 != null) {
+//                    var titleByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_name)
+//                    var bodyByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_body)
+//                    if (titleByviewsIds != null && bodyByviewsIds != null) {
+//                        titleByviewsIds.textColor = Color.parseColor("#95ffffff")
+//                        bodyByviewsIds.textColor = Color.parseColor("#95ffffff")
+//                    }
+//                }
+//
+//                // 투명값이 사라져야하는 항목
+//                if (reverseViewsIds1 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds2 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds3 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds4 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds5 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds6 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds7 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds8 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds9 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds10 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds10!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds10!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    fun convertPartlyRVitemScrollDown(){
+//        // ScrollDown
+//        if(mLayoutManager != null) {
+//
+//            // RecyclerView에 표시되는 Item중 최상단 Item
+//            var viewsIds = mLayoutManager.findLastCompletelyVisibleItemPosition()
+//
+//            if (viewsIds != 0 && viewsIds != 1 && viewsIds != 2 && viewsIds != 3 && viewsIds != 4 && viewsIds != 5 && viewsIds != 6){
+//
+//                // 투명으로 바뀌어야하는 값
+//                var viewsIds2 = mLayoutManager.findViewByPosition(viewsIds + 1)
+//                var viewsIds3 = mLayoutManager.findViewByPosition(viewsIds)
+//                var viewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 1)
+//
+//                // 투명에서 돌아와야하는 값
+//                var reverseViewsIds1 = mLayoutManager.findViewByPosition(viewsIds - 3)
+//                var reverseViewsIds2 = mLayoutManager.findViewByPosition(viewsIds - 4)
+//                var reverseViewsIds3 = mLayoutManager.findViewByPosition(viewsIds - 5)
+//                var reverseViewsIds4 = mLayoutManager.findViewByPosition(viewsIds - 6)
+//                var reverseViewsIds5 = mLayoutManager.findViewByPosition(viewsIds - 7)
+//                var reverseViewsIds6 = mLayoutManager.findViewByPosition(viewsIds - 8)
+//                var reverseViewsIds7 = mLayoutManager.findViewByPosition(viewsIds - 9)
+//                var reverseViewsIds8 = mLayoutManager.findViewByPosition(viewsIds - 10)
+//                var reverseViewsIds9 = mLayoutManager.findViewByPosition(viewsIds - 11)
+//                var reverseViewsIds10 = mLayoutManager.findViewByPosition(viewsIds - 12)
+//
+//                // 투명해지는 처리
+//                if (viewsIds2 != null) {
+//                    var titleByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_name)
+//                    var bodyByviewsIds: TextView = viewsIds2!!.findViewById(R.id.text_message_body)
+//                    if (titleByviewsIds != null && bodyByviewsIds != null) {
+//                        titleByviewsIds.textColor = Color.parseColor("#68ffffff")
+//                        bodyByviewsIds.textColor = Color.parseColor("#68ffffff")
+//                    }
+//                }
+//                if (viewsIds3 != null) {
+//                    var titleByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_name)
+//                    var bodyByviewsIds: TextView = viewsIds3!!.findViewById(R.id.text_message_body)
+//                    if (titleByviewsIds != null && bodyByviewsIds != null) {
+//                        titleByviewsIds.textColor = Color.parseColor("#84ffffff")
+//                        bodyByviewsIds.textColor = Color.parseColor("#84ffffff")
+//                    }
+//                }
+//                if (viewsIds4 != null) {
+//                    var titleByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_name)
+//                    var bodyByviewsIds: TextView = viewsIds4!!.findViewById(R.id.text_message_body)
+//                    if (titleByviewsIds != null && bodyByviewsIds != null) {
+//                        titleByviewsIds.textColor = Color.parseColor("#95ffffff")
+//                        bodyByviewsIds.textColor = Color.parseColor("#95ffffff")
+//                    }
+//                }
+//
+//                // 투명값 사라지는 작업
+//                if (reverseViewsIds1 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds1!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds2 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds2!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds3 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds3!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds4 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds4!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds5 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds5!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds6 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds6!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds7 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds7!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds8 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds8!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//                if (reverseViewsIds9 != null) {
+//                    var reverseTitleByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_name)
+//                    var reverseBodyByviewsIds: TextView = reverseViewsIds9!!.findViewById(R.id.text_message_body)
+//                    if (reverseTitleByviewsIds != null && reverseBodyByviewsIds != null) {
+//                        reverseTitleByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                        reverseBodyByviewsIds.textColor = Color.parseColor("#FFFFFF")
+//                    }
+//                }
+//            }
+//
+//        }
+//    }
 
     inner class ChatAdapter(channel: OpenChannel) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val VIEW_TYPE_MESSAGE_SENT = 1
