@@ -11,14 +11,13 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.Window
-import android.view.WindowManager
 import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.db.PointreeHistoryData
 import app.woovictory.liiv_live.db.SharedPreferenceController
 import app.woovictory.liiv_live.db.pointItemDataList
-import app.woovictory.liiv_live.util.dialoog.ExchangeDialog
+import app.woovictory.liiv_live.util.dialog.ExchangeDialog
 import kotlinx.android.synthetic.main.activity_exchage.*
 
 class ExchageActivity : AppCompatActivity(), View.OnClickListener {

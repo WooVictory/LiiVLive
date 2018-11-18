@@ -52,8 +52,8 @@ class QuizReviewActivity : AppCompatActivity(), View.OnClickListener {
 //        }
 
 
-        var snapHelper: SnapHelper = PagerSnapHelper()
-        snapHelper.attachToRecyclerView(quizReviewRvOne)
+/*        var snapHelper: SnapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(quizReviewRvOne)*/
 
         requestQuizReview(SharedPreferenceController.getMyId(applicationContext))
 //        quizReviewRvOne.setHasFixedSize(true)
@@ -96,7 +96,17 @@ class QuizReviewActivity : AppCompatActivity(), View.OnClickListener {
 
                     quizReviewTextThird.text = response!!.body()!!.data[2].date
 
+
+
+
+
+
+
+
+
                     reviewAdapterData1 = response.body()!!.data[0].quizData
+                    var snapHelper: SnapHelper = PagerSnapHelper()
+                    snapHelper.attachToRecyclerView(quizReviewRvOne)
                     quizReviewRvOne.setHasFixedSize(true)
                     var quizReviewAdapter1 = QuizReviewAdapter(reviewAdapterData1, applicationContext)
                     quizReviewRvOne.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
@@ -104,12 +114,16 @@ class QuizReviewActivity : AppCompatActivity(), View.OnClickListener {
 
                     reviewAdapterData2 = response.body()!!.data[1].quizData
                     quizReviewRvOne.setHasFixedSize(true)
+                    snapHelper = PagerSnapHelper()
+                    snapHelper.attachToRecyclerView(quizReviewRvTwo)
                     var quizReviewAdapter2 = QuizReviewAdapter(reviewAdapterData2, applicationContext)
                     quizReviewRvTwo.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
                     quizReviewRvTwo.adapter = quizReviewAdapter2
 
                     reviewAdapterData3 = response.body()!!.data[2].quizData
                     quizReviewRvOne.setHasFixedSize(true)
+                    snapHelper = PagerSnapHelper()
+                    snapHelper.attachToRecyclerView(quizReviewRvThree)
                     var quizReviewAdapter3 = QuizReviewAdapter(reviewAdapterData3, applicationContext)
                     quizReviewRvThree.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.HORIZONTAL, false)
                     quizReviewRvThree.adapter = quizReviewAdapter3

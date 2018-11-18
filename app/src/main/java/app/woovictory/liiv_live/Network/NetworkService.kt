@@ -1,10 +1,6 @@
 package app.woovictory.liiv_live.Network
 
-import app.woovictory.liiv_live.Get.GetMypageResponse
-import app.woovictory.liiv_live.Get.GetQuizAnswerReviewResponse
-import app.woovictory.liiv_live.Get.GetQuizAnswerResponse
-import app.woovictory.liiv_live.Get.GetQuizResponse
-import app.woovictory.liiv_live.Get.GetUserMainResponse
+import app.woovictory.liiv_live.Get.*
 import app.woovictory.liiv_live.Post.PostLoginResponse
 import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.Post.PostSignUpResponse
@@ -84,4 +80,9 @@ interface NetworkService {
     fun getQuizReview(
         @Path("userID") userID: String
     ): Call<GetQuizReviewResponse>
+
+    @GET("youtube/")
+    fun getYoutubeUrl(
+
+    ) : Call<getYoutubeResponse>
 }

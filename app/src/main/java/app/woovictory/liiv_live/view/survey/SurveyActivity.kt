@@ -4,11 +4,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.RelativeLayout
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.SurveyFragmentAdapter
+import app.woovictory.liiv_live.util.EnhancedWrapContentViewPager
 import app.woovictory.liiv_live.util.MeasureViewpager
 import kotlinx.android.synthetic.main.activity_survey.*
 import kotlinx.android.synthetic.main.content_home.*
@@ -38,7 +40,7 @@ class SurveyActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     lateinit var surveyFragmentAdapter: SurveyFragmentAdapter
-    lateinit var custom_vp : MeasureViewpager
+    lateinit var custom_vp : EnhancedWrapContentViewPager
     var survey_num_items = listOf<String>("Q. 1","Q. 2","Q. 2-1","Q. 3","Q. 4","Q. 5","Q. 6")
     var survey_items = listOf<String>("현재 본인의 차를 보유하고 계신가요?","중고차를 판매해 본 경험이 있나요?"
         ,"어떤 채널을 통해 판매하셨나요?","차를 판매할 때 가장 어려운 점이 무엇인가요?","기존에 판매한 중고차 채널에 대한 만족도는?"
@@ -47,7 +49,8 @@ class SurveyActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_survey)
 
-        custom_vp = survey_viewpager
+        //custom_vp = survey_viewpager
+
         survey_x_btn.setOnClickListener(this)
 
         //addFragment(SurveyFragment.newInstance("1"))
@@ -58,6 +61,7 @@ class SurveyActivity : AppCompatActivity(), View.OnClickListener {
         * 처음에 통신을 먼저해서 질문 갯수를 받아와서 통신 함수 안에서 사이즈 받고
         * for문으로 생성해주고
         * */
+        //resize(0)
         surveyFragmentAdapter.addItem(SurveyDoubleFragment.newInstance("1"))
         surveyFragmentAdapter.addItem(SurveyDoubleFragment.newInstance("2"))
         //surveyFragmentAdapter.addItem(SurveyFragment.newInstance("1"))
@@ -66,14 +70,14 @@ class SurveyActivity : AppCompatActivity(), View.OnClickListener {
         surveyFragmentAdapter.addItem(SurveyFragment.newInstance("4"))
         surveyFragmentAdapter.addItem(SurveyFragment.newInstance("5"))
         surveyFragmentAdapter.addItem(SurveyFragment.newInstance("6"))
-        custom_vp.offscreenPageLimit = 6
+        survey_viewpager.offscreenPageLimit = 6
         survey_indicator.setItemMargin(10)
         survey_indicator.setAnimDuration(300)
         println("count는??"+surveyFragmentAdapter.count)
         survey_indicator.createDotPanel(surveyFragmentAdapter.count, R.drawable.dot_non, R.drawable.dot)
 
 
-        custom_vp.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        survey_viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
 
             }
@@ -85,6 +89,7 @@ class SurveyActivity : AppCompatActivity(), View.OnClickListener {
                 survey_indicator.selectDot(position)
                 survey_question_number.text = survey_num_items[position]
                 survey_question_title.text = survey_items[position]
+                survey_viewpager.reMeasureCurrentPage(survey_viewpager.currentItem)
                 //resize(position)
                 /*  when(position){
                       0->{
@@ -111,8 +116,8 @@ class SurveyActivity : AppCompatActivity(), View.OnClickListener {
 
         })
 
-        custom_vp.setCurrentItem(0)
-        custom_vp.adapter = surveyFragmentAdapter
+        survey_viewpager.setCurrentItem(0)
+        survey_viewpager.adapter = surveyFragmentAdapter
     }
 
     fun resize(position : Int){

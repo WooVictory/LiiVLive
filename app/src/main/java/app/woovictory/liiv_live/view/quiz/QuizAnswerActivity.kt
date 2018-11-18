@@ -13,9 +13,11 @@ import app.woovictory.liiv_live.Post.PostRefreshFcmTokenResponse
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.db.SharedPreferenceController
 import app.woovictory.liiv_live.db.pointItemDataList
+import app.woovictory.liiv_live.view.popup.LiveFinishPopUpActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_quiz.*
 import kotlinx.android.synthetic.main.activity_quiz_answer.*
+import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -116,7 +118,13 @@ class QuizAnswerActivity : AppCompatActivity() {
                     var handler = Handler()
                     handler.postDelayed({
                         finish()
+                        if(pointItemDataList.count == 3){
+                            startActivity<LiveFinishPopUpActivity>()
+                        }
                     },3000)
+
+
+
                 }
             }
 

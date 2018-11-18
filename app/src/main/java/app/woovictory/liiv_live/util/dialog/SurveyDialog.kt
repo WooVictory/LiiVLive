@@ -1,4 +1,4 @@
-package app.woovictory.liiv_live.util.dialoog
+package app.woovictory.liiv_live.util.dialog
 
 import android.app.Dialog
 import android.content.Context

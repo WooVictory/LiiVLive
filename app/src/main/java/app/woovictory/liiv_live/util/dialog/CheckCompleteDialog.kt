@@ -1,30 +1,31 @@
-package app.woovictory.liiv_live.util.dialoog
+package app.woovictory.liiv_live.util.dialog
 
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.View
 import app.woovictory.liiv_live.R
-import kotlinx.android.synthetic.main.custom_dialog_exchange_complete.*
+import kotlinx.android.synthetic.main.custom_check_dialog.*
 
 /**
  * Created by VictoryWoo
  */
-class ExchangeDialog(context: Context) : Dialog(context), View.OnClickListener {
+class CheckCompleteDialog(context: Context) : Dialog(context), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v!!) {
-            exchange_complete_x_button -> dismiss()
+            check_dialog_x_btn -> dismiss()
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(LAYOUT)
-        exchange_complete_x_button.setOnClickListener(this)
+        check_dialog_x_btn.setOnClickListener(this)
+
+
     }
 
     companion object {
-        private val LAYOUT = R.layout.custom_dialog_exchange_complete
+        private val LAYOUT = R.layout.custom_check_dialog
     }
-
 }

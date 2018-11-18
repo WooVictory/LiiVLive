@@ -15,6 +15,7 @@ import android.widget.Toast;
 import app.woovictory.liiv_live.R;
 import app.woovictory.liiv_live.db.pointItemDataList;
 import app.woovictory.liiv_live.view.login.LoginActivity;
+import app.woovictory.liiv_live.view.popup.LiveFinishPopUpActivity;
 import app.woovictory.liiv_live.view.popup.SOSPopupActivity;
 import app.woovictory.liiv_live.view.quiz.QuizActivity;
 import com.google.firebase.messaging.RemoteMessage;
@@ -66,14 +67,17 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
                     Log.v("TAG", "퀴즈 소진");
                 }else{
                     int count = pointItemDataList.INSTANCE.getCount();
+                    Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
+                    intent.putExtra("json", json);
+                    getApplicationContext().startActivity(intent);
                     if(count >= 3){
                         //Toast.makeText(getApplicationContext(), "3문제를 푸셨습니다.",Toast.LENGTH_LONG).show();
                         Log.v("woo 948","3문제를 푸셨습니당.");
                         pointItemDataList.INSTANCE.setCount(0);
+                        Intent intent2 = new Intent(getApplicationContext(), LiveFinishPopUpActivity.class);
+                        getApplicationContext().startActivity(intent2);
                     }else {
-                        Intent intent = new Intent(getApplicationContext(), QuizActivity.class);
-                        intent.putExtra("json", json);
-                        getApplicationContext().startActivity(intent);
+                        Log.v("woo 327","문제 아직 남았다.");
                     }
 
                 }

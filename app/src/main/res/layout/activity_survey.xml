@@ -81,7 +81,7 @@
     />
 
 
-    <app.woovictory.liiv_live.util.MeasureViewpager
+    <app.woovictory.liiv_live.util.WrapContentViewPager
             android:layout_below="@+id/survey_question_title"
             android:id="@+id/survey_viewpager"
             android:layout_marginHorizontal="16dp"

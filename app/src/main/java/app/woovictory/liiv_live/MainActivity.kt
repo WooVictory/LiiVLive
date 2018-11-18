@@ -2,16 +2,13 @@ package app.woovictory.liiv_live
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Toast
-import app.woovictory.liiv_live.util.dialoog.SurveyDialog
+import app.woovictory.liiv_live.util.dialog.SurveyDialog
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer

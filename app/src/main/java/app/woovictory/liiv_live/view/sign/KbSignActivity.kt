@@ -208,7 +208,7 @@ class KbSignActivity : AppCompatActivity(), View.OnClickListener {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         when (requestCode) {
             MY_PERMISSIONS_REQUEST_READ_EXT_STORAGE -> {
-                if (grantResults.size > 0 && grantResults[0] == -1) {
+                if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     val intent = Intent(Intent.ACTION_PICK)
                     intent.type = android.provider.MediaStore.Images.Media.CONTENT_TYPE
                     intent.data = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI

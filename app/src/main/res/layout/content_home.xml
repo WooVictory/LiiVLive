@@ -18,11 +18,10 @@
 
     <!--umanoPanelHeight : sliding panel이 얼만큼 올라올건지!-->
 
-    <ScrollView android:layout_width="match_parent" android:layout_height="626dp">
 
         <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="626dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/main_background_img">
 
             <android.support.v4.view.ViewPager
@@ -69,7 +68,6 @@
         </RelativeLayout>
 
 
-    </ScrollView>
 
 
     <include

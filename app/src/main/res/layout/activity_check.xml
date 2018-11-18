@@ -29,7 +29,7 @@
         />
 
         <RelativeLayout
-                android:id="@+id/check_x_btn"
+                android:id="@+id/check_back_btn"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
@@ -178,6 +178,7 @@
             android:background="@drawable/border_show_detail_btn_background">
 
         <TextView
+                android:id="@+id/check_btn_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"

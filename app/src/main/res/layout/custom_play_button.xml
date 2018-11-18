@@ -11,7 +11,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
-            android:background="@android:color/black"/>
+            android:background="@drawable/live_back_img"/>
     <!--
         <TextView
                 android:id="@+id/text_text1"
@@ -51,6 +51,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:fontFamily="@font/nanumsquarebold"
+                android:includeFontPadding="false"
                 android:textSize="13sp"
                 android:textColor="#ffffff"
                 android:lineSpacingExtra="12sp"

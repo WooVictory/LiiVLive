@@ -26,8 +26,8 @@ class CouponCoffeeActivity : AppCompatActivity(), View.OnClickListener{
 
         item_list = ArrayList()
 
-        for(i in 0..10)
-            item_list.add(CoffeeData(R.drawable.americano_img,"스타벅스","HOT) 아메리카노","4,100원"))
+
+        settingData()
 
         coffeeAdapter = CoffeeAdapter(item_list, this)
 
@@ -35,9 +35,19 @@ class CouponCoffeeActivity : AppCompatActivity(), View.OnClickListener{
         coffee_rv.layoutManager = GridLayoutManager(this, 2)
         coffee_rv.adapter = coffeeAdapter
 
-        val spanCount = 2 // 3 columns
-        val spacing = 25 // 50px
+        val spanCount = 2 // 2 columns
+        val spacing = 20 // 50px
         val includeEdge = true
         coffee_rv.addItemDecoration(GridSpacingItemDecoration(spanCount, spacing, includeEdge))
+    }
+    fun settingData(){
+        item_list.add(CoffeeData(R.drawable.americano_img,"스타벅스","HOT) 아메리카노","4,100원"))
+        item_list.add(CoffeeData(R.drawable.capuccino_img,"스타벅스","HOT) 카푸치","4,800원"))
+        item_list.add(CoffeeData(R.drawable.ice_americano_img,"스타벅스","ICE) 아메리카노","1,500원"))
+        item_list.add(CoffeeData(R.drawable.latte_img,"스타벅스","HOT) 라떼","4,500원"))
+        item_list.add(CoffeeData(R.drawable.americano_img,"스타벅스","HOT) 아메리카노","4,100원"))
+        item_list.add(CoffeeData(R.drawable.capuccino_img,"스타벅스","HOT) 카푸치","4,800원"))
+        item_list.add(CoffeeData(R.drawable.ice_americano_img,"스타벅스","ICE) 아메리카노","1,500원"))
+        item_list.add(CoffeeData(R.drawable.latte_img,"스타벅스","HOT) 라떼","4,500원"))
     }
 }
