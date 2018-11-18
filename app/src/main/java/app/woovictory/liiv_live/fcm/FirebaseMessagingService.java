@@ -11,13 +11,13 @@ import android.net.Uri;
 import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-import android.widget.Toast;
 import app.woovictory.liiv_live.R;
 import app.woovictory.liiv_live.db.pointItemDataList;
 import app.woovictory.liiv_live.view.login.LoginActivity;
 import app.woovictory.liiv_live.view.popup.LiveFinishPopUpActivity;
 import app.woovictory.liiv_live.view.popup.SOSPopupActivity;
 import app.woovictory.liiv_live.view.quiz.QuizActivity;
+import app.woovictory.liiv_live.view.quiz.QuizAnswerActivity;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.List;
@@ -49,6 +49,30 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 //        intent_.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);   // 이거 안해주면 안됨
             getApplicationContext().startActivity(intent_);
         }// 퀴즈 푸시일 경우
+        else if(remoteMessage.getNotification().getTitle().equals("퀴즈정답푸시")){
+            ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+            Log.v("TAG", "퀴즈정답푸시일경우 이쪽으로 들어옴1");
+
+//api level 21.. deprecated..
+
+            List<ActivityManager.RunningTaskInfo> list = manager.getRunningTasks(1);
+
+            ActivityManager.RunningTaskInfo info = list.get(0);
+
+            if (info.topActivity.getClassName().equals("app.woovictory.liiv_live.view.live.LiveActivity")){
+                String quiz_id = remoteMessage.getData().get("quiz_id");
+                String user_select_example_id = remoteMessage.getData().get("user_select_example_id");
+
+                Log.v("TAG", "퀴즈정답푸시일경우 이쪽으로 들어옴2");
+
+                Intent intent = new Intent(getApplicationContext(), QuizAnswerActivity.class);
+                intent.putExtra("quiz_id", quiz_id);
+                intent.putExtra("select_answer", user_select_example_id);
+                // 이거만해
+//                intent.putExtra("quiz_title", SharedPreferenceController.INSTANCE.getMyId(getApplicationContext()));
+                getApplicationContext().startActivity(intent);
+            }
+        }
         else{
             ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
 
@@ -79,7 +103,6 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
                     }else {
                         Log.v("woo 327","문제 아직 남았다.");
                     }
-
                 }
 
             } else {
@@ -88,7 +111,6 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
             }
 
             Log.v("TAG", info.topActivity.getClassName().toString());
-
         }
 
         Log.v("TAG","푸시들어옴");

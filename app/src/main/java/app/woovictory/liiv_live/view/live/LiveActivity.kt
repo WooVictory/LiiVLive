@@ -1,8 +1,7 @@
 package app.woovictory.liiv_live.view.live
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.ViewPager
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import app.woovictory.liiv_live.Get.getYoutubeResponse
 import app.woovictory.liiv_live.Network.ApplicationController
@@ -11,9 +10,7 @@ import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.adapter.LivePagerAdapter
 import app.woovictory.liiv_live.util.youtube.CustomPlayerUIController
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
-import kotlinx.android.synthetic.main.activity_exam.*
 import kotlinx.android.synthetic.main.activity_live.*
-import kotlinx.android.synthetic.main.content_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,26 +29,19 @@ class LiveActivity : AppCompatActivity() {
         live_vp.adapter = LivePagerAdapter(supportFragmentManager)
         live_vp.setCurrentItem(0)
 
-        live_indicator.setItemMargin(10)
-        live_indicator.setAnimDuration(300)
-        live_indicator.createDotPanel(2, R.drawable.dot_non, R.drawable.dot)
-
-        live_vp.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrollStateChanged(state: Int) {
-
-            }
-
-            override fun onPageSelected(position: Int) {
-                live_indicator.selectDot(position)
-
-
-            }
-
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-
-            }
-
-        })
+//        live_indicator.setItemMargin(10)
+//        live_indicator.setAnimDuration(300)
+//        live_indicator.createDotPanel(2, R.drawable.dot_non, R.drawable.dot)
+//
+//        live_vp.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+//            override fun onPageScrollStateChanged(state: Int) {
+//            }
+//            override fun onPageSelected(position: Int) {
+//                live_indicator.selectDot(position)
+//            }
+//            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+//            }
+//        })
 
 
     }

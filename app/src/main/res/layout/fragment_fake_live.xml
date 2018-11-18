@@ -5,9 +5,41 @@
         android:layout_height="match_parent"
         android:background="@android:color/transparent">
 
-    <TextView
+    <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="페이크 화면임"/>
+            android:orientation="horizontal"
+    android:layout_above="@+id/live_bottom_title"
+    android:layout_marginBottom="12dp"
+    android:layout_centerHorizontal="true">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_brightness_1_white_6dp"
+        />
+
+        <ImageView
+                android:layout_marginLeft="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_brightness_1_black_24dp"/>
+
+
+    </LinearLayout>
+    <TextView
+            android:id="@+id/live_bottom_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="#ffffff"
+            android:lineSpacingExtra="10sp"
+            android:fontFamily="@font/nanumsquarebold"
+            android:includeFontPadding="false"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="채팅을  보려면 왼쪽에서 오른쪽으로 밀어주세요!"
+            android:layout_marginBottom="31dp"
+    />
 
 </RelativeLayout>
