@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
         <TextView
-                android:id="@+id/nick"
+                android:id="@+id/nav_nick"
                 android:layout_alignParentLeft="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         />
 
         <TextView
-                android:layout_toRightOf="@+id/nick"
+                android:layout_toRightOf="@+id/nav_nick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"

@@ -868,6 +868,7 @@
                     android:background="@color/viewColor"/>
 
             <ImageView
+                    android:id="@+id/goStockStartBtn"
                     android:layout_marginTop="31dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"

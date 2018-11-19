@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
 import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
@@ -39,6 +40,7 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.content_home.*
+import kotlinx.android.synthetic.main.nav_header_home.*
 import kotlinx.android.synthetic.main.sliding_layout.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -199,9 +201,16 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         // 네비게이션 바 쉐어드에서 이름 꺼내와서 달기.
+
+        // activity_home의 navigation view를 참조해서
+        // 그 navigation view가 포함하고 있는 header_layout을 참조한다.
+        // 그리고 그 view를 homeHeaderView라는 변수로 받는다.
+        // 그리고 그 하위의 id를 참조한다.
+        var homeHeaderView : View = nav_view.getHeaderView(0)
+        var nav_nick = homeHeaderView.findViewById<TextView>(R.id.nav_nick)
         var nickname : String = SharedPreferenceController.getMyNick(this@HomeActivity)
         Log.v("woo 1155 : ", nickname.toString())
-        //nick.text = nickname
+        nav_nick.text = SharedPreferenceController.getMyNick(this@HomeActivity)
 
 
 
