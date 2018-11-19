@@ -114,6 +114,7 @@
             />
 
             <TextView
+                    android:id="@+id/posible_exchange_point"
                     android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -263,6 +264,8 @@
     />
 
     <EditText
+            android:hint="계좌번호를 입력해주세요."
+            android:fontFamily="@font/nanumsquareregular"
             android:theme="@style/Theme.App.Base"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -285,6 +288,8 @@
     />
 
     <EditText
+            android:hint="포인트리를 입력해주세요."
+            android:fontFamily="@font/nanumsquareregular"
             android:id="@+id/exchange_will_use_pointree"
             android:theme="@style/Theme.App.Base"
             android:layout_width="match_parent"

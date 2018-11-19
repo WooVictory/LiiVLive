@@ -42,7 +42,6 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.content_home.*
-import kotlinx.android.synthetic.main.nav_header_home.*
 import kotlinx.android.synthetic.main.sliding_layout.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -126,7 +125,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 //window.setLayout(1300, WindowManager.LayoutParams.WRAP_CONTENT)
             }
             topLayout -> startActivity<PointreeHistoryActivity>()
-            pointree_go_btn -> startActivity<PointreeHistoryActivity>()
+            pointree_go_btn -> startActivity<CouponShopActivity>()
             homeGoToMypageBtn -> startActivity<MypageActivity>()
             goToExchangeBtn -> startActivity<ExchageActivity>()
             goToCouponShopBtn -> startActivity<CouponShopActivity>()
@@ -182,7 +181,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onResume() {
         super.onResume()
-        mypage_ponitree.text = SharedPreferenceController.getMyPoint(this@HomeActivity).toString()
+        mypage_ponitree.text = SharedPreferenceController.getMyPoint(this@HomeActivity).toString() + " P"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -200,7 +199,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         redrawHomeAct(num)
 
 
-        mypage_ponitree.text = SharedPreferenceController.getMyPoint(this@HomeActivity).toString()
+        mypage_ponitree.text = SharedPreferenceController.getMyPoint(this@HomeActivity).toString() + " P"
 
         goToDetailStockBtn.setOnClickListener {
             if (num == 0) {
@@ -460,6 +459,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     // nickname : String
                     Log.v("TAG", response.body()!!.data.nickname)
                     home_nick.text = response.body()!!.data.nickname
+                    email_tv.text= SharedPreferenceController.getMyId(applicationContext)
                 }
             }
         })
@@ -476,11 +476,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             six_icon.setImageResource(R.drawable.coupon_shop_coupon_icon)
             seven_tv.text = "쿠폰샵 BEST 상품"
             eight_iv.setImageResource(R.drawable.starbucks_americano)
-            eight_tv.text = "스타벅스 아메..."
+            eight_tv.text = "스타벅스..."
             nine_iv.setImageResource(R.drawable.lotte_pepero)
             nine_tv.text = "롯데)빼빼로"
             ten_iv.setImageResource(R.drawable.ediya_cafe_latte)
-            ten_tv.text = "이디야 카페라.."
+            ten_tv.text = "이디야 카.."
         } else {
             sliding_text_one.text = "포인트리"
             two_tv.text = "를 이용해"

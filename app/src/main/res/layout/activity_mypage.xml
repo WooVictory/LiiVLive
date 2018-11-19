@@ -163,6 +163,7 @@
             android:layout_height="112dp">
 
         <RelativeLayout
+                android:id="@+id/check_rl"
                 android:elevation="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
@@ -208,7 +209,7 @@
                         android:lineSpacingExtra="1sp"
                         android:fontFamily="@font/nanumsquareregular"
                         android:includeFontPadding="false"
-                        android:text="출첵하면 3P를 드립니다!"
+                        android:text="출첵하면 30P를 드립니다!"
                 />
 
             </LinearLayout>

@@ -98,6 +98,7 @@ class ChattingFragment : Fragment() {
             override fun onMessageReceived(baseChannel: BaseChannel, baseMessage: BaseMessage) {
                 if (baseChannel.url == mChannelUrl && baseMessage is UserMessage) {
                     mChatAdapter.appendMessage(baseMessage)
+                    mRecyclerView.scrollToPosition(0)
                 }
             }
         })

@@ -3,7 +3,6 @@ package app.woovictory.liiv_live.view.quiz
 import android.graphics.PorterDuff
 import android.os.AsyncTask
 import android.os.Bundle
-import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -14,14 +13,8 @@ import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.db.SharedPreferenceController
-import app.woovictory.liiv_live.db.pointItemDataList
-import app.woovictory.liiv_live.view.popup.LiveFinishPopUpActivity
-import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_quiz.*
-import kotlinx.android.synthetic.main.activity_quiz_answer.*
-import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,7 +32,6 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                         quiz_id = data.question.id.toString()
                         select_answer = data.question_example[0].id.toString()
                         quiz_title = data.question.question
-                        toast("${quiz_id}, ${select_answer}")
 
                         var task = QuizTask()
                         task.execute(4)
@@ -48,6 +40,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
 
                     live_quiz_answer_one.background.setColorFilter(ContextCompat.getColor(this, R.color.mainColor),
                         PorterDuff.Mode.SRC_IN)
+                    live_quiz_answer_two.background = getDrawable(R.drawable.border_quiz_answer)
+                    live_quiz_answer_three.background = getDrawable(R.drawable.border_quiz_answer)
                 } else{
                     live_quiz_answer_one.isSelected = false
                     live_quiz_answer_one.background = getDrawable(R.drawable.border_quiz_answer)
@@ -60,7 +54,6 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                         quiz_id = data.question.id.toString()
                         select_answer = data.question_example[1].id.toString()
                         quiz_title = data.question.question
-                        toast("${quiz_id}, ${select_answer}")
 
                         var task = QuizTask()
                         task.execute(4)
@@ -68,6 +61,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                     }
                     live_quiz_answer_two.background.setColorFilter(ContextCompat.getColor(this, R.color.mainColor),
                         PorterDuff.Mode.SRC_IN)
+                    live_quiz_answer_one.background = getDrawable(R.drawable.border_quiz_answer)
+                    live_quiz_answer_three.background = getDrawable(R.drawable.border_quiz_answer)
                 }else{
                     live_quiz_answer_two.isSelected = false
                     live_quiz_answer_two.background = getDrawable(R.drawable.border_quiz_answer)
@@ -81,7 +76,6 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                         quiz_id = data.question.id.toString()
                         select_answer = data.question_example[2].id.toString()
                         quiz_title = data.question.question
-                        toast("${quiz_id}, ${select_answer}")
 
                         var task = QuizTask()
                         task.execute(4)
@@ -89,6 +83,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                     }
                     live_quiz_answer_three.background.setColorFilter(ContextCompat.getColor(this, R.color.mainColor),
                         PorterDuff.Mode.SRC_IN)
+                    live_quiz_answer_one.background = getDrawable(R.drawable.border_quiz_answer)
+                    live_quiz_answer_two.background = getDrawable(R.drawable.border_quiz_answer)
                 }else{
                     live_quiz_answer_three.isSelected = false
                     live_quiz_answer_three.background = getDrawable(R.drawable.border_quiz_answer)
