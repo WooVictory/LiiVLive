@@ -30,6 +30,10 @@ class CheckActivity : AppCompatActivity(), View.OnClickListener {
                     check_btn_text.text = "출석 완료"
                     pointItemDataList.check_flag = 1
 
+                    pointItemDataList.addPointItemData("출석체크",30,"획득")
+                    SharedPreferenceController.setMyPoint(this,
+                        SharedPreferenceController.getMyPoint(this@CheckActivity)+30)
+
                     var check_dialog = CheckCompleteDialog(this@CheckActivity)
                     check_dialog.setCanceledOnTouchOutside(false)
                     check_dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -47,7 +51,6 @@ class CheckActivity : AppCompatActivity(), View.OnClickListener {
                     // 이 값을 조정하고 bottom으로 해야지 정중앙으로 배치가 됨...
                     var y = (size.y * 0.6f).toInt()
                     window.setGravity(Gravity.BOTTOM)
-
 
                     window.setLayout(x, y)
                 }

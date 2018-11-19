@@ -11,7 +11,9 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.View
+import android.widget.ScrollView
 import android.widget.TextView
 import app.woovictory.liiv_live.Get.GetUserMainResponse
 import app.woovictory.liiv_live.Network.ApplicationController
@@ -56,24 +58,24 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             checkLayout -> startActivity<CheckActivity>()
             quizLayout -> startActivity<QuizReviewActivity>()
             surveyLayout -> startActivity<SurveyActivity>()
-            slide_up_btn -> {
-                if (!click_flag) {
-                    click_flag = true
-                    custom_scroll_view.setEnableScrolling(true)
-                } else {
-                    click_flag = false
-                    custom_scroll_view.setEnableScrolling(false)
-                }
-            }
-            sliding_tops -> {
-                if (!click_flag) {
-                    click_flag = true
-                    custom_scroll_view.setEnableScrolling(true)
-                } else {
-                    click_flag = false
-                    custom_scroll_view.setEnableScrolling(false)
-                }
-            }
+            /*  slide_up_btn -> {
+                  if (!click_flag) {
+                      click_flag = true
+                      custom_scroll_view.setEnableScrolling(true)
+                  } else {
+                      click_flag = false
+                      custom_scroll_view.setEnableScrolling(false)
+                  }
+              }
+              sliding_tops -> {
+                  if (!click_flag) {
+                      click_flag = true
+                      custom_scroll_view.setEnableScrolling(true)
+                  } else {
+                      click_flag = false
+                      custom_scroll_view.setEnableScrolling(false)
+                  }
+              }*/
             participantBtn -> {
                 //startActivity<MainActivity>()
 
@@ -178,6 +180,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     val APP_ID = "2A8C97EE-D8F7-473B-AEA5-B37A877DAB31"
     var click_flag: Boolean = false
 
+    override fun onResume() {
+        super.onResume()
+        mypage_ponitree.text = SharedPreferenceController.getMyPoint(this@HomeActivity).toString()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -192,10 +199,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val num = random.nextInt(2)
         redrawHomeAct(num)
 
+
+        mypage_ponitree.text = SharedPreferenceController.getMyPoint(this@HomeActivity).toString()
+
         goToDetailStockBtn.setOnClickListener {
-            if(num == 0){
+            if (num == 0) {
                 startActivity<CouponShopActivity>()
-            }else{
+            } else {
                 startActivity<StockAndFundActivity>()
             }
         }
@@ -206,14 +216,44 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // 그 navigation view가 포함하고 있는 header_layout을 참조한다.
         // 그리고 그 view를 homeHeaderView라는 변수로 받는다.
         // 그리고 그 하위의 id를 참조한다.
-        var homeHeaderView : View = nav_view.getHeaderView(0)
+        var homeHeaderView: View = nav_view.getHeaderView(0)
         var nav_nick = homeHeaderView.findViewById<TextView>(R.id.nav_nick)
-        var nickname : String = SharedPreferenceController.getMyNick(this@HomeActivity)
+        var nickname: String = SharedPreferenceController.getMyNick(this@HomeActivity)
         Log.v("woo 1155 : ", nickname.toString())
         nav_nick.text = SharedPreferenceController.getMyNick(this@HomeActivity)
 
 
+        Log.v("woo 1219 : ", sliding_up_panel_layout.panelState.toString())
 
+        sliding_up_panel_layout.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener {
+            override fun onPanelSlide(panel: View?, slideOffset: Float) {
+                Log.v("1330 offset : ", slideOffset.toString())
+                if(slideOffset == 1.0f){
+                    custom_scroll_view.setEnableScrolling(true)
+                }else{
+                    custom_scroll_view.setEnableScrolling(false)
+                }
+            }
+
+            override fun onPanelStateChanged(
+                panel: View?,
+                previousState: SlidingUpPanelLayout.PanelState?,
+                newState: SlidingUpPanelLayout.PanelState?
+            ) {
+                /*Log.v("woo 1229 : ", previousState!!.toString())
+                Log.v("woo 1220 : ", newState!!.toString())
+                if (previousState!!.toString() == "COLLAPSED" && newState!!.toString() =="DRAGGING")
+                    custom_scroll_view.setEnableScrolling(true)
+                else
+                    custom_scroll_view.setEnableScrolling(false)*/
+
+            }
+
+
+        })
+
+
+        // 유저 정보 받아오는 통신
         requestUserMain(SharedPreferenceController.getMyId(applicationContext))
         refreshFcmToekn(
             SharedPreferenceController.getMyId(applicationContext),
@@ -221,11 +261,23 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         Log.v("TAG", FirebaseInstanceId.getInstance().getToken().toString() + "   이것은 fcm 토큰이다.")
 
-        if (sliding_up_panel_layout.panelState == SlidingUpPanelLayout.PanelState.EXPANDED) {
-            toast("올라갔음")
-        }
-        Log.v("woo 119", sliding_up_panel_layout.panelState.toString())
 
+        slide_up_btn.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                when (event!!.action) {
+                    MotionEvent.ACTION_UP, MotionEvent.ACTION_MOVE -> {
+                        custom_scroll_view.setEnableScrolling(true)
+                        custom_scroll_view.fullScroll(ScrollView.FOCUS_UP)
+                    }
+                    MotionEvent.ACTION_DOWN -> {
+                        custom_scroll_view.setEnableScrolling(false)
+                        custom_scroll_view.fullScroll(ScrollView.FOCUS_UP)
+                    }
+                }
+                return true
+            }
+
+        })
 
         //init()
 
@@ -413,9 +465,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         })
     }
 
-    fun redrawHomeAct(flag : Int){
-        if(flag == 0)
-        {
+    fun redrawHomeAct(flag: Int) {
+        if (flag == 0) {
             sliding_text_one.text = "쿠폰샵"
             two_tv.text = "에서"
             three_tv.text = "다양한 상품"
@@ -430,7 +481,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             nine_tv.text = "롯데)빼빼로"
             ten_iv.setImageResource(R.drawable.ediya_cafe_latte)
             ten_tv.text = "이디야 카페라.."
-        }else{
+        } else {
             sliding_text_one.text = "포인트리"
             two_tv.text = "를 이용해"
             three_tv.text = "작은 주식"

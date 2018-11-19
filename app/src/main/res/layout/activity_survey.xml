@@ -77,7 +77,7 @@
             android:textSize="18sp"
             android:textColor="#707070"
             android:lineSpacingExtra="3sp"
-            android:text="얼마나 자주 해당 서비스를 이용하시나요?"
+            android:text="현재 본인의 차를 보유하고 계신가요?"
     />
 
 
