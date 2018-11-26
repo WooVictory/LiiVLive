@@ -3,6 +3,7 @@ package app.woovictory.liiv_live.view.quiz
 import android.graphics.PorterDuff
 import android.os.AsyncTask
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -13,8 +14,11 @@ import app.woovictory.liiv_live.Network.ApplicationController
 import app.woovictory.liiv_live.Network.NetworkService
 import app.woovictory.liiv_live.R
 import app.woovictory.liiv_live.db.SharedPreferenceController
+import app.woovictory.liiv_live.db.pointItemDataList
+import app.woovictory.liiv_live.view.popup.LiveFinishPopUpActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_quiz.*
+import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -264,16 +268,16 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                     Log.v("woo 854 success: ", response!!.body()!!.toString())
                     Log.v("woo 854 people : ", total.toString())*/
 
-                    //pointItemDataList.count += 1
-                  /*  Log.v("woo 854 count : ", pointItemDataList.count.toString())
+             /*       pointItemDataList.count += 1
+                    Log.v("woo 854 count : ", pointItemDataList.count.toString())
                     var handler = Handler()
                     handler.postDelayed({
                         finish()
                         if (pointItemDataList.count == 3) {
                             startActivity<LiveFinishPopUpActivity>()
                         }
-                    }, 3000)*/
-
+                    }, 3000)
+*/
 
                 }
             }
