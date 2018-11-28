@@ -25,6 +25,31 @@ class LiveActivity : AppCompatActivity() {
 
         getYoutubeUrl()
 
+   /*     lifecycle.addObserver(live_youtube_plyer_view)
+
+        val customPlayerUI = live_youtube_plyer_view.inflateCustomPlayerUI(R.layout.custom_play_button)
+
+        live_youtube_plyer_view.initialize({ youTubePlayer ->
+
+            val customPlayerUIController =
+                CustomPlayerUIController(
+                    this@LiveActivity,
+                    customPlayerUI,
+                    youTubePlayer,
+                    live_youtube_plyer_view
+                )
+            youTubePlayer.addListener(customPlayerUIController)
+            live_youtube_plyer_view.addFullScreenListener(customPlayerUIController)
+
+            youTubePlayer.addListener(object : AbstractYouTubePlayerListener() {
+                override fun onReady() {
+                    Log.v("woo TAG 534 : ",videoIds[0])
+                    youTubePlayer.loadVideo("LQACWdebNPU", 0F)
+                }
+            })
+
+        }, true)*/
+
 
         live_vp.adapter = LivePagerAdapter(supportFragmentManager)
         live_vp.setCurrentItem(0)
@@ -77,7 +102,8 @@ class LiveActivity : AppCompatActivity() {
 
                         youTubePlayer.addListener(object : AbstractYouTubePlayerListener() {
                             override fun onReady() {
-                                youTubePlayer.loadVideo(videoIds[0], 0F)
+                                Log.v("woo TAG 534 : ",videoIds[0])
+                                youTubePlayer.loadVideo("LQACWdebNPU", 0F)
                             }
                         })
 

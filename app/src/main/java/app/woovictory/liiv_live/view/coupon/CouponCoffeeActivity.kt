@@ -42,11 +42,11 @@ class CouponCoffeeActivity : AppCompatActivity(), View.OnClickListener{
     }
     fun settingData(){
         item_list.add(CoffeeData(R.drawable.americano_img,"스타벅스","HOT) 아메리카노","4,100원"))
-        item_list.add(CoffeeData(R.drawable.capuccino_img,"스타벅스","HOT) 카푸치","4,800원"))
+        item_list.add(CoffeeData(R.drawable.capuccino_img,"스타벅스","HOT) 카푸치노","4,800원"))
         item_list.add(CoffeeData(R.drawable.ice_americano_img,"스타벅스","ICE) 아메리카노","1,500원"))
         item_list.add(CoffeeData(R.drawable.latte_img,"스타벅스","HOT) 라떼","4,500원"))
         item_list.add(CoffeeData(R.drawable.americano_img,"스타벅스","HOT) 아메리카노","4,100원"))
-        item_list.add(CoffeeData(R.drawable.capuccino_img,"스타벅스","HOT) 카푸치","4,800원"))
+        item_list.add(CoffeeData(R.drawable.capuccino_img,"스타벅스","HOT) 카푸치노","4,800원"))
         item_list.add(CoffeeData(R.drawable.ice_americano_img,"스타벅스","ICE) 아메리카노","1,500원"))
         item_list.add(CoffeeData(R.drawable.latte_img,"스타벅스","HOT) 라떼","4,500원"))
     }

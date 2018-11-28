@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v4.content.ContextCompat
 import android.support.v4.content.ContextCompat.startActivity
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -65,6 +66,7 @@ internal class CustomPlayerUIController(
             playing = !playing
         }
         live_x_button.setOnClickListener {
+            Log.v("TAG 1026","click")
             context.startActivity<LiveExitPopUpActivity>()
         }
 
